@@ -1,0 +1,118 @@
+/**
+ * Main Conent
+ * Applies layout to the default theme frontend design
+ */
+
+body:not(.lovage-boxed-container) #body-container{
+	background: #fff;
+}
+
+#page{
+    margin: 50px auto;
+    position: relative;
+    z-index: 1;
+    min-height:700px;
+}
+
+.elementor-editor-active.page.page-template-page-blank #page,
+.elementor-editor-active.blank-portfolio-template #page{
+	z-index:999;
+}
+
+.lovage-fullwidth #page{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.single #page,
+.page #page,
+.archive #page{
+	margin-bottom:40px;
+}
+
+.single-product #page{
+    margin-top:50px;
+}
+
+.single-no-sidebar #page{
+	width:900px;
+}
+
+.page-template-page-blank #page{
+	margin-bottom:0;
+}
+
+.elementor-section.elementor-section-boxed>.elementor-container{
+	max-width:1000px;
+}
+
+.no-results{
+	margin:0;
+	background:#fff;
+}
+
+.no-results,
+.site-content{
+	min-height:300px;
+}
+
+body:not(.single-product) .site-content{
+	-webkit-animation: fadeIn 0.5s ease-in-out 1.5s backwards;
+	-moz-animation: fadeIn 0.5s ease-in-out 1.5s backwards;
+	-ms-animation: fadeIn 0.5s ease-in-out 1.5s backwards;
+	animation: fadeIn 0.5s ease-in-out 1.5s backwards;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	margin-right:0;
+	-webkit-animation: fadeIn 0.5s ease-in-out 1.8s backwards;
+	-moz-animation: fadeIn 0.5s ease-in-out 1.8s backwards;
+	-ms-animation: fadeIn 0.5s ease-in-out 1.8s backwards;
+	animation: fadeIn 0.5s ease-in-out 1.8s backwards;
+}
+
+/* Left Sidebar */
+.lovage-left-sidebar{
+	.site-content .site-main{
+	    float: right;
+	    margin-right: 0;
+	}
+
+	.site-content .widget-area{
+		float: left;
+	}
+}
+
+/* Boxed Layout */
+.lovage-boxed-container #body-container{
+	background-color: #fff;
+	margin: auto;
+
+	.site-header{
+	  width: auto;
+	  margin: 0 30px;
+
+	  &.sticky-header{
+	       width: 100%;
+	  	   margin: 0;
+
+	  	   #lovage-primary-bar{
+	  	      width: auto;
+	  	   }
+	  }
+	}
+
+	#page{
+	   margin: 20px 0;
+	   width: auto;
+	}
+}
+
+@media (max-width: 1200px){ 
+  .site-content{
+     margin: auto;
+  }
+}

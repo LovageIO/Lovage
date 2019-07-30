@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+## Breadcrumbs
+--------------------------------------------------------------*/
+.lovage-breadcrumbs{
+  font-size: 14px;
+  margin: 10px 0;
+  z-index: 2;
+  position: relative;
+
+  a,span{
+  	margin:0 5px 5px 0;
+  }
+
+  a{
+    color: #000;
+  }
+
+  span.delimiter{
+    margin-right:10px;
+  }
+
+}

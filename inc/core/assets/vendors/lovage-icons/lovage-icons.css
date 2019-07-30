@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'lovage-icons';
+  src:  url('fonts/lovage-icons.eot?z6tmkr');
+  src:  url('fonts/lovage-icons.eot?z6tmkr#iefix') format('embedded-opentype'),
+    url('fonts/lovage-icons.ttf?z6tmkr') format('truetype'),
+    url('fonts/lovage-icons.woff?z6tmkr') format('woff'),
+    url('fonts/lovage-icons.svg?z6tmkr#lovage-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i.lovage-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lovage-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lovage-icon-menu:before {
+  content: "\e901";
+}
+.lovage-icon-search:before {
+  content: "\e903";
+}
+.lovage-icon-bag:before {
+  content: "\e900";
+}
+.lovage-icon-cart:before {
+  content: "\e915";
+}
+.lovage-icon-user:before {
+  content: "\e040";
+}
+.lovage-icon-heart:before {
+  content: "\e04a";
+}
+.lovage-icon-upload:before {
+  content: "\e04c";
+}
+.lovage-icon-download:before {
+  content: "\e04d";
+}

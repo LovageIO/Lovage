@@ -1,0 +1,80 @@
+.site-footer {
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin:0;
+	color:#333;
+	background-color:#fff;
+	-webkit-animation: fadeIn 0.5s ease-in-out 2s backwards;
+	-moz-animation: fadeIn 0.5s ease-in-out 2s backwards;
+	-ms-animation: fadeIn 0.5s ease-in-out 2s backwards;
+	animation: fadeIn 0.5s ease-in-out 2s backwards;
+
+	a{
+		color:#222;
+
+		&:hover{
+		   color: $primary;
+		}
+	}
+
+	.site-info{
+		font-size: 12px;
+		font-size:0.7rem;
+		margin:20px auto;
+	}
+}
+
+.site-bottom{
+	height:auto;
+	overflow: hidden;
+	margin-top:0px;
+	padding:60px 0;
+	background-color:#fff;
+    color:#333;
+    clear:both;
+    border-bottom:1px solid #efefef;
+
+    .bottom-widget{
+		min-height:100px;
+
+		.widget-title{
+			color:#000;
+			text-align:left;
+			padding-left:0!important;
+			border:0!important;
+		}
+
+		.widget {
+			margin-right:15px;
+		}
+
+		.widget li,
+		.widget .widget-title{
+			border-color: rgba(0,0,0,.1);
+		}
+
+		.widget li a{
+			color:#222;
+
+			&:hover{
+				color: $primary;
+			}
+		}
+	}
+	.bottom-widget:last-child .widget {
+		margin-right:0;
+	}
+}
+
+
+.left-sidebar-layout {
+    .site-main{
+		float:right;
+		margin-right:0;
+	}
+
+	site-content .widget-area{
+		float:left;
+	}
+}

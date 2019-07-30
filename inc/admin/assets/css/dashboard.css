@@ -1,0 +1,92 @@
+/**
+ * Stylesheet of theme dashboard	
+ *
+ * @package Lovage
+ * @author Lovage
+ * @link https://lovage.io
+ * @version 1.0
+ */
+.lovage-wrap{
+	height: auto;
+    overflow: hidden;
+}
+.lovage-wrap h2{
+	text-transform: uppercase;
+	padding:10px;
+	font-weight:normal;
+	text-transform:none;
+	margin:20px auto;
+}
+.lovage-wrap .intro{
+	font-size:18px;
+	font-weight:400;
+	width: 60%;
+}
+.lovage-wrap .nav-tab-wrapper{
+    margin:40px auto!important;
+}
+
+.lovage-wrap .nav-tab{
+	padding-left:10px;
+	padding-right:10px;
+	font-size:14px;
+}
+
+.lovage-wrap .lovage-admin-footer{
+	clear: both;
+	text-align: center;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.lovage-wrap .page_description{
+	font-size:16px;
+	font-weight:600;
+	line-height: 1.6em;
+	margin: 0px 0 40px
+}
+
+.lovage-wrap .notice.lovage-plugin-update-notice{
+	display:block!important;
+	margin-top:0;
+	margin-bottom:5px;
+}
+
+.lovage-wrap .lovage-admin-box{
+	border: 1px solid #eee;
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.lovage-wrap .lovage-admin-box h2{
+	font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #eee;
+}
+.lovage-wrap .lovage-admin-box h3{
+	margin: 0;
+}
+.lovage-wrap .lovage-admin-box a{
+	text-decoration: none;
+}
+
+.lovage-wrap .row{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.lovage-wrap .col-2{
+	width: 49%;
+}
+
+.lovage-wrap .lovage-admin-box ul li{
+	padding: 5px 0;
+}
+
+.lovage-wrap .lovage-admin-box ul li .dashicons-before:before{
+	font-size: 16px;
+    vertical-align: middle;
+}

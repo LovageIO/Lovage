@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.related-posts{
+  margin:10px auto 20px;
+  padding:0 0 20px;
+  max-width:100%;
+  height:auto;
+  overflow: hidden;
+  border-bottom:1px solid #eee;
+
+  .section-title{
+    text-align:left;
+    font-weight:600;
+  }
+
+  .grids .item{
+    float:left;
+    width:32%;
+    margin:0 2% 0 0;
+
+    a{
+      color:#333;
+
+      &:hover{
+         color: $link_hover;
+      }
+    }
+
+    i{
+      font-size:25px;
+    }
+
+    .thumbnail{
+      max-height: 200px;
+      margin-bottom: 10px;
+      overflow: hidden;
+
+      img{
+        width:100%;
+        height:auto;
+      }
+    }
+
+    &:nth-child(3n+3){
+      margin-right:0;
+    }
+
+    .entry-title{
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+  }
+
+}

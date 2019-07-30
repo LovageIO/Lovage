@@ -1,0 +1,37 @@
+$woocommerce:   		#000;
+$green:         		#11c39b;
+$red:           		#a00;
+$orange:        		#ffba00;
+$blue:          		#2ea2cc;
+
+$primary:           	#11c39b;                                    // Primary color for buttons (alt)
+$primarytext:       	desaturate(lighten($primary, 50%), 18%);    // Text on primary color bg
+
+$secondary:         	desaturate(lighten($primary, 40%), 21%);    // Secondary buttons
+$secondarytext:     	desaturate(darken($secondary, 60%), 21%);   // Text on secondary color bg
+
+$highlight:         	adjust-hue($primary, 150deg);               // Prices, In stock labels, sales flash
+$highlightext:      	desaturate(lighten($highlight, 50%), 18%);  // Text on highlight color bg
+
+$contentbg:         	#fff;                                       // Content BG - Tabs (active state)
+$subtext:          	 	#777;                                       // small, breadcrumbs etc
+
+$headerbordercolor: 	rgba(0,0,0,.05);
+$border_light_color: 	#eee;
+$border_lighter_color:  #efefef;
+
+$link_hover:        	#11c39b;
+
+$headerheight:      	70px;
+$menu_width:			300px;
+$header_image_height: 	260px;
+
+$thin:					200;
+$light: 				300;
+$normal: 				400;
+$semibold: 				500;
+$bold: 					600;
+$extrambold: 			800;
+
+$heading_font:      	-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$content_font:	    	-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

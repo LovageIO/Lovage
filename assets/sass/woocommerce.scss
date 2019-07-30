@@ -1,0 +1,15 @@
+/**
+ * woocommerce.scss
+ * Governs the general look and feel of WooCommerce sections of stores using themes that do not
+ * integrate with WooCommerce specifically.
+ */
+
+/**
+ * Imports
+ */
+@import 'mixins/mixins';
+@import 'variables/variables';
+@import 'woocommerce/fonts';
+@import "woocommerce/layout";
+@import "woocommerce/general";
+@import "woocommerce/smallscreen";

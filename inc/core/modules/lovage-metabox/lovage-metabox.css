@@ -1,0 +1,404 @@
+/**
+ * Metabox Tabs
+ */
+
+.lovage-meta-form dl{
+  display: flex;
+}
+.lovage-meta-form dl dt{
+  width: 320px;
+  font-weight: 600;
+}
+.lovage-meta-form dl dd{
+  width: 70%;
+}
+.lovage-meta-form dl dt,
+.lovage-meta-form dl dd{
+  display: inline-block;
+}
+
+.is-side .lovage-meta-form dl{
+   flex-wrap: wrap;
+}
+.is-side .lovage-meta-form dl dt,
+.is-side .lovage-meta-form dl dd{
+  width: 100%;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.lovage-desc{
+	opacity:.55;
+	font-style:italic;
+}
+
+.lovage-option.radio-image .lovage-desc{
+  display: block;
+}
+
+.lovage-metabox-tabs{
+	padding:10px 0;
+}
+.lovage-metabox-tabs-container{
+	margin-top: 12px;
+	margin-bottom: 12px;
+	height:50px;
+	border-bottom: 1px solid #ddd;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.lovage-metabox-tabs-container ul {
+	list-style:none;
+	line-height:0;
+	margin:0;
+	padding:0;
+}
+.lovage-metabox-tabs-container ul li {
+	display: inline-block;
+	padding: 0 15px;
+	height:inherit;
+	line-height: 47px;
+}
+.lovage-metabox-tabs-container ul li.active {
+	border-bottom:3px solid #11c39b;
+}
+.lovage-metabox-tabs-container ul li.active a{
+	color:#11c39b;
+}
+.lovage-metabox-tabs-container ul li a {
+	text-decoration: none;
+	color:#000;
+	display:block;
+	width:100%;
+	height:inherit;
+	font-weight:600;
+	font-size:14px;
+  -webkit-tap-highlight-color: transparent; 
+  outline: none;
+}
+.lovage-metabox-tabs-container ul li a:focus,
+.lovage-metabox-tabs-container ul li a:active:focus{
+  -webkit-tap-highlight-color: transparent; 
+  outline: 0;
+  box-shadow:none;
+}
+.lovage-metabox-tabs-container .heading {
+	padding-left:10px;
+}
+.lovage-metabox-tab-content{
+  overflow: auto;
+	padding: 0.5em 0.9em;
+}
+
+.lovage-option input,
+.lovage-option select,
+.lovage-option label{
+	margin-right:10px;
+}
+.lovage-option .short{
+	width:15%;
+}
+.lovage-option .medium{
+  width:25%;
+}
+.lovage-option .long,
+.lovage-option textarea{
+	width:100%;
+	margin-bottom:10px;
+}
+.lovage-option textarea{
+	width:100%;
+	min-height:200px;
+}
+
+/* Toggle */
+.lovage-option .switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 25px;
+}
+
+.lovage-option .switch input {display:none;}
+
+.lovage-option .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.lovage-option .slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.lovage-option input:checked + .slider {
+  background-color: #11c39b;
+}
+
+.lovage-option input:focus + .slider {
+  box-shadow: 0 0 1px #11c39b;
+}
+
+.lovage-option input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.lovage-option .slider.round {
+  border-radius: 34px;
+}
+
+.lovage-option .slider.round:before {
+  border-radius: 50%;
+}
+
+/* The custom checkbox */
+.lovage-custom-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    height:10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser\'s default checkbox */
+.lovage-custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border:1px solid #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.lovage-custom-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.lovage-custom-checkbox input:checked ~ .checkmark {
+    background-color: #11c39b;
+    border-color: #11c39b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.lovage-custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.lovage-custom-checkbox .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Custom Radio */
+.lovage-custom-radio {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser\'s default radio button */
+.lovage-custom-radio input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.lovage-custom-radio .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border:1px solid #ccc;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.lovage-custom-radio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.lovage-custom-radio input:checked ~ .checkmark {
+  background-color: #11c39b;
+  border-color: #11c39b;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.lovage-custom-radio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.lovage-custom-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.lovage-custom-radio .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Custom Range */
+.lovage-custom-range {
+    width: 100%;
+}
+
+.lovage-custom-range .lovage-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-right:0;
+    padding:0;
+}
+
+.lovage-custom-range .lovage-slider:hover {
+    opacity: 1;
+}
+
+.lovage-custom-range .lovage-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #11c39b;
+    cursor: pointer;
+}
+
+.lovage-custom-range .lovage-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #11c39b;
+    cursor: pointer;
+}
+.lovage-custom-range-numbers{
+    height:40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.lovage-custom-range-numbers span{
+    display:inline-block;
+    text-align:left;
+    width: 33%;
+    color:#999;
+}
+.lovage-custom-range-numbers span:last-child{
+    text-align:right;
+}
+.lovage-custom-range-numbers span.lovage-range-value:before{
+    content: 'Value:';
+    margin-right:5px;
+}
+.lovage-custom-range-numbers span.lovage-range-value{
+    color:#11c39b;
+    margin-bottom:10px;
+}
+
+/* Custom Radio Image */
+.lovage-custom-radio-image {
+  width:22%;
+  margin-bottom:1em;
+  display: inline-block;
+}
+.lovage-custom-radio-image .lovage-desc{
+  display:block;
+  float:none;
+}
+.lovage-custom-radio-image > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.lovage-custom-radio-image > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  width:100%;
+  border:2px solid #eee;
+}
+.lovage-custom-radio-image > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #11c39b;
+}
+.lovage-custom-radio-image-title{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+}
+.lovage-image-preview{
+  display: block;
+  margin: 15px 0;
+}
+.lovage-image-preview img{
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.is-side .lovage-custom-radio-image{
+  width: 29%;
+}

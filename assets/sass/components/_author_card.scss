@@ -1,0 +1,64 @@
+/*--------------------------------------------------------------
+## Author Info
+--------------------------------------------------------------*/
+#author_vcard{
+  padding:0 0 30px;
+  max-width:100%;
+  height:auto;
+  overflow:hidden;
+  font-size:14px;
+  line-height: 1.5;
+  border-bottom:1px solid #eee;
+}
+
+#author_vcard .section-title{
+  text-align:left;
+  font-weight:600;
+  margin-top:1em;
+}
+#author_vcard.narrow .section-title{
+  text-align:center;
+}
+#author_vcard .author-title{
+  margin-bottom:40px;
+}
+#author_vcard a.avatar{
+  float:left;
+  margin-right:20px;
+  width:80px;
+  height:120px;
+}
+#author_vcard a.avatar img{
+  border-radius:200%;
+  width:80px;
+  height:80px;
+}
+#author_vcard p{
+  float:none;
+  margin:0 0 10px;
+  color:#666;
+  font-size:13px;
+  line-height:20px;
+  text-align:left;
+}
+#author_vcard p strong{
+  display:block;
+  font-size:18px;
+  color:#000;
+  margin-bottom:10px;
+}
+#author_vcard .social_icons a{
+  color:#000;
+  margin-top:10px;
+  margin-left:-1px;
+  border:1px solid #eee;
+  width:30px;
+  height:30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+}
+#author_vcard .social_icons a:hover{
+  background:#000;
+  color:#fff;
+}

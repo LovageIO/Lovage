@@ -1,0 +1,261 @@
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header{
+  width:100%;
+  height:$headerheight;
+  position: relative;
+  z-index:2;
+  background:#fff;
+  border-bottom: 1px solid $headerbordercolor;
+
+  &.sticky-header{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 10;
+     background: #fff;
+  }
+
+  .site-branding{
+      height:inherit;
+
+      .site-title{
+         margin:0;
+         height:inherit;
+         display: flex;
+         align-items:center;
+         font:600 1.5em $heading_font;
+
+         a{
+            color: #000;
+         }
+      }
+  }
+
+  #lovage-primary-bar{
+    height:inherit;
+  }
+
+  /**
+   * Header Icons
+   */
+  #site-icons{
+      width:14%;
+      height:inherit;
+      text-align: right;
+      float:right;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+
+      a{
+        display: inline-block;
+        padding:0 10px;
+        height:inherit;
+        color:#000;
+        font-size:22px;
+        position: relative;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+
+        &:hover{
+            color:$primary;
+        }
+      }
+
+      .cart_tip{
+        position:absolute;
+        width:17px;
+        height:17px;
+        font-size:12px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        font-weight:bold;
+        background:#f00;
+        color:#fff;
+        text-align:center;
+        line-height:17px;
+        border-radius:200%;
+        top: 20px;
+        right: 2px;
+        display:none;
+      }
+
+      .cart_tip.show{
+        display:block;
+      }
+  }
+
+  /**
+   * Standard RTL Header
+   */
+  &.lovage-standard-rtl{
+       .site-branding,
+       .main-navigation,
+       #site-icons{
+          float:right;
+          margin-right:0;
+       }
+
+       .site-branding,
+       .main-navigation{
+          margin-left:3%;
+       }
+       .main-navigation ul{
+          text-align:center;
+       }
+
+       .site-branding{
+         .site-title{
+           justify-content: right;
+         }
+       }
+  }
+
+  /**
+   * Centered LOGO Vertical
+   */
+  &.lovage-centered-vertical{
+      height:auto;
+
+      .site-branding{
+         float:none;
+         margin:0 auto 40px;
+         padding-top:30px;
+         height:$headerheight;
+         width:auto;
+         max-width: 20%;
+
+         .site-title{
+           justify-content: center;
+         }
+      }
+
+      .main-navigation{
+        float:none;
+        width:100%;
+
+        ul{
+         text-align:center;
+        }
+      }
+
+      #site-icons{
+         position:fixed;
+         height:auto;
+         top:50px;
+         left:auto;
+         right:20px;
+      }
+  }
+
+}
+
+.admin-bar .site-header{
+    top: 32px;
+}
+
+
+.logged-in #site-icons a#user_account{
+    color: $primary;
+}
+
+/**
+ * Elementor preview mode
+ */
+.elementor-editor-active{
+  .site-header{
+    border-top:1px dashed #000;
+    z-index: 1;
+
+    &.sticky-header{
+      z-index: 2;
+    }
+  }   
+}
+
+/**
+ * Responsive Header
+ */
+@media (max-width: 959px){
+
+  .site-header{
+     .site-branding {
+        width: 150px;
+        margin: 0;
+        float: left;
+     }
+
+     #site-icons {
+        width: 150px;
+        margin: 0;
+     }
+
+     /**
+      * RTL Standard Header
+      */
+     &.lovage-standard-rtl{
+       .main-navigation,
+       #site-icons{
+          float:left;
+          margin-right:0;
+       }
+     }
+
+     /**
+      * Centered LOGO Header
+      */
+     &.lovage-centered-logo{
+
+       height:$headerheight;
+
+       .site-branding {
+          width: 150px;
+          margin: 0;
+          float: left;
+          max-width:100%;
+          padding-top:0;
+       }
+
+       .main-navigation,
+       #site-icons{
+          position:relative;
+          float:right;
+          right:0;
+          top:0;
+          width:auto;
+          height:inherit;
+          margin-right:0;
+       }
+
+       #site-icons{
+          margin-right:3%;
+       }
+    }
+
+  }
+}
+
+@media (max-width: 782px){
+  .admin-bar .site-header{
+    top: 46px;
+  }
+}
+
+@media (max-width: 767px){
+  .site-header{
+
+    .site-branding{
+       width: 100px;
+    }
+
+    #site-icons {
+      width: 135px;
+      padding: 0;
+      justify-content: flex-end;
+    }
+  }
+}
