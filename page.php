@@ -14,10 +14,10 @@ get_header();
 	  /* Hook: lovage_before_content, lovage_before_main_content
 	   * @Hooked: lovage_before_content()
 	   */
-	  do_action('lovage_before_content');
+	  do_action( 'lovage_before_content' );
 
 	  if( lovage_has_sidebar() ){
-	     do_action('lovage_before_main_content');
+	     do_action( 'lovage_before_main_content' );
 	  }
 	 
 	  while ( have_posts() ) : the_post(); 
@@ -35,7 +35,7 @@ get_header();
 			/* Hook: lovage_after_main_content
 			 * @Hooked: lovage_after_main_content();
 			 */
-			do_action('lovage_after_main_content');
+			do_action( 'lovage_after_main_content' );
 			
 			get_sidebar(); 
 
@@ -44,6 +44,6 @@ get_header();
 	  /* Hook: lovage_after_content
 	   * @Hooked: lovage_after_content()
 	   */
-	  do_action('lovage_after_content');
+	  do_action( 'lovage_after_content' );
 	 
 get_footer();

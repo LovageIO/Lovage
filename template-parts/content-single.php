@@ -14,11 +14,11 @@ $featured_image_alignment = get_post_meta(get_the_ID(), '_lovage_featured_alignm
 <article id="post-<?php the_ID(); ?>" <?php post_class('thumbnail-float-'.esc_html($featured_image_alignment)); ?>>
     
     <?php if( has_post_thumbnail() && !get_post_meta(get_the_ID(), '_lovage_hide_single_featured_image', true) ):?>
-	<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark" class="featured_thumbnail" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full');?>);"></a>
+	<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark" class="featured_thumbnail" style="background-image: url(<?php echo esc_url( get_the_post_thumbnail_url(get_the_ID(), 'full') );?>) ;"></a>
 	<?php endif;?>
 
 	<header class="entry-header">
-		<?php echo get_the_category_list();?>
+		<?php echo wp_kses_post( get_the_category_list() );?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">

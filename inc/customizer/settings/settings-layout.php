@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
- return array(
+ $GLOBALS[ 'lovage_setting_layout' ] =  array(
 
     'lovage_layout_panel' => array(
        'title'           => esc_html__( 'Layout', 'lovage' ),
@@ -40,7 +40,7 @@
         'title'       => esc_html__( 'Header Layouts', 'lovage' ),
         'description' => esc_html__( 'Choose the global site header layout.', 'lovage' ),
         'section'     => 'lovage_header_layout_section', 
-        'default'     => $this->defaults['header_layout'],
+        'default'     => lovage_theme_customizer()->get_default('header_layout'),
         'field'       => 'radio-image', 
         'transport'   => 'postMessage',
         'type'        => 'control',
@@ -68,7 +68,7 @@
         'field'       => 'toggle', 
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'	  => $this->defaults['menu_buttons'],
+        'default'	  => lovage_theme_customizer()->get_default('menu_buttons'),
         'sanitize_callback'    => 'lovage_switch_sanitization',
     ),
 
@@ -79,7 +79,7 @@
         'field'       => 'toggle', 
         'type'        => 'control',
         'transport'   => 'refresh',
-        'default'     => $this->defaults['sticky_header'],
+        'default'     => lovage_theme_customizer()->get_default('sticky_header'),
         'sanitize_callback'    => 'lovage_switch_sanitization',
     ),
 
@@ -90,7 +90,7 @@
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'	  => $this->defaults['header_image_height'],
+        'default'	  => lovage_theme_customizer()->get_default('header_image_height'),
         'sanitize_callback' => 'lovage_range_sanitization',
         'input_attrs' => array(
         	'min' => 50, 
@@ -106,7 +106,7 @@
         'field'       => 'text',
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'     => $this->defaults['header_title'],
+        'default'     => lovage_theme_customizer()->get_default('header_title'),
         'sanitize_callback' => 'wp_kses_post',
     ),
 
@@ -117,7 +117,7 @@
         'field'       => 'text',
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'     => $this->defaults['header_subtitle'],
+        'default'     => lovage_theme_customizer()->get_default('header_subtitle'),
         'sanitize_callback' => 'wp_kses_post',
     ),
 
@@ -129,7 +129,7 @@
         'show_opacity'=> true, 
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'     => $this->defaults['header_image_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('header_image_text_color'),
         'sanitize_callback' => 'lovage_hex_rgba_sanitization',
     ),
 
@@ -141,7 +141,7 @@
         'type'        => 'control',
         'transport'   => 'postMessage',
         'show_opacity' => true,
-        'default'     => $this->defaults['header_image_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('header_image_border_color'),
         'sanitize_callback'    => '',
     ),
 
@@ -153,7 +153,7 @@
         'show_opacity'=> true, 
         'type'        => 'control',
         'transport'   => 'postMessage',
-        'default'     => $this->defaults['header_image_overlay_color'],
+        'default'     => lovage_theme_customizer()->get_default('header_image_overlay_color'),
         'sanitize_callback' => 'lovage_hex_rgba_sanitization',
     ),
 
@@ -177,7 +177,7 @@
         'title'       => esc_html__( 'Footer Widget Area Layouts', 'lovage' ),
         'description' => esc_html__( 'Choose the global site footer widget area layout.', 'lovage' ),
         'section'     => 'lovage_footer_layout_section', 
-        'default'     => $this->defaults['footer_widget_layout'],
+        'default'     => lovage_theme_customizer()->get_default('footer_widget_layout'),
         'field'       => 'radio-image', 
         'type'        => 'control',
         'choices'	  => apply_filters('lovage_footer_widget_area_layouts', array(
@@ -221,7 +221,7 @@
         'title'       => esc_html__( 'Copyright Text', 'lovage' ),
         'description' => esc_html__( 'The copyright text shows in the bottom footer. The content supports <a> <span> <small> <strong> HTML tag.', 'lovage' ),
         'section'     => 'lovage_footer_layout_section', 
-        'default'     => $this->defaults['site_copyright'],
+        'default'     => lovage_theme_customizer()->get_default('site_copyright'),
         'field'       => 'text', 
         'transport'   => 'postMessage',
         'type'        => 'control',
@@ -247,7 +247,7 @@
         'title'       => esc_html__( 'Blog Archive/Category Layouts', 'lovage' ),
         'description' => esc_html__( 'Choose a layout for all blog archive/category pages.', 'lovage' ),
         'section'     => 'lovage_blog_archive_layout_section', 
-        'default'     => $this->defaults['blog_archive_layout'],
+        'default'     => lovage_theme_customizer()->get_default('blog_archive_layout'),
         'field'       => 'radio-image', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -287,7 +287,7 @@
         'title'       => esc_html__( 'Single Post Layouts', 'lovage' ),
         'description' => esc_html__( 'Globally choose a layout for all the single posts.', 'lovage' ),
         'section'     => 'lovage_blog_post_layout_section', 
-        'default'     => $this->defaults['blog_post_layout'],
+        'default'     => lovage_theme_customizer()->get_default('blog_post_layout'),
         'field'       => 'radio-image', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -311,7 +311,7 @@
     'blog_post_author_card' => array(
         'title'       => esc_html__( 'Show Author Section', 'lovage' ),
         'section'     => 'lovage_blog_post_layout_section', 
-        'default'     => $this->defaults['blog_post_author_card'],
+        'default'     => lovage_theme_customizer()->get_default('blog_post_author_card'),
         'field'       => 'toggle',
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -321,7 +321,7 @@
     'blog_post_related_post' => array(
         'title'       => esc_html__( 'Related Posts Section', 'lovage' ),
         'section'     => 'lovage_blog_post_layout_section', 
-        'default'     => $this->defaults['blog_post_related_post'],
+        'default'     => lovage_theme_customizer()->get_default('blog_post_related_post'),
         'field'       => 'toggle',
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -331,7 +331,7 @@
     'blog_post_related_post_show_by' => array(
         'title'       => esc_html__( 'Related Posts Show By', 'lovage' ),
         'section'     => 'lovage_blog_post_layout_section', 
-        'default'     => $this->defaults['blog_post_related_post_show_by'],
+        'default'     => lovage_theme_customizer()->get_default('blog_post_related_post_show_by'),
         'field'       => 'select',
         'transport'   => 'refresh',
         'choices'	  => array(

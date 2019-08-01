@@ -318,6 +318,18 @@ if(!class_exists('Lovage_Theme_Customizer')){
 			return apply_filters('lovage_customizer_default_settings', $default);
 		}
 
+		/**
+		 * Get the default settings
+		 */
+		public function get_default( $key ){
+			foreach( $this->default_value() as $mod => $value ){
+				if( $key === $mod ){
+					return $value;
+				}else{
+					return null;
+				}
+			}
+		}
 
 		/**
 		 * Save the default settings
@@ -333,18 +345,25 @@ if(!class_exists('Lovage_Theme_Customizer')){
 		 */
 		public function settings(){
 
-			require_once LOVEAGE_INC_DIR.'customizer/customizer-rendering.php';
-			require_once LOVEAGE_INC_DIR.'customizer/customizer-sanitize.php';
+			load_template( LOVEAGE_INC_DIR.'customizer/customizer-rendering.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/customizer-sanitize.php', TRUE );
 
 			/* Load Settings */
-			$setting_colors 	 = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-colors.php';
-			$setting_components  = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-components.php';
-			$setting_layout 	 = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-layout.php';
-			$setting_typography  = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-typography.php';
-			$setting_codes 		 = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-codes.php';
-			$setting_woocommerce = require_once LOVEAGE_INC_DIR.'customizer/settings/settings-woocommerce.php';
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-colors.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-components.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-layout.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-typography.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-codes.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-woocommerce.php', TRUE );
 
-			$options = array_merge($setting_colors, $setting_components, $setting_typography, $setting_layout, $setting_codes, $setting_woocommerce);
+			$options = array_merge(
+				$GLOBALS[ 'lovage_setting_colors' ], 
+				$GLOBALS[ 'lovage_setting_components' ], 
+			    $GLOBALS[ 'lovage_setting_typography' ], 
+				$GLOBALS[ 'lovage_setting_layout' ], 
+				$GLOBALS[ 'lovage_setting_codes' ], 
+				$GLOBALS[ 'lovage_setting_woocommerce' ]
+			);
 
 			$settings = array(
 		        'prefix'     => $this->prefix,

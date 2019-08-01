@@ -10,12 +10,12 @@
 
 $sidebar_id = 'sidebar';
 
-if( is_page() && ! is_page_template('page-templates/page-blog-template.php') ){
+if( is_page() && ! is_page_template( 'page-templates/page-blog-template.php' ) ){
 	$sidebar_id = 'sidebar-page';
 }
 
-if( class_exists('woocommerce') ){
-	if(is_shop() || is_product_category() || is_product_tag() || is_product()){
+if( class_exists( 'woocommerce' ) ){
+	if( is_shop() || is_product_category() || is_product_tag() || is_product() ){
 		$sidebar_id = 'sidebar-shop';
 	}
 }

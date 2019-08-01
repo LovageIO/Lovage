@@ -20,12 +20,12 @@ get_header();
             $limit = get_option('posts_per_page');
 	        
 	        if(!is_front_page()){
-	          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	          $lovage_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	        }else{		       
-	          $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+	          $lovage_paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	        }
 
-	        query_posts(array('post_type'=>'post','posts_per_page'=>$limit,'paged'=>$paged));
+	        query_posts( array( 'post_type' => 'post','posts_per_page' => $limit,'paged' => $lovage_paged ) );
 			
 			while ( have_posts() ) : the_post();
 					/*
@@ -36,7 +36,7 @@ get_header();
 					get_template_part( 'template-parts/content', get_post_format() );
 			endwhile; 
 
-			echo lovage_pagenavi(); 
+		   lovage_pagenavi( TRUE ); 
 
 		 else : 
 

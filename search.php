@@ -13,7 +13,7 @@ get_header();
 	   /* Hook: lovage_before_content
 	    * @Hooked: lovage_before_content()
 	    */
-	   do_action('lovage_before_content');
+	   do_action( 'lovage_before_content' );
 	  
 	   if ( have_posts() ) : ?>
 
@@ -26,11 +26,11 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search');
+				get_template_part( 'template-parts/content', 'search' );
 				
 			 endwhile;  
 
-			 echo lovage_pagenavi(); 
+			 lovage_pagenavi( TRUE ); 
 
 		else :
 
@@ -41,6 +41,6 @@ get_header();
 	    /* Hook: lovage_after_content
 	     * @Hooked: lovage_after_content();
 	     */
-		do_action('lovage_after_content');	 
+		do_action( 'lovage_after_content' );	 
 	
 get_footer(); 

@@ -35,11 +35,11 @@ if ( ! function_exists( 'lovage_product_category_list' ) ) {
 		    	do_action('lovage_before_product_list');
 
 		        foreach ( $terms as $term ) {                        
-		                echo '<a href="' . esc_url( get_term_link( $term ) ) . '" class="' . $term->slug . '">';
-		                echo $term->name;
+		                echo '<a href="' . esc_url( get_term_link( $term ) ) . '" class="' . esc_attr( $term->slug ) . '">';
+		                echo esc_attr( $term->name );
 		                echo '</a>';
 		        }
-		        echo '<a href="'.esc_url(home_url('/')).'?page_id='.get_option('woocommerce_shop_page_id').'" class="all_products">'.esc_html__('All Products','lovage').' &raquo;</a>';
+		        echo '<a href="'.esc_url(home_url('/')).'?page_id='. esc_attr( get_option('woocommerce_shop_page_id') ).'" class="all_products">'.esc_html__('All Products','lovage').' &raquo;</a>';
 
 		        do_action('lovage_after_product_list');
 		    echo '</div>';
@@ -82,7 +82,7 @@ if ( ! function_exists( 'lovage_product_data' ) ) {
 		}
 		$wc_query = new WP_Query(array('post_type'=>'product')); 
         if ($wc_query->have_posts()) {
-		echo  '<a href="'.esc_url(home_url('/')).'?page_id='.get_option('woocommerce_shop_page_id').'" class="button_outline aligncenter">'.esc_html__('Load More','lovage').'</a>';
+		echo  '<a href="'.esc_url(home_url('/')).'?page_id='. esc_attr( get_option('woocommerce_shop_page_id') ).'" class="button_outline aligncenter">'.esc_html__('Load More','lovage').'</a>';
 		}
 	}
 }
@@ -380,7 +380,7 @@ function lovage_add_to_cart(){
 			$add_to_cart='<i class="lovage-icon lovage-icon-plus"></i>';
 	}
 	
-    echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+    echo wp_kses_post( apply_filters( 'lovage_woocommerce_loop_add_to_cart_link',
 	sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $quantity ) ? $quantity : 1 ),
@@ -389,7 +389,7 @@ function lovage_add_to_cart(){
 		esc_attr( isset( $class ) ? $class : $cart_class ),
 		$add_to_cart
 	),
-    $product );
+    $product ) );
 }
 endif;
 
@@ -405,13 +405,13 @@ function lovage_template_loop_product_thumbnail(){
 	  $attachment_ids = $product->get_gallery_image_ids();
 	  if(count($attachment_ids)>0){
 		  $attachment_id=$attachment_ids[0];
-		  $hover_image='<span class="product_hover_image" style="background:url('.esc_url(wp_get_attachment_url( $attachment_id)).');background-size:cover;"></span>';
+		  $hover_image = '<span class="product_hover_image" style="background:url('.esc_url(wp_get_attachment_url( $attachment_id)).');background-size:cover;"></span>';
 	  }
 	  if ( $product->is_on_sale() ){
-	      $onsale=apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'lovage' ) . '</span>', $post, $product );
+	      $onsale = apply_filters( 'lovage_woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'lovage' ) . '</span>', $post, $product );
       }
 	 
-	  echo '<a href="'.esc_url(get_permalink()).'" class="product_thumbnail">'.$onsale.$hover_image.woocommerce_get_product_thumbnail().'</a>';
+	  echo '<a href="'.esc_url( get_permalink() ).'" class="product_thumbnail">'. wp_kses_post( $onsale ) . wp_kses_post( $hover_image ) . wp_kses_post( woocommerce_get_product_thumbnail() ).'</a>';
 }
 endif;
 

@@ -14,7 +14,7 @@ get_header(); ?>
 	  /* Hook: lovage_before_content
 	   * @Hooked: lovage_before_content()
 	   */
-	  do_action('lovage_before_content');
+	  do_action( 'lovage_before_content' );
 	?>
 
 			<section class="error-404 not-found">
@@ -25,11 +25,10 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'lovage' ); ?></p>
                     <br />
-					<form role="search" method="get" id="searchform_default" class="searchform" action="<?php echo esc_url(home_url('/'));?>" >
+					<form role="search" method="get" id="searchform_default" class="searchform" action="<?php echo esc_url(home_url( '/' ));?>" >
 					    <div class="lovage-search">
 					    <input type="text" value="" name="s" id="s" />
 					    <input type="submit" id="searchsubmit" value="" />
-					    <input type="hidden" name="post_type" id="post_type_default" value="product" />
 					    </div>
 					</form>
 
@@ -41,7 +40,7 @@ get_header(); ?>
 		  /* Hook: lovage_after_content
 	       * @Hooked: lovage_after_content();
 		   */
-		  do_action('lovage_after_content');
+		  do_action( 'lovage_after_content' );
 		?>
 
 <?php get_footer(); ?>

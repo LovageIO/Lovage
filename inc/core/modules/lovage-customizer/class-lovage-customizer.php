@@ -79,7 +79,7 @@ if(!class_exists('Lovage_Customizer')){
  		    $this->prefix 	  = ! empty( $args['prefix'] ) ? $args['prefix'] : '';
  		    $this->options    = $args['options'];
 
- 		    add_action( 'customize_controls_enqueue_scripts', array($this, 'customize_register_scripts'), 0 );
+ 		    add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_register_scripts' ), 10 );
 
 		}
 
@@ -117,8 +117,7 @@ if(!class_exists('Lovage_Customizer')){
 			wp_enqueue_style( 'lovage-customize', LOVEAGE_CORE_URI . 'modules/lovage-customizer/assets/customize-controls.css' );
 			
 			/* JS */
-		    wp_enqueue_script( 'wp-color-picker');
-			wp_enqueue_script( 'lovage-customize', LOVEAGE_CORE_URI . 'modules/lovage-customizer/assets/customize-controls.js', array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-slider', 'customize-controls' ) );
+			wp_enqueue_script( 'lovage-customize', LOVEAGE_CORE_URI . 'modules/lovage-customizer/assets/customize-controls.js', array( 'jquery', 'wp-color-picker', 'jquery-ui-sortable', 'jquery-ui-slider', 'customize-controls' ), '', true );
 			wp_localize_script('lovage-customize', 'lovage_customizer_data', array(
 				'localFontFile' => LOVEAGE_CORE_URI.'modules/lovage-customizer/cache/google-fonts.json',
 			));

@@ -11,34 +11,34 @@
 /**
  * Function liburary.
  */
-require LOVEAGE_MODULE_DIR.'init/lib.php';
+load_template( LOVEAGE_MODULE_DIR.'init/lib.php', TRUE );
 	
 /**
  * Custom template tags for this theme.
  */
-require LOVEAGE_MODULE_DIR.'init/template-tags.php';
+load_template( LOVEAGE_MODULE_DIR.'init/template-tags.php', TRUE );
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require LOVEAGE_MODULE_DIR.'init/extras.php';
+load_template( LOVEAGE_MODULE_DIR.'init/extras.php', TRUE );
 
 /**
  * Hooks
  */
-require LOVEAGE_MODULE_DIR.'init/hooks.php';
+load_template( LOVEAGE_MODULE_DIR.'init/hooks.php', TRUE );
 
 /**
  * Elementor Integration
  */
-require LOVEAGE_MODULE_DIR.'init/elementor.php';
+load_template( LOVEAGE_MODULE_DIR.'init/elementor.php', TRUE );
 
 /**
  * Metabox
  */
-require LOVEAGE_MODULE_DIR.'init/metabox.php';
+load_template( LOVEAGE_MODULE_DIR.'init/metabox.php', TRUE );
 
 /**
  * Metabox
  */
-require LOVEAGE_MODULE_DIR.'init/page-codes.php';
+load_template( LOVEAGE_MODULE_DIR.'init/inline-codes.php', TRUE );

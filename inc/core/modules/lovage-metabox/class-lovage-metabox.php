@@ -59,14 +59,14 @@ class Lovage_MetaBox {
 	 */
 	public function add_meta_box() {
 
-		$post_type 		= isset($this->metabox['post_type']) ? $this->metabox['post_type'] : array('post');
-		$metabox_id 	= isset($this->metabox['id']) ? $this->metabox['id'] : '';
-		$metabox_title  = isset($this->metabox['title']) ? $this->metabox['title'] : '';
-		$metabox_context  = isset($this->metabox['context']) ? $this->metabox['context'] : 'normal';
-		$metabox_priority = isset($this->metabox['priority']) ? $this->metabox['priority'] : 'high';
-		$compatible_with_gutenberg = isset($this->metabox['block_compatible']) ? $this->metabox['block_compatible'] : true;
+		$post_type 		= isset( $this->metabox['post_type'] ) ? $this->metabox['post_type'] : array( 'post' );
+		$metabox_id 	= isset( $this->metabox['id'] ) ? $this->metabox['id'] : '';
+		$metabox_title  = isset( $this->metabox['title'] ) ? $this->metabox['title'] : '';
+		$metabox_context  = isset( $this->metabox['context'] ) ? $this->metabox['context'] : 'normal';
+		$metabox_priority = isset( $this->metabox['priority'] ) ? $this->metabox['priority'] : 'high';
+		$compatible_with_gutenberg = isset( $this->metabox['block_compatible'] ) ? $this->metabox['block_compatible'] : true;
 
-		$callback = isset($this->metabox['callback']) ? call_user_func($this->metabox['callback']) : true;
+		$callback = isset( $this->metabox['callback'] ) ? call_user_func( $this->metabox['callback'] ) : true;
 		
 		if( ! $callback ){
 			return;
@@ -89,26 +89,26 @@ class Lovage_MetaBox {
 	 * Create Metabox HTML
 	 */
 	public function create_meta_box_content() {
-		$tabs 	    = isset($this->metabox['tabs']) ? $this->metabox['tabs'] : '';
-		$metabox_id = isset($this->metabox['id']) ? $this->metabox['id'] : '';
+		$tabs 	    = isset( $this->metabox['tabs'] ) ? $this->metabox['tabs'] : '';
+		$metabox_id = isset( $this->metabox['id'] ) ? $this->metabox['id'] : '';
 		?>
-		<div id="lovage-metabox-tabs-<?php echo esc_html($metabox_id);?>" class="lovage-metabox-tabs">
+		<div id="lovage-metabox-tabs-<?php echo esc_html( $metabox_id );?>" class="lovage-metabox-tabs">
 
 			<?php wp_nonce_field( basename( __FILE__ ), $this->metabox['id'].'_nonce' ); ?>
 
-			<?php if( isset($this->metabox['description']) && '' !== $this->metabox['description'] ):?>
-				<p class="lovage-desc"><?php echo esc_html($this->metabox['description']);?></p>
+			<?php if( isset( $this->metabox['description'] ) && '' !== $this->metabox['description'] ):?>
+				<p class="lovage-desc"><?php echo esc_html( $this->metabox['description'] );?></p>
 		    <?php endif;?>
 
-			<?php if(isset($tabs) && count($tabs) > 1 ):?>
+			<?php if( isset( $tabs ) && count( $tabs ) > 1 ):?>
 				<div class="lovage-metabox-tabs-container">
 					<ul>
 						
 							<?php 
 							$i=1; 
-							foreach($tabs as $key => $val):
+							foreach( $tabs as $key => $val ):
 							?>
-								<li class="lovage-metabox-tab-item <?php echo $i==1 ? 'active' : ''; ?>" id="lovage-metabox-tab-item-<?php echo trim(esc_html($key));?>"><a href="javascript:void(0);" data-target="#lovage-metabox-tab-content-<?php echo esc_html($key);?>"><?php echo esc_html($val['title']);?></a></li>
+								<li class="lovage-metabox-tab-item <?php echo $i==1 ? 'active' : ''; ?>" id="lovage-metabox-tab-item-<?php echo esc_html( trim( $key ) );?>"><a href="javascript:void(0);" data-target="#lovage-metabox-tab-content-<?php echo esc_html( $key );?>"><?php echo esc_html( $val['title'] );?></a></li>
 							<?php
 							$i++;
 							endforeach;
@@ -120,26 +120,26 @@ class Lovage_MetaBox {
 
 			<?php 
 			// Tabs
-			if(isset($tabs) && count($tabs) > 1): 
+			if( isset( $tabs ) && count( $tabs ) > 1 ): 
 				$j = 1; 
-				foreach($tabs as $key => $val):
+				foreach( $tabs as $key => $val ):
 			?>
-					<div id="lovage-metabox-tab-content-<?php echo esc_html($key);?>" class="lovage-metabox-tab-content" <?php echo $j > 1 ? 'style="display:none;"' : ''; ?>>
+					<div id="lovage-metabox-tab-content-<?php echo esc_html( $key );?>" class="lovage-metabox-tab-content" <?php echo $j > 1 ? 'style="display:none;"' : ''; ?>>
 
 						<div class="lovage-meta-form">
 							<?php 
-							foreach($this->metabox['options'] as $id => $args ): 
+							foreach( $this->metabox['options'] as $id => $args ): 
 								
-								$label       = isset($args['label']) ? $args['label'] : '';
-								$description = isset($args['description']) ? $args['description'] : '';
-								$tab         = isset($args['tab']) ? $args['tab'] : '';
-								$option_callback    = isset($args['callback']) ? call_user_func($args['callback']) : true;
+								$label       = isset( $args['label'] ) ? $args['label'] : '';
+								$description = isset( $args['description'] ) ? $args['description'] : '';
+								$tab         = isset( $args['tab'] ) ? $args['tab'] : '';
+								$option_callback    = isset( $args['callback'] ) ? call_user_func( $args['callback'] ) : true;
 
-								if($option_callback && $tab == $key):
+								if( $option_callback && $tab == $key ):
 							?>
 							<dl>
-								<dt scope="row"><label for="<?php echo esc_html($id);?>"><?php echo esc_html($label);?></label></dt>
-								<dd class="lovage-option"><?php $this->option_type($id, $args);?><span class="lovage-desc"><?php echo $description;?></span></dd>
+								<dt scope="row"><label for="<?php echo esc_html( $id );?>"><?php echo esc_html( $label );?></label></dt>
+								<dd class="lovage-option"><?php $this->option_type( $id, $args );?><span class="lovage-desc"><?php echo esc_html( $description );?></span></dd>
 							</dl>
 							<?php 
 							    endif;
@@ -153,22 +153,22 @@ class Lovage_MetaBox {
 		    else:
 		    // No Tabs
 		    ?>
-    		<div id="lovage-metabox-content-<?php echo $metabox_id;?>" class="lovage-metabox-content">
+    		<div id="lovage-metabox-content-<?php echo esc_attr( $metabox_id );?>" class="lovage-metabox-content">
 				<div class="lovage-meta-form">
 					<?php 
-					foreach($this->metabox['options'] as $id => $args ): 
-						$label       = isset($args['label']) ? $args['label'] : '';
-						$description = isset($args['description']) ? $args['description'] : '';
-						$type = isset($args['type']) ? $args['type'] : 'text';
-						$option_callback    = isset($args['callback']) ? $args['callback'] : true;
+					foreach( $this->metabox['options'] as $id => $args ): 
+						$label       = isset( $args['label'] ) ? $args['label'] : '';
+						$description = isset( $args['description'] ) ? $args['description'] : '';
+						$type = isset( $args['type'] ) ? $args['type'] : 'text';
+						$option_callback    = isset( $args['callback'] ) ? $args['callback'] : true;
 
-						if($option_callback):
+						if( $option_callback ):
 					?>
 					<dl>
-						<dt scope="row"><label for="<?php echo esc_html($id);?>"><?php echo esc_html($label);?></label></dt>
-						<dd class="lovage-option <?php echo esc_attr($type);?>">
-							<?php $this->option_type($id, $args);?>
-							<span class="lovage-desc"><?php echo $description;?></span>
+						<dt scope="row"><label for="<?php echo esc_html( $id );?>"><?php echo esc_html( $label );?></label></dt>
+						<dd class="lovage-option <?php echo esc_attr( $type );?>">
+							<?php $this->option_type( $id, $args );?>
+							<span class="lovage-desc"><?php echo esc_html( $description );?></span>
 						</dd>
 					</dl>
 					<?php endif; endforeach;?>
@@ -184,23 +184,23 @@ class Lovage_MetaBox {
 	 * @param $id: option id
 	 * @param $args: option arguments
 	 */
-	public function option_type($id, $args){
+	public function option_type( $id, $args ){
 		global $post;
-		$type    	 = isset($args['type']) ? $args['type'] : 'text';
-		$style  	 = isset($args['style']) ? $args['style'] : '';
-		$default 	 = isset($args['default']) ? $args['default'] : '';
-		$placeholder = isset($args['placeholder']) ? $args['placeholder'] : '';
+		$type    	 = isset( $args['type'] ) ? $args['type'] : 'text';
+		$style  	 = isset( $args['style'] ) ? $args['style'] : '';
+		$default 	 = isset( $args['default'] ) ? $args['default'] : '';
+		$placeholder = isset( $args['placeholder'] ) ? $args['placeholder'] : '';
 
 		$value = '';
 		$html  = '';
 
-		if( null !== get_post_meta($post->ID, $id, true)){
-			$value = get_post_meta($post->ID, $id, true);
+		if( null !== get_post_meta( $post->ID, $id, true ) ){
+			$value = get_post_meta( $post->ID, $id, true );
 		}else{
 			$value = $args['default'];
 		}
 
-		switch($type){
+		switch( $type ){
 
 			case 'number':
 			  $html = '<input type="number" value="'.$value.'" class="'.$style.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
@@ -217,11 +217,11 @@ class Lovage_MetaBox {
 			case 'select':
 		      $choices = '';
 
-			  foreach($args['choices'] as $val => $label){
+			  foreach( $args['choices'] as $val => $label ){
 			  	$selected = ( $value == $val ) ? 'selected="selected"' : '';
-			  	$callback = isset($label['callback']) ? call_user_func($label['callback']) : true;
+			  	$callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
-			  	if($callback){
+			  	if( $callback ){
 					$choices .= '<option value="'.$val.'" '.$selected.'>'.$label.'</option>';
 				}
 			  }
@@ -231,9 +231,9 @@ class Lovage_MetaBox {
 
 			case 'range':
 
-			  $max 	= isset($args['max']) ? $args['max'] : '100';
-			  $min 	= isset($args['min']) ? $args['min'] : '1';
-			  $val  = ($value !== $default) ? $value : $default;
+			  $max 	= isset( $args['max'] ) ? $args['max'] : '100';
+			  $min 	= isset( $args['min'] ) ? $args['min'] : '1';
+			  $val  = $value !== $default ? $value : $default;
 			  $html = '
 				<div class="lovage-custom-range">
 			 	 <input type="range" name="'.$id.'" id="'.$id.'" min="'.$min.'" max="'.$max.'" value="'.$val.'" class="lovage-slider '.$style.'"> 
@@ -268,7 +268,7 @@ class Lovage_MetaBox {
 			  $i = 1;
 
 			
-			  foreach($args['choices'] as $val => $label){
+			  foreach( $args['choices'] as $val => $label ){
 
 			  	if ( in_array( $val, $value ) ) {
 		            $checked = 'checked="checked"';
@@ -276,9 +276,9 @@ class Lovage_MetaBox {
 		            $checked = null;
 		        }
 
-		        $callback = isset($label['callback']) ? call_user_func($label['callback']) : true;
+		        $callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
-		        if($callback){
+		        if( $callback ){
 				  	$html .= '<label class="lovage-custom-checkbox">
 				  				<input type="checkbox" class="'.$style.'" name="'.$id.'[]" id="'.$id.'['.$i.']" value="'.$val.'" '.$checked.'><span>'.$label.'</span>
 				  				<span class="checkmark"></span>
@@ -289,12 +289,12 @@ class Lovage_MetaBox {
 			  break;
 
 			case 'radio':
-			  foreach($args['choices'] as $val => $label){
+			  foreach( $args['choices'] as $val => $label ){
 			  	
 			  	$checked = ( $value == $val ) ? 'checked="checked"' : '';
-			  	$callback = isset($label['callback']) ? call_user_func($label['callback']) : true;
+			  	$callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
-			  	if($callback){
+			  	if( $callback ){
 			  		$html .= '<label class="lovage-custom-radio">
 			  				<input type="radio" class="'.$style.'" name="'.$id.'" value="'.$val.'" '.$checked.'><span>'.$label.'</span>
 			  				<span class="checkmark"></span>
@@ -307,18 +307,18 @@ class Lovage_MetaBox {
 			  
 			  $i = 1;
 
-			  foreach($args['choices'] as $val => $label){
+			  foreach( $args['choices'] as $val => $label ){
 
 			  	$checked = ( $value == $val ) ? 'checked="checked"' : '';
 
-			  	$callback = isset($label['callback']) ? call_user_func($label['callback']) : true;
+			  	$callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
-				if($callback){
+				if( $callback ){
 				  	$html .= '<label class="lovage-custom-radio-image">
 				  				<input type="radio" class="'.$style.'" name="'.$id.'" value="'.$val.'" '. $checked.'>
 				  				<img src="'.$label['image'].'" />';
 
-				  	    if(isset($label['title']) && '' !== $label['title']){
+				  	    if( isset( $label['title'] ) && '' !== $label['title'] ){
 				  		   $html .= '<span class="lovage-custom-radio-image-title">'.$label['title'].'</span>';
 				  	    }
 				  		$html .= '</label>';
@@ -355,7 +355,7 @@ class Lovage_MetaBox {
 			case 'image':
 			  $html = '<input type="url" class="'.$style.'" value="'.$value.'" name="'.$id.'" id="'.$id.'" />
 			  	       <input type="button" class="image-upload button" value="'.__( 'Choose or Upload an Image', 'lovage' ).'" />';
-			  if(isset($value) && $value !== ''){
+			  if( isset( $value ) && $value !== '' ){
 			  	   $html .= '<span class="lovage-image-preview"><img src="'.$value.'" /></span>';
 			  }else{
 			  	   $html .= '<span class="lovage-image-preview"></span>';
@@ -365,13 +365,13 @@ class Lovage_MetaBox {
 			case 'multi-image':
 			  $html = '<input type="hidden" value="'.$value.'" name="'.$id.'" id="'.$id.'" />
 			  	       <input type="button" class="multi-image-upload button" value="'.__( 'Choose or Upload Images', 'lovage' ).'" />';
-			  if($value !== ''){
+			  if( $value !== '' ){
 			  	   $preview = '';
-			  	   $images = json_decode($value);
+			  	   $images = json_decode( $value );
 
-			  	   if(isset($images)){
-				  	   foreach($images as $image){
-				  	   	  $preview .= '<img src="'.$image->url.'" />';
+			  	   if( isset( $images ) ){
+				  	   foreach( $images as $image ){
+				  	   	  $preview .= '<img src="'.esc_url( $image->url ).'" />';
 				  	   }
 			  	   }
 			  	   $html .= '<span class="lovage-image-preview">'.$preview.'</span>';
@@ -386,14 +386,14 @@ class Lovage_MetaBox {
 			  break;
 		}
 
-		echo $html;
+		echo wp_kses_post( $html );
 	}
 
 
 	/**
 	 * Save the meta value.
 	 */
-	public function save_meta_value($post_id){
+	public function save_meta_value( $post_id ){
 
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
@@ -402,17 +402,17 @@ class Lovage_MetaBox {
         // Checks save status
 	    $is_autosave = wp_is_post_autosave( $post_id );
 	    $is_revision = wp_is_post_revision( $post_id );
-	    $is_valid_nonce = ( isset($_POST[$this->metabox['id'].'_nonce']) && wp_verify_nonce( $_POST[$this->metabox['id'].'_nonce'], basename( __FILE__ ) ) ) ? 'true' : 'false';
+	    $is_valid_nonce = ( isset( $_POST[$this->metabox['id'].'_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[$this->metabox['id'].'_nonce'] ) ), basename( __FILE__ ) ) ) ? 'true' : 'false';
 	 
 	    // Exits script depending on save status
 	    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
 	        return;
 	    }
 
-        foreach( $this->metabox['options'] as $meta_key => $args){
+        foreach( $this->metabox['options'] as $meta_key => $args ){
         	
-        	$new_meta_value =  isset( $_POST[$meta_key] ) ? $_POST[$meta_key] : '';
-        	$meta_value = get_post_meta($post_id, $meta_key, true);
+        	$new_meta_value =  isset( $_POST[$meta_key] ) ? sanitize_text_field( wp_unslash( $_POST[$meta_key] ) ) : '';
+        	$meta_value = get_post_meta( $post_id, $meta_key, true );
 
         	if ( $new_meta_value ) {
 				update_post_meta( $post_id, $meta_key, $new_meta_value );
@@ -429,10 +429,10 @@ class Lovage_MetaBox {
 		wp_enqueue_media();
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker' );
-		wp_enqueue_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+		wp_enqueue_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
 
-		wp_enqueue_style( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.css');
-		wp_enqueue_script( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.js', array('jquery','jquery-ui-datepicker'), '', true );
+		wp_enqueue_style( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.css' );
+		wp_enqueue_script( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.js', array( 'jquery','jquery-ui-datepicker' ), '', true );
 
 		wp_localize_script( 'lovage-metabox', 'image_upload',
             array(

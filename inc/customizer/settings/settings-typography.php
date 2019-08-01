@@ -8,8 +8,8 @@
  * @version 1.0
  */
 
- return array(
- 	/**
+ $GLOBALS[ 'lovage_setting_typography' ] =  array(
+ 	  /**
      * Typography Panel
      */
 
@@ -39,7 +39,7 @@
         'title'       => esc_html__( 'Site Title Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the default site title text. If you set the LOGO, the site title will be replaced, so you don\'t need to set this option.', 'lovage' ),
         'section'     => 'lovage_header_typography_section', 
-        'default'     => $this->defaults['site_title_typography'],
+        'default'     => lovage_theme_customizer()->get_default('site_title_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -49,7 +49,7 @@
         'title'       => esc_html__( 'Site Navigation Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the default site navigation text.', 'lovage' ),
         'section'     => 'lovage_header_typography_section', 
-        'default'     => $this->defaults['navigation_menu_typography'],
+        'default'     => lovage_theme_customizer()->get_default('navigation_menu_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -71,7 +71,7 @@
         'title'       => esc_html__( 'Standard Blog Title Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the standard blog title.', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['standard_blog_title_typography'],
+        'default'     => lovage_theme_customizer()->get_default('standard_blog_title_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -81,7 +81,7 @@
         'title'       => esc_html__( 'Paragraph Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the content paragraph text.', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['site_paragraph_typography'],
+        'default'     => lovage_theme_customizer()->get_default('site_paragraph_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -90,7 +90,7 @@
     'h1_typography' => array(
         'title'       => esc_html__( 'H1 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h1_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h1_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -99,7 +99,7 @@
     'h2_typography' => array(
         'title'       => esc_html__( 'H2 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h2_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h2_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -108,7 +108,7 @@
     'h3_typography' => array(
         'title'       => esc_html__( 'H3 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h3_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h3_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -117,7 +117,7 @@
     'h4_typography' => array(
         'title'       => esc_html__( 'H4 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h4_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h4_typography'),
         'field'       => 'typography', 
         'transport'   => 'postMessage',
         'type'        => 'control',
@@ -127,7 +127,7 @@
     'h5_typography' => array(
         'title'       => esc_html__( 'H5 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h5_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h5_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -136,7 +136,7 @@
     'h6_typography' => array(
         'title'       => esc_html__( 'H6 Typography', 'lovage' ),
         'section'     => 'lovage_content_typography_section', 
-        'default'     => $this->defaults['h6_typography'],
+        'default'     => lovage_theme_customizer()->get_default('h6_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -158,7 +158,7 @@
         'title'       => esc_html__( 'Widget Title Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the site widgets title.', 'lovage' ),
         'section'     => 'lovage_widget_typography_section', 
-        'default'     => $this->defaults['widget_title_typography'],
+        'default'     => lovage_theme_customizer()->get_default('widget_title_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 
@@ -168,7 +168,7 @@
         'title'       => esc_html__( 'Widget Content Typography', 'lovage' ),
         'description' => esc_html__( 'The typography settings for the site widgets content text.', 'lovage' ),
         'section'     => 'lovage_widget_typography_section', 
-        'default'     => $this->defaults['widget_content_typography'],
+        'default'     => lovage_theme_customizer()->get_default('widget_content_typography'),
         'field'       => 'typography',
         'type'        => 'control',
         'sanitize_callback'    => 'lovage_google_font_sanitization', 

@@ -21,21 +21,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 function lovage_get_extensions() {
 
 	$lovage_extensions = array(
-		'one-click-demo-import'  => array(
-			'name'               => 'One Click Demo Import',
-			'slug'               => 'one-click-demo-import',
+		'lovage-demo-import'  => array(
+			'name'               => 'Lovage Demo Import',
+			'slug'               => 'lovage-demo-import',
 			'required'           => false,
+			'source'			 => 'https://lovage.io/update-server/?action=download&slug=lovage-demo-import',
 			'author'			 => 'Proteus Themes',
 			'description'		 => esc_html__( 'Preview and import Lovage demos.', 'lovage' ),
-			'version'            => '2.5.1',
+			'version'            => '1.0.0',
 			'force_activation'   => false,
 			'force_deactivation' => false,
-			'external_url'       => 'https://github.com/proteusthemes/one-click-demo-import',
+			'external_url'       => '',
 			'image_url'          => 'https://ps.w.org/one-click-demo-import/assets/icon-256x256.png'
 		)
     );
 
-	array_merge( $lovage_extensions, apply_filters('lovage_add_extension', array()) );
+	array_merge( $lovage_extensions, apply_filters( 'lovage_add_extension', array() ) );
 	return $lovage_extensions;
 }
 

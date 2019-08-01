@@ -1,11 +1,11 @@
-function LovageUrlExists(url){
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status!=404;
-}
-
 jQuery( document ).ready( function($) {
+
+    function LovageUrlExists(url){
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status!=404;
+    }
 
     /*  1. Sortable Multi-CheckBoxes  */
 

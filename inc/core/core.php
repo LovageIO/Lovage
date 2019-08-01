@@ -63,7 +63,7 @@ if(!class_exists('Lovage_Core')){
                 $path = LOVEAGE_CORE_DIR.'modules/'. $module .'/class-'.basename( $module ) . '.php';
 
                 if ( file_exists( $path ) ) {
-                    require_once $path;
+                    load_template( $path, TRUE );
                 }
             }
 		}

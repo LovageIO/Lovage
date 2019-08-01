@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if(!class_exists('Lovage')){
-	class Lovage{
+if( ! class_exists( 'Lovage' ) ) {
+	class Lovage {
 		/**
 		 * A reference to an instance of this class.
 		 *
@@ -41,19 +41,19 @@ if(!class_exists('Lovage')){
 
 		public function constants(){
 			define( 'LOVEAGE_API', 		  'https://lovage.io/api/' );
-			define( 'LOVEAGE_THEME_URI',  trailingslashit(get_template_directory_uri()) );
-			define( 'LOVEAGE_THEME_DIR',  trailingslashit(get_template_directory()) );
-			define( 'LOVEAGE_INC_URI',    trailingslashit(LOVEAGE_THEME_URI.'inc') );
-			define( 'LOVEAGE_INC_DIR',    trailingslashit(LOVEAGE_THEME_DIR.'inc') );
-			define( 'LOVEAGE_CORE_URI',   trailingslashit(LOVEAGE_INC_URI.'core') );
-			define( 'LOVEAGE_CORE_DIR',   trailingslashit(LOVEAGE_INC_DIR.'core') );
-			define( 'LOVEAGE_MODULE_URI', trailingslashit(LOVEAGE_INC_URI.'modules') );
-			define( 'LOVEAGE_MODULE_DIR', trailingslashit(LOVEAGE_INC_DIR.'modules') );
+			define( 'LOVEAGE_THEME_URI',  trailingslashit( get_template_directory_uri() ) );
+			define( 'LOVEAGE_THEME_DIR',  trailingslashit( get_template_directory() ) );
+			define( 'LOVEAGE_INC_URI',    trailingslashit( LOVEAGE_THEME_URI.'inc' ) );
+			define( 'LOVEAGE_INC_DIR',    trailingslashit( LOVEAGE_THEME_DIR.'inc' ) );
+			define( 'LOVEAGE_CORE_URI',   trailingslashit( LOVEAGE_INC_URI.'core') );
+			define( 'LOVEAGE_CORE_DIR',   trailingslashit( LOVEAGE_INC_DIR.'core') );
+			define( 'LOVEAGE_MODULE_URI', trailingslashit( LOVEAGE_INC_URI.'modules' ) );
+			define( 'LOVEAGE_MODULE_DIR', trailingslashit( LOVEAGE_INC_DIR.'modules' ) );
 		}
 
 		public function init_core(){
 
-			require_once LOVEAGE_CORE_DIR . 'core.php';
+			load_template( LOVEAGE_CORE_DIR . 'core.php', TRUE );
 			
 			$lovage = new Lovage_Core();
 			$lovage->chosen_modules = array(
@@ -81,10 +81,11 @@ if(!class_exists('Lovage')){
 			load_theme_textdomain( 'lovage', LOVEAGE_THEME_DIR . '/languages' );
 			$locale = get_locale(); 
 			$locale_file = LOVEAGE_THEME_URI."/languages/$locale.php"; 
-			if ( is_readable($locale_file) ) require_once $locale_file;
+			if ( is_readable( $locale_file ) ) load_template( $locale_file, TRUE );
 
 			// Sets the content width in pixels, based on the theme's design and stylesheet.
-			$GLOBALS['content_width']  = apply_filters( 'lovage_content_width', 1140 );
+			if ( ! isset( $content_width ) ) $content_width = 1140;
+			$GLOBALS['lovage_content_width'] = apply_filters( 'lovage_content_width', $content_width );
 
 			// Add default posts and comments RSS feed links to head.
 			add_theme_support( 'automatic-feed-links' );
@@ -135,36 +136,17 @@ if(!class_exists('Lovage')){
 			// Set up the WordPress core custom header feature.
 			add_theme_support( 'custom-header', apply_filters( 'lovage_custom_header_args', array(
 				'default-image'          => LOVEAGE_THEME_URI.'assets/img/header-image.jpg',
-				'width'                  => $GLOBALS['content_width'] ,
+				'width'                  => $GLOBALS['lovage_content_width'] ,
 				'height'                 => 500,
 				'flex-height'            => true,
 				'header-text'			 => false
 			) ) );
 
-			if(lovage_theme_customizer()->value('home_container_mode') == 'boxed' || 
-				lovage_theme_customizer()->value('blog_archive_container_mode') == 'boxed' || 
-				lovage_theme_customizer()->value('post_container_mode') == 'boxed' || 
-				lovage_theme_customizer()->value('author_container_mode') == 'boxed' || 
-				lovage_theme_customizer()->value('404_container_mode') == 'boxed' || 
-				lovage_theme_customizer()->value('search_container_mode') == 'boxed'){
-				add_theme_support( 'custom-background', apply_filters( 'lovage_custom_background_args', array(
-					'default-color'          => 'ffffff',
-					'default-image'          => '',
-					'default-repeat'         => 'no-repeat',
-					'default-position-x'     => 'center',
-				    'default-position-y'     => 'center',
-				    'default-size'           => 'cover',
-					'default-attachment'     => 'fixed',
-					'admin-head-callback'    => '',
-					'admin-preview-callback' => ''
-				) ) );
-			}
-
 			/* Enable the editor style */
-			add_editor_style('editor-style.css');
+			add_editor_style( 'editor-style.css' );
 
 			/*Change excerpt more string*/
-			add_filter( 'excerpt_more', function(){return '...';} );
+			add_filter( 'excerpt_more', function(){ return '...'; } );
 
 			// This theme uses wp_nav_menu() in one location.
 			register_nav_menus( array(
@@ -198,22 +180,22 @@ if(!class_exists('Lovage')){
 				array(
 				    'name'          => esc_html__( 'Blog Sidebar', 'lovage' ),
 					'id'            => 'sidebar',
-					'description'   => esc_html__('This sidebar will be displayed on the category and single post page.','lovage'),
+					'description'   => esc_html__('This sidebar will be displayed on the category and single post page.','lovage' ),
 			    ),
 			    array(
 				    'name'          => esc_html__( 'Page Sidebar', 'lovage' ),
 					'id'            => 'sidebar-page',
-					'description'   => esc_html__('This sidebar will be displayed on the static page.','lovage'),
+					'description'   => esc_html__('This sidebar will be displayed on the static page.','lovage' ),
 			    ),
 			    array(
 				    'name'          => esc_html__( 'Shop Sidebar', 'lovage' ),
 					'id'            => 'sidebar-shop',
-					'description'   => esc_html__('This sidebar will be displayed on the shop page.','lovage'),
+					'description'   => esc_html__('This sidebar will be displayed on the shop page.','lovage' ),
 			    ),
 			    array(
 				    'name'          => esc_html__( 'Bottom Widget 1', 'lovage' ),
 					'id'            => 'bottom-widget-1',
-					'description'   => esc_html__('This widget area will be displayed on the left of the bottom section.','lovage'),
+					'description'   => esc_html__('This widget area will be displayed on the left of the bottom section.','lovage' ),
 			    ),
 			    array(
 				    'name'          => esc_html__( 'Bottom Widget 2', 'lovage' ),
@@ -223,12 +205,12 @@ if(!class_exists('Lovage')){
 			    array(
 				    'name'          => esc_html__( 'Bottom Widget 3', 'lovage' ),
 					'id'            => 'bottom-widget-3',
-					'description'   => esc_html__('This widget area will be displayed on the middle of the bottom section.','lovage'),
+					'description'   => esc_html__('This widget area will be displayed on the middle of the bottom section.','lovage' ),
 			    ),
 			    array(
 				    'name'          => esc_html__( 'Bottom Widget 4', 'lovage' ),
 					'id'            => 'bottom-widget-4',
-					'description'   => esc_html__('This widget area will be displayed on the right of the bottom section.','lovage'),
+					'description'   => esc_html__('This widget area will be displayed on the right of the bottom section.','lovage' ),
 			    ),
 			);
 			
@@ -271,7 +253,7 @@ if(!class_exists('Lovage')){
 				  ),
 			);
 
-			foreach($css as $file){
+			foreach( $css as $file ){
 				wp_enqueue_style( $file['handler'], $file['path'], $file['dependencies'], $file['version'] );
 			}
 
@@ -306,16 +288,16 @@ if(!class_exists('Lovage')){
 				),
 			);
 
-			foreach($js as $file){
+			foreach( $js as $file ){
 				wp_enqueue_script( $file['handler'], $file['path'], $file['dependencies'], $file['version'], $file['in_footer'] );
 			}
 
-			wp_localize_script('lovage', 'lovage_data', array(
+			wp_localize_script( 'lovage', 'lovage_data', array(
 				'template_url'    => LOVEAGE_THEME_URI,
-				'content_width'   => $GLOBALS['content_width'],
+				'content_width'   => $GLOBALS['lovage_content_width'],
 				'woocommerce'     => class_exists('WooCommerce')? true : false,
 				'sticky_header'	  =>  lovage_theme_customizer()->value('sticky_header') == 1 ? true : false
-			));
+			) );
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
@@ -340,14 +322,14 @@ if(!class_exists('Lovage')){
 		 * @since 1.0
 		 */
 		public function admin_scripts(){
-			wp_enqueue_style("farbtastic");
-			wp_enqueue_script("farbtastic");
-			wp_enqueue_style("lovage-admin", LOVEAGE_INC_URI."admin/assets/css/admin.css", false, "1.0", "all");
-			wp_enqueue_script("lovage-admin", LOVEAGE_INC_URI."admin/assets/js/admin.js",array('jquery'));
-			wp_localize_script('lovage-admin', 'lovage_admin_data', array(
+			wp_enqueue_style( "farbtastic" );
+			wp_enqueue_script( "farbtastic" );
+			wp_enqueue_style( "lovage-admin", LOVEAGE_INC_URI."admin/assets/css/admin.css", false, "1.0", "all" );
+			wp_enqueue_script( "lovage-admin", LOVEAGE_INC_URI."admin/assets/js/admin.js",array('jquery') );
+			wp_localize_script( 'lovage-admin', 'lovage_admin_data', array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'admin_url'=> admin_url()
-			));
+			) );
 		}
 
 
@@ -360,16 +342,15 @@ if(!class_exists('Lovage')){
 			/**
 			 * Admin
 			 */
-			require_once LOVEAGE_INC_DIR.'admin/class-tgm-plugin-activation.php';
-			require_once LOVEAGE_INC_DIR.'admin/class-plugin-installer.php';
-			require_once LOVEAGE_INC_DIR.'admin/extensions.php';
-			require_once LOVEAGE_INC_DIR.'admin/class-admin.php';
-			require_once LOVEAGE_INC_DIR.'admin/demo-importer.php';
+			load_template( LOVEAGE_INC_DIR.'admin/class-tgm-plugin-activation.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'admin/class-plugin-installer.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'admin/extensions.php', TRUE );
+			load_template( LOVEAGE_INC_DIR.'admin/class-admin.php', TRUE );
 
 			/**
 			 * Customizer additions.
 			 */
-			require_once LOVEAGE_INC_DIR.'customizer/customizer.php';
+			load_template( LOVEAGE_INC_DIR.'customizer/customizer.php', TRUE );
 
 		}
 
@@ -410,7 +391,7 @@ if(!class_exists('Lovage')){
                 $path = trailingslashit( $module ) . 'module.'.basename( $module ) . '.php';
 
                 if ( file_exists( $path ) ) {
-                    require_once $path;
+                    load_template( $path, TRUE );
                 }
             }
 

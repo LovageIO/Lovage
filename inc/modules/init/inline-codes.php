@@ -1,6 +1,6 @@
 <?php
 /**
- * Page Codes
+ * Page Inline Codes
  *
  * @package Lovage
  * @author Lovage
@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-function lovage_page_codes(){
+function lovage_page_inline_codes(){
 	
 	global $post;
 
@@ -20,4 +20,4 @@ function lovage_page_codes(){
 	wp_add_inline_style('lovage', $compressed_css);
 	wp_add_inline_script('lovage', $page_js);
 }
-add_action( 'wp_enqueue_scripts', 'lovage_page_codes' );
+add_action( 'wp_enqueue_scripts', 'lovage_page_inline_codes' );

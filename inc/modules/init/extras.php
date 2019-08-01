@@ -38,24 +38,24 @@ if ( ! function_exists( 'lovage_body_classes' ) ) {
 			$page_layout = get_post_meta( $post->ID, '_lovage_page_layout', true );
 		}
 
-		if( $page_layout == 'right-sidebar' ){
+		if( is_singular() && $page_layout == 'right-sidebar' ){
 			$classes[] = 'lovage-sidebar-layout lovage-right-sidebar';
 		}
 
-		if( $page_layout == 'left-sidebar' ){
+		if( is_singular() && $page_layout == 'left-sidebar' ){
 			$classes[] = 'lovage-sidebar-layout lovage-left-sidebar';
 		}
 
-		if( $page_layout == 'one-column' ){
+		if( is_singular() && $page_layout == 'one-column' ){
 			$classes[] = 'lovage-one-column';
 		}
 
-		if( is_home() && !is_active_sidebar('sidebar') ){
-			$classes[] = 'lovage-one-column';
-		}
-
-		if( is_home() && is_active_sidebar('sidebar') ){
-			$classes[] = 'lovage-sidebar-layout';
+		if( is_home() ){
+			if( ! is_active_sidebar('sidebar') ){
+				$classes[] = 'lovage-one-column';
+			}else{
+				$classes[] = 'lovage-sidebar-layout';
+			}
 		}
 
 		if( lovage_is_fullwidth() ){

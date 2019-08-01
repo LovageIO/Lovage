@@ -4,31 +4,31 @@
 	<div class="row">
 		<div class="col-2">
 			<div class="lovage-admin-box">
-				<h2>General Settings</h2>
+				<h2><?php esc_html_e( 'General Settings' , 'lovage' ); ?></h2>
 				<ul>
 					<li>
 						<i class="dashicons-before dashicons-format-image"></i>
-						<a href="<?php echo admin_url('customize.php?autofocus[section]=title_tagline');?>"><?php esc_html_e('Upload Logo & Favicon', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=title_tagline' ) );?>"><?php esc_html_e('Upload Logo & Favicon', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-art"></i>
-						<a href="<?php echo admin_url('customize.php?autofocus[panel]=color_panel');?>"><?php esc_html_e('Color Scheme', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=color_panel' ) );?>"><?php esc_html_e('Color Scheme', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-editor-textcolor"></i>
-						<a href="<?php echo admin_url('customize.php?autofocus[panel]=typography_panel');?>"><?php esc_html_e('Custom Fonts', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=typography_panel' ) );?>"><?php esc_html_e('Custom Fonts', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-tagcloud"></i>
-						<a href="<?php echo admin_url('customize.php?autofocus[panel]=layout_panel');?>"><?php esc_html_e('Header, Footer and Page Layout', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=layout_panel' ) );?>"><?php esc_html_e('Header, Footer and Page Layout', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-admin-generic"></i>
-						<a href="<?php echo admin_url('customize.php?');?>"><strong><?php esc_html_e('More Theme Options', 'lovage');?></strong></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?' ) );?>"><strong><?php esc_html_e( 'More Theme Options', 'lovage' );?></strong></a>
 					</li>
 				</ul>
 			</div>
@@ -37,8 +37,8 @@
 		<div class="col-2 last">
 			<div class="lovage-admin-box">
 				
-				<h2><?php esc_html_e('Subscribe To Lovage Newsletter', 'lovage');?></h2>
-				<p><?php esc_html_e('Get early to know Lovage theme new features, subscriber-only promotion and tutorials.', 'lovage');?></p>
+				<h2><?php esc_html_e( 'Subscribe To Lovage Newsletter', 'lovage' );?></h2>
+				<p><?php esc_html_e( 'Get early to know Lovage theme new features, subscriber-only promotion and tutorials.', 'lovage' );?></p>
 			
 				<!-- Begin Mailchimp Signup Form -->
 				<style type="text/css">
@@ -97,7 +97,7 @@
 					    <div id="mc_embed_signup_scroll">
 						
 							<div class="mc-field-group">
-								<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+								<label for="mce-EMAIL"><?php esc_html_e( 'Email Address', 'lovage' ); ?>  <span class="asterisk">*</span>
 							</label>
 								<input type="email" value="<?php bloginfo('admin_email');?>" name="EMAIL" class="required email" id="mce-EMAIL">
 							</div>
@@ -113,7 +113,7 @@
 						</div>
 					</form>
 				</div>
-				<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+				<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 				<!--End mc_embed_signup-->
 
 			</div>

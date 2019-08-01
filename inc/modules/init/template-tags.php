@@ -19,7 +19,7 @@ if ( ! function_exists( 'lovage_header_class' ) ) :
 		  $sticky_header = '';
 
 		  $header_class = 'class="site-header lovage-'.esc_html(lovage_theme_customizer()->value('header_layout')).'"';
-	      echo $header_class;
+	      echo wp_kses_post( $header_class );
 	}
 endif;
 
@@ -48,15 +48,15 @@ if ( ! function_exists( 'lovage_page_header' ) ) :
 
 		$header_image = has_header_image() ? 'style="background-image:url('.esc_url(get_header_image()).'); background-size: cover;"' : '';
 
-		echo '<header id="lovage-header-cover" class="lovage-page-header '.$text_alignment.'" '.$header_image.'>
+		echo '<header id="lovage-header-cover" class="lovage-page-header '. esc_attr( $text_alignment ).'" '.esc_attr( $header_image ).'>
 		 		<div class="lovage-grid-1140">';
 		 		    
 		 		    if(is_page()){
-		 		    	echo '<h1 class="entry-title">'.get_the_title($post->ID).'</h1>';
+		 		    	echo '<h1 class="entry-title">'.esc_attr( get_the_title( $post->ID ) ).'</h1>';
 		 		    }
 
-		 		    if(is_search() && function_exists('is_shop') && !is_shop()){
-		 		    	echo '<h1 class="entry-title">'.esc_html__('Search Results For', 'lovage').' '.esc_html($_GET['s']).'</h1>';
+		 		    if( is_search() && function_exists('is_shop') && !is_shop() ){
+		 		    	echo '<h1 class="entry-title">'.esc_html__('Search Results For', 'lovage').' '. isset( $_GET['s'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['s'] ) ) ) : '' . '</h1>';
 		 		    }
 
 		 		    if(is_404()){
@@ -64,9 +64,7 @@ if ( ! function_exists( 'lovage_page_header' ) ) :
 		 		    }
 
 					if(function_exists('is_shop') && is_shop()){
-						if ( apply_filters( 'woocommerce_show_page_title', true ) ) {
-							echo '<h1 class="entry-title">'.woocommerce_page_title(false).'</h1>';
-						}
+						echo '<h1 class="entry-title">'. esc_html( woocommerce_page_title( false ) ).'</h1>';
 					}
 
 					if ( class_exists( 'woocommerce' ) ){
@@ -119,7 +117,7 @@ if ( ! function_exists( 'lovage_site_header_image' ) ) :
 				   	   </div>';
 	   	  }
 	    }
-	    echo $render;
+	    echo wp_kses_post( $render );
 
 	    do_action('lovage_after_output_header_image');
 	}
@@ -134,7 +132,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 	    
 		global $post;
 
-		$width = $GLOBALS['content_width'];
+		$width = $GLOBALS['lovage_content_width'];
 	    
 		if( !is_search() && !is_404() ){
 
@@ -155,7 +153,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 
 		}
 
-		echo '<div id="page" class="hfeed site lovage-grid-'.$width.'">
+		echo '<div id="page" class="hfeed site lovage-grid-' . esc_html( $width ) . '">
 		  		 <div id="content" class="site-content">';
 	}
 endif;
@@ -222,47 +220,13 @@ if ( ! function_exists( 'lovage_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			esc_html_x( 'Posted on %s', 'post date', 'lovage' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = esc_html__( 'Posted on', 'lovage' ) . ' ' .
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_attr( $time_string ) . '</a>';
 
-		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'lovage' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+		$byline = esc_html__( 'by', 'lovage' ) . ' ' .
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>'; 
-
-	}
-endif;
-
-
-if ( ! function_exists( 'lovage_entry_footer' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function lovage_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'lovage' ) );
-			if ( $categories_list && lovage_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'lovage' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'lovage' ) );
-			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'lovage' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'lovage' ), esc_html__( '1 Comment', 'lovage' ), esc_html__( '% Comments', 'lovage' ) );
-			echo '</span>';
-		}
+		echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span><span class="byline">' . wp_kses_post( $byline ) . '</span>'; 
 
 	}
 endif;
@@ -312,7 +276,7 @@ if ( ! function_exists( 'lovage_custom_logo' ) ) :
 				}
 			$render .= '</div><!-- .site-branding -->';
 
-			echo $render;
+			echo wp_kses_post( $render );
 	}
 endif;
 
@@ -350,7 +314,7 @@ if ( ! function_exists( 'lovage_primary_navigation' ) ) :
 			).
 		   '</nav><!-- #site-navigation -->';
 	    }
-	    echo $render;
+	    echo wp_kses_post( $render );
 	}
 endif;
 
@@ -365,7 +329,7 @@ if ( ! function_exists( 'lovage_popup_menu' ) ) :
 	    }
 	    $render = wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => esc_html($menu_slug),'menu_id' => 'primary-menu','echo' => false ) );
 
-	    echo $render;
+	    echo wp_kses_post( $render );
 	}
 endif;
 
@@ -389,7 +353,7 @@ if ( ! function_exists( 'lovage_menu_buttons' ) ) :
 		  	   	 $status = 'show';
 		  	   }
 
-			   echo'<a href="'.esc_url(home_url('/')).'?page_id='.get_option('woocommerce_myaccount_page_id').'"><i class="lovage-icon lovage-icon-user"></i></a>
+			   echo'<a href="'.esc_url(home_url('/')).'?page_id='.esc_attr( get_option('woocommerce_myaccount_page_id') ).'"><i class="lovage-icon lovage-icon-user"></i></a>
 					<a href="javascript:void(0);" id="lovage-cart-button"><i class="lovage-icon lovage-icon-cart"></i>
 					  <span id="cart_tip" class="cart_tip '.esc_attr($status).'">'.esc_attr($cart_number).'</span>
 					</a>';
@@ -418,7 +382,7 @@ if ( ! function_exists( 'lovage_header_add_to_cart_fragment' ) ) :
 	    ob_start(); 
 	    ?>
 
-	    <span class="cart_tip <?php echo esc_attr($status);?>" id="cart_tip"><?php echo $cart_number;?></span>
+	    <span class="cart_tip <?php echo esc_attr( $status );?>" id="cart_tip"><?php echo esc_attr( $cart_number );?></span>
 
 	    <?php 
 	    $fragments['#cart_tip'] = ob_get_clean();
@@ -432,8 +396,8 @@ if ( ! function_exists( 'lovage_before_navigation' ) ) :
 	 * The Wrapper Before Navigation
 	 */
 	function lovage_before_navigation(){
-		   $render = '<div id="lovage-primary-bar" class="lovage-grid-'.$GLOBALS['content_width'] .'">';
-		   echo $render;
+		   $render = '<div id="lovage-primary-bar" class="lovage-grid-'.$GLOBALS['lovage_content_width'] .'">';
+		   echo wp_kses_post( $render );
 	}
 endif;
 
@@ -470,7 +434,7 @@ if ( ! function_exists( 'lovage_bottom_widget' ) ) :
 	 */
 	function lovage_bottom_widget_item($column_class,$widget_id) {
 	  if(is_active_sidebar( $widget_id )){
-		echo'<div class="bottom-widget lovage-grid '.$column_class.'">';
+		echo'<div class="bottom-widget lovage-grid '.esc_attr( $column_class ).'">';
 	?>
 	      <?php dynamic_sidebar( $widget_id );?>
 	<?php   
@@ -487,7 +451,7 @@ if ( ! function_exists( 'lovage_bottom_widgets' ) ) :
 	function lovage_bottom_widgets(){
 		if ( is_active_sidebar( 'bottom-widget-1' ) || is_active_sidebar( 'bottom-widget-2' ) || is_active_sidebar( 'bottom-widget-3' ) || is_active_sidebar( 'bottom-widget-4' ) ){
 	        echo '<div id="site-bottom" class="site-bottom">
-	  				<div class="lovage-grid-'.$GLOBALS['content_width'] .'">';
+	  				<div class="lovage-grid-'.esc_html( $GLOBALS['lovage_content_width'] ) .'">';
 	  	    
 			    if(lovage_theme_customizer()->value( 'footer_widget_layout' )=='2'){
 			        // 2 columns
@@ -543,7 +507,7 @@ if ( ! function_exists( 'lovage_before_footer' ) ) :
 	function lovage_before_footer(){
 		do_action('lovage_before_footer');
 		echo'<footer id="colophon" class="site-footer">
-				<div class="site-info lovage-grid-'.$GLOBALS['content_width'] .'">';
+				<div class="site-info lovage-grid-'.esc_attr( $GLOBALS['lovage_content_width'] ) .'">';
 	}
 endif;
 
@@ -574,7 +538,7 @@ if ( ! function_exists( 'lovage_author_socials' ) ) :
 		    $social_profile.='<a href="'.esc_url(get_the_author_meta($social_array[$i])).'" target="_blank"><i class="fa fa-'.esc_attr($social_name).'"></i></a>';
 		  }
 		}
-		echo $social_profile;
+		echo wp_kses_post( $social_profile );
 	}
 endif;
 
@@ -597,7 +561,7 @@ if ( ! function_exists( 'lovage_post_navigation' ) ) :
 	        $navigation = _navigation_markup( $previous . $next, $class, $args['screen_reader_text'] );
 	    }
 
-	    echo $navigation;
+	    echo wp_kses_post( $navigation );
 	}
 endif;
 

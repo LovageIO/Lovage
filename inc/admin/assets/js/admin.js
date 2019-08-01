@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
     });
 
 	/**
-	 * Ajax install wordpress plugin  
+	 * Ajax install WordPress plugin  
 	 */
 	$('#lovage-install-demo-import-plugin:not(.button-disabled)').on('click', function(e){
 		e.preventDefault();

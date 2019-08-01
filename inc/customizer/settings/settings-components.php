@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
- return array(
+ $GLOBALS[ 'lovage_setting_components' ] =  array(
 
     'lovage_components_panel' => array(
        'title'           => esc_html__( 'Components', 'lovage' ),
@@ -37,7 +37,7 @@
     'button_color' => array(
         'title'       => esc_html__( 'Button: Background Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -48,7 +48,7 @@
     'button_border_color' => array(
         'title'       => esc_html__( 'Button: Border Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_border_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true, 
         'type'        => 'control',
@@ -59,7 +59,7 @@
     'button_text_color' => array(
         'title'       => esc_html__( 'Button: Text Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_text_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -71,7 +71,7 @@
         'title'       => esc_html__( 'Button Radius', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_radius'],
+        'default'     => lovage_theme_customizer()->get_default('button_radius'),
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -87,7 +87,7 @@
         'title'       => esc_html__( 'Button Border Width', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_border_width'],
+        'default'     => lovage_theme_customizer()->get_default('button_border_width'),
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -113,7 +113,7 @@
     'button_hover_color' => array(
         'title'       => esc_html__( 'Button: Background Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_hover_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_hover_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -124,7 +124,7 @@
     'button_hover_border_color' => array(
         'title'       => esc_html__( 'Button: Border Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_hover_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_hover_border_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -135,7 +135,7 @@
     'button_hover_text_color' => array(
         'title'       => esc_html__( 'Button: Text Color', 'lovage' ),
         'section'     => 'lovage_button_section', 
-        'default'     => $this->defaults['button_hover_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('button_hover_text_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -161,7 +161,7 @@
     'text_field_color' => array(
         'title'       => esc_html__( 'Text Field: Background Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true, 
         'type'        => 'control',
@@ -172,7 +172,7 @@
     'text_field_border_color' => array(
         'title'       => esc_html__( 'Text Field: Border Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_border_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -183,7 +183,7 @@
     'text_field_text_color' => array(
         'title'       => esc_html__( 'Text Field: Text Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_text_color'),
         'field'       => 'alpha-color', 
         'show_opacity' => true,
         'type'        => 'control',
@@ -195,7 +195,7 @@
         'title'       => esc_html__( 'Text Field: Border Radius', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_radius'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_radius'),
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -210,7 +210,7 @@
         'title'       => esc_html__( 'Text Field: Border Width', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_border_width'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_border_width'),
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -235,7 +235,7 @@
     'text_field_focus_color' => array(
         'title'       => esc_html__( 'Text Field: Background Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_focus_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_focus_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -246,7 +246,7 @@
     'text_field_focus_border_color' => array(
         'title'       => esc_html__( 'Text Field: Border Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_focus_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_focus_border_color'),
         'field'       => 'alpha-color', 
         'transport'   => 'postMessage',
         'show_opacity' => true,
@@ -257,7 +257,7 @@
     'text_field_focus_text_color' => array(
         'title'       => esc_html__( 'Text Field: Text Color', 'lovage' ),
         'section'     => 'lovage_text_field_section', 
-        'default'     => $this->defaults['text_field_focus_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('text_field_focus_text_color'),
         'field'       => 'alpha-color', 
         'transport'   => 'postMessage',
         'show_opacity' => true,
@@ -284,7 +284,7 @@
     'textarea_color' => array(
         'title'       => esc_html__( 'Textarea: Background Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -295,7 +295,7 @@
     'textarea_border_color' => array(
         'title'       => esc_html__( 'Textarea: Border Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_border_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -306,7 +306,7 @@
     'textarea_text_color' => array(
         'title'       => esc_html__( 'Textarea: Text Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_text_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -318,7 +318,7 @@
         'title'       => esc_html__( 'Textarea: Border Radius', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_radius'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_radius'),
         'field'       => 'range-slider', 
         'transport'   => 'postMessage',
         'type'        => 'control',
@@ -333,7 +333,7 @@
         'title'       => esc_html__( 'Textarea: Border Width', 'lovage' ),
         'description' => esc_html__('The default unit is px', 'lovage'),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_border_width'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_border_width'),
         'field'       => 'range-slider', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -358,7 +358,7 @@
     'textarea_focus_color' => array(
         'title'       => esc_html__( 'Textarea: Background Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_focus_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_focus_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -369,7 +369,7 @@
     'textarea_focus_border_color' => array(
         'title'       => esc_html__( 'Textarea: Border Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_focus_border_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_focus_border_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',
@@ -380,7 +380,7 @@
     'textarea_focus_text_color' => array(
         'title'       => esc_html__( 'Textarea: Text Color', 'lovage' ),
         'section'     => 'lovage_textarea_section', 
-        'default'     => $this->defaults['textarea_focus_text_color'],
+        'default'     => lovage_theme_customizer()->get_default('textarea_focus_text_color'),
         'field'       => 'alpha-color', 
         'type'        => 'control',
         'transport'   => 'postMessage',

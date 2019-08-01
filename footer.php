@@ -18,7 +18,7 @@
  * @Hooked  lovage_copyright()
  * @Hooked  lovage_after_footer()
  */
- do_action('lovage_footer');
+ do_action( 'lovage_footer' );
 ?>
 </div><!-- #body-container -->
 

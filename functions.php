@@ -12,7 +12,7 @@ define( 'LOVEAGE_DEBUG', TRUE );
 /** 
  * Load Theme Core file.
  */
-require_once(get_template_directory() . '/inc/class-lovage.php');
+require_once( get_template_directory() . '/inc/class-lovage.php' );
 
 /**
  * Please Note: Do not add any custom code here. 

@@ -12,12 +12,12 @@ $featured_image_alignment = get_post_meta(get_the_ID(), '_lovage_featured_alignm
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('thumbnail-float-'.esc_html($featured_image_alignment)); ?>>
     <?php if( has_post_thumbnail() && !get_post_meta(get_the_ID(), '_lovage_hide_single_featured_image', true) ):?>
-	<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark" class="featured_thumbnail" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full');?>);"></a>
+	<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark" class="featured_thumbnail" style="background-image: url(<?php echo esc_url( get_the_post_thumbnail_url(get_the_ID(), 'full') ); ?>);"></a>
 	<?php endif;?>
 	
 	<div class="entry-body">
 		<header class="entry-header">
-			<?php echo get_the_category_list();?>
+			<?php echo wp_kses_post( get_the_category_list() ); ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 			<?php if ( 'post' === get_post_type() ) : ?>

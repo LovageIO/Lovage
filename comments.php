@@ -28,11 +28,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', esc_attr(get_comments_number()), 'comments title', 'lovage' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . esc_attr(get_the_title()) . '</span>'
-				);
+				echo esc_attr( get_comments_number() ). ' ' .esc_html__( 'Comments On', 'lovage' ). ' ' .esc_attr( get_the_title() );
 			?>
 		</h2>
 
@@ -78,6 +74,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'lovage' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(array('class_submit'=>'button_effect')); ?>
+	<?php comment_form( array('class_submit'=>'button_effect') ); ?>
 
 </div><!-- #comments -->

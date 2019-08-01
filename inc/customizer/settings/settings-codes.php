@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-return array(
+$GLOBALS[ 'lovage_setting_codes' ] = array(
 
     'lovage_additional_codes_section' => array(
        'title'           => esc_html__( 'Additional Codes', 'lovage' ),
@@ -24,7 +24,7 @@ return array(
         'title'       => esc_html__( 'Head Codes', 'lovage' ),
         'description' => esc_html__( 'The codes will be appened within <head></head> tag.', 'lovage' ),
         'section'     => 'lovage_additional_codes_section', 
-        'default'     => $this->defaults['head_codes'],
+        'default'     => lovage_theme_customizer()->get_default('head_codes'),
         'field'       => 'code_editor', 
         'type'        => 'control',
         'sanitize_callback'    => 'wp_kses_post',
@@ -34,7 +34,7 @@ return array(
         'title'       => esc_html__( 'Footer Codes', 'lovage' ),
         'description' => esc_html__( 'The codes will be appened above </body> tag.', 'lovage' ),
         'section'     => 'lovage_additional_codes_section', 
-        'default'     => $this->defaults['footer_codes'],
+        'default'     => lovage_theme_customizer()->get_default('footer_codes'),
         'field'       => 'code_editor', 
         'type'        => 'control',
         'sanitize_callback'    => 'wp_kses_post',

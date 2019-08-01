@@ -47,16 +47,16 @@ if ( ! function_exists( 'lovage_woocommerce_breadcrumbs' ) ) :
 	}
 endif;
 
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')):
+add_filter( 'loop_shop_columns', 'lovage_woocommerce_loop_columns' );
+if ( ! function_exists('lovage_woocommerce_loop_columns') ):
 	// Change number or products per row to 3
-	function loop_columns() {
+	function lovage_woocommerce_loop_columns() {
 		return 3; // 3 products per row
 	}
 endif;
 
 add_filter( 'loop_shop_per_page','lovage_products_per_page' );
-if (!function_exists('lovage_products_per_page')):
+if ( ! function_exists('lovage_products_per_page') ):
 	/**
 	 * Products per page
 	 * ---------------------------------------------------

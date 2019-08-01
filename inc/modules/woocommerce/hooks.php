@@ -60,9 +60,9 @@ add_action( 'woocommerce_before_add_to_cart_form', 'lovage_add_to_cart_wrapper' 
 add_action( 'woocommerce_after_add_to_cart_form', 'lovage_add_to_cart_wrapper_close' );
 
 /* Remove the product tab heading */
-add_filter( 'woocommerce_product_description_heading', 'remove_product_tab_heading' );
-add_filter('woocommerce_product_additional_information_heading', 'remove_product_tab_heading');
-function remove_product_tab_heading() {
+add_filter( 'woocommerce_product_description_heading', 'lovage_remove_product_tab_heading' );
+add_filter('woocommerce_product_additional_information_heading', 'lovage_remove_product_tab_heading');
+function lovage_remove_product_tab_heading() {
     return '';
 } 
 

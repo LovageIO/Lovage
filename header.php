@@ -32,7 +32,7 @@
       /* Popup */
       get_template_part( 'template-parts/header/popup');
 
-      do_action('lovage_before_header');
+      do_action( 'lovage_before_header' );
     ?>
 
 	<header id="masthead" <?php lovage_header_class();?>>
@@ -47,8 +47,8 @@
 		 * @hooked lovage_after_navigation - 50
 		 * @hooked lovage_site_header_image - 60
 		 */
-		do_action('lovage_header');
+		do_action( 'lovage_header' );
 		?>
 	</header><!-- #masthead -->
 	
-	<?php do_action('lovage_after_header');?>
+	<?php do_action( 'lovage_after_header' );?>

@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-return array(
+$GLOBALS[ 'lovage_setting_woocommerce' ] =  array(
 
     /* Theme Color Section */
     'lovage_shop_section' => array(
@@ -25,7 +25,7 @@ return array(
     'shop_sidebar' => array(
         'title'       => esc_html__( 'Show Sidebar', 'lovage' ),
         'section'     => 'lovage_shop_section', 
-        'default'     => $this->defaults['shop_sidebar'],
+        'default'     => lovage_theme_customizer()->get_default('shop_sidebar'),
         'field'       => 'toggle', 
         'type'        => 'control',
         'default'     => 1,

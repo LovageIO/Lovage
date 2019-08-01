@@ -14,8 +14,8 @@ get_header();
 		 * @Hooked: lovage_before_content()
 		 * @Hooked: lovage_before_main_content();
 		 */
-		do_action('lovage_before_content');
-		do_action('lovage_before_main_content');
+		do_action( 'lovage_before_content' );
+		do_action( 'lovage_before_main_content' );
 		 
 		if ( have_posts() ) : ?>
 
@@ -38,7 +38,7 @@ get_header();
 					get_template_part( 'template-parts/content', get_post_format() );
 				 endwhile; 
 
-			echo lovage_pagenavi(); 
+			     lovage_pagenavi( true ); 
 
 		else : 
 
@@ -49,7 +49,7 @@ get_header();
 		/* Hook: lovage_after_main_content
 		 * @Hooked: lovage_after_main_content();
 		 */
-		do_action('lovage_after_main_content');
+		do_action( 'lovage_after_main_content' );
 
 
         get_sidebar();
@@ -58,6 +58,6 @@ get_header();
 	    /* Hook: lovage_after_content
 	     * @Hooked: lovage_after_content();
 	     */
-		do_action('lovage_after_content');	 
+		do_action( 'lovage_after_content' );	 
   
  get_footer();
