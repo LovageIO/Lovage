@@ -28,6 +28,10 @@
 
 }
 
+.bypostauthor{
+  color: $primary;
+}
+
 .page-links{
   margin-top: 40px;
 
@@ -58,10 +62,6 @@
   margin: 0;
   padding: 0 0 30px;
   border-bottom: 1px solid #eee;
-
-  &.sticky {
-    
-  }
 
   .hentry img{
     max-width:100%;
@@ -153,6 +153,13 @@
   margin: 0 auto 2em;
   padding: 0 0 2em;
   overflow: hidden;
+
+  &.sticky {
+    padding: 10px 30px !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border: none;   
+  }
+
 }
 
 .lovage-fullwidth .hentry{

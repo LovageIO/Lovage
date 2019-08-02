@@ -37,6 +37,10 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 == Changelogs ==
 
+= 1.0.3.1 =
+* Added missing styles for .sticky, .alignleft, .alignright, .aligncenter.
+
+
 = 1.0.3 =
 * Added RTL Support.
 * Fixed the content width issue for the product page.
