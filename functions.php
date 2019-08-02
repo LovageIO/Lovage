@@ -7,8 +7,6 @@
  * @link https://lovage.io
  */
 
-define( 'LOVEAGE_DEBUG', TRUE );
-
 /** 
  * Load Theme Core file.
  */

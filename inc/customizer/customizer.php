@@ -312,7 +312,7 @@ if(!class_exists('Lovage_Theme_Customizer')){
 				'head_codes'		  			  => '',
 				'footer_codes'		  			  => '',
 
-				'shop_sidebar'					  => 1
+				'shop_sidebar'					  => 0
 			);
 
 			return apply_filters('lovage_customizer_default_settings', $default);

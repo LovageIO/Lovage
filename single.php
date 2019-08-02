@@ -10,16 +10,16 @@
 
 get_header(); 
 		
-	  /* Hook: lovage_before_content, lovage_before_main_content
-	   * @Hooked: lovage_before_content()
-	   * @Hooked: lovage_before_main_content();
-	   */
-	  do_action( 'lovage_before_content' );
+		/* Hook: lovage_before_content, lovage_before_main_content
+		 * @Hooked: lovage_before_content()
+		 * @Hooked: lovage_before_main_content();
+		 */
+		do_action( 'lovage_before_content' );
 
-	  if( lovage_has_sidebar() ){
-	     do_action( 'lovage_before_main_content' );
-	  }
-	  
+		if( lovage_has_sidebar() ){
+		     do_action( 'lovage_before_main_content' );
+		}
+		  
 	    while ( have_posts() ) : the_post();
 			 get_template_part( 'template-parts/content', 'single' ); 
 
@@ -30,9 +30,9 @@ get_header();
 			 }
 			 
 			 // If comments are open or we have at least one comment, load up the comment template.
-			 if ( comments_open() || get_comments_number() ) :
+			 if ( comments_open() || get_comments_number() ) {
 				comments_template();
-			 endif;
+			 }
 
 		endwhile; 
 

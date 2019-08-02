@@ -1,0 +1,158 @@
+body{
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* Pushy Menu */
+.pushy.pushy-right{
+	right: 0;
+}
+.pushy ul:first-child{
+	margin-left: 0;
+	padding-right: 0;
+}
+.pushy ul .children{
+	padding-right: 0;
+}
+.pushy ul .children li{
+	padding-right: 30px;
+}
+
+/* Widgets */
+.widget_recent_comments li, 
+.widget_recent_entries li, 
+.widget_categories li, 
+.widget_pages li, 
+.widget_product_categories li,
+.widget_product_categories ul.children li, 
+.widget_categories ul.children li, 
+.widget_nav_menu ul.sub-menu li, 
+.widget_pages ul.children li,
+.widget_meta li, .widget_archive li{
+	background-position: right 7px;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+/* Posts */
+.entry-header .post-categories{
+	margin-right: 0;
+	padding-right: 0;
+}
+.entry-header .post-categories li{
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.related-posts .section-title{
+	text-align: right;
+}
+.related-posts .grids .item{
+	float: right;
+	margin-left: 2%;
+	margin-right: 0;
+}
+.comment-navigation .nav-previous, 
+.posts-navigation .nav-previous, 
+.post-navigation .nav-previous{
+	text-align: left;
+}
+
+/* WooCommerce */
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product{
+    float: right;
+    margin: 0 0 2.992em 3.8%;
+}
+
+.woocommerce ul.products.columns-2 li.product:nth-child(2n+2), 
+.woocommerce-page ul.products.columns-2 li.product:nth-child(2n+2),
+.woocommerce ul.products.columns-3 li.product:nth-child(3n+3), 
+.woocommerce-page ul.products.columns-3 li.product:nth-child(3n+3),
+.woocommerce ul.products.columns-4 li.product:nth-child(4n+4), 
+.woocommerce-page ul.products.columns-4 li.product:nth-child(4n+4),
+.woocommerce ul.products.columns-5 li.product:nth-child(5n+5), 
+.woocommerce-page ul.products.columns-5 li.product:nth-child(5n+5),
+.woocommerce ul.products.columns-6 li.product:nth-child(6n+6), 
+.woocommerce-page ul.products.columns-6 li.product:nth-child(6n+6){
+	margin-left: 0;
+}
+
+.woocommerce .add_to_cart_button.button, 
+.woocommerce .lovage-add-to-cart-button{
+	right: auto;
+    left: -50px;
+}
+.woocommerce ul.products li.product:hover .add_to_cart_button.button, 
+.woocommerce-page ul.products li.product:hover .add_to_cart_button.button{
+	right: auto;
+	left: 0;
+}
+
+.woocommerce div.product form.cart .variations select,
+.woocommerce .woocommerce-ordering select{
+	padding-right: 40px;
+	padding-left: 0;
+}
+
+.woocommerce div.product form.cart .button,
+.woocommerce div.product form.cart div.quantity{
+	float: right;
+}
+
+.woocommerce div.product form.cart div.quantity{
+	margin-right: 0;
+	margin-left: 20px;
+}
+
+.woocommerce ul.cart_list li img, 
+.woocommerce ul.product_list_widget li img{
+	float: right;
+}
+
+.woocommerce ul.cart_list li .quantity, 
+.woocommerce ul.product_list_widget li .quantity,
+.woocommerce-mini-cart__total{
+	text-align: left;
+}
+
+.woocommerce table.shop_table{
+	width: 100%;
+	text-align: right;
+}
+.woocommerce table.shop_table tbody:first-child tr:first-child th, 
+.woocommerce table.shop_table tbody:first-child tr:first-child td,
+.woocommerce-cart .cart-collaterals .cart_totals tr td, 
+.woocommerce-cart .cart-collaterals .cart_totals tr th, 
+.woocommerce-checkout .cart-collaterals .cart_totals tr td, 
+.woocommerce-checkout .cart-collaterals .cart_totals tr th, 
+#add_payment_method .cart-collaterals .cart_totals tr td, 
+#add_payment_method .cart-collaterals .cart_totals tr th{
+	text-align: right;
+}
+
+.woocommerce table.shop_table td.product-name{
+	padding-left: 0;
+	padding-right: 12px;
+}
+
+.woocommerce ul.order_details li{
+	float: right;
+	margin-left: 2em;
+	margin-right: 0;
+}
+
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--phone, 
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--email{
+	padding-right: 1.5em;
+}
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--email::before,
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--phone::before{
+	margin-right: -1.5em;
+}
+
+@media (max-width: 959px)
+	.main-navigation {
+	    float: right;
+	}
+}

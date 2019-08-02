@@ -40,4 +40,4 @@ do_action('Lovage_Admin');
     ?>
 </div>
 
-<div class="lovage-admin-footer">Made by <a href="https://mofect.com?utm_source=<?php bloginfo('name');?>-dashboard" target="_blank">Mofect Limited</a></div>
+<div class="lovage-admin-footer">Made by <a href="https://lovage.io?utm_source=<?php bloginfo('name');?>-dashboard" target="_blank">Lovage Team</a></div>

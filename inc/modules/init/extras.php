@@ -130,23 +130,6 @@ if ( ! function_exists( 'lovage_is_fullwidth' ) ) {
 	}
 }
 
-/** 
- * Disable support for comments and trackbacks in post types
- */
-if( ! function_exists('lovage_disable_comment_status') ){
-	function lovage_disable_comment_status() {
-		
-		$post_types = apply_filters( 'lovage_disable_comments_for_post_types', array('page') );
-
-		foreach ($post_types as $post_type) {
-			return false;
-		}
-
-	}
-}
-add_filter('comments_open', 'lovage_disable_comment_status', 20, 2);
-add_filter('pings_open', 'lovage_disable_comment_status', 20, 2);
-
 /**
  * Add social profile fields to user page
  */

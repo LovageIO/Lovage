@@ -188,11 +188,6 @@ if( ! class_exists( 'Lovage' ) ) {
 					'description'   => esc_html__('This sidebar will be displayed on the static page.','lovage' ),
 			    ),
 			    array(
-				    'name'          => esc_html__( 'Shop Sidebar', 'lovage' ),
-					'id'            => 'sidebar-shop',
-					'description'   => esc_html__('This sidebar will be displayed on the shop page.','lovage' ),
-			    ),
-			    array(
 				    'name'          => esc_html__( 'Bottom Widget 1', 'lovage' ),
 					'id'            => 'bottom-widget-1',
 					'description'   => esc_html__('This widget area will be displayed on the left of the bottom section.','lovage' ),
@@ -213,6 +208,14 @@ if( ! class_exists( 'Lovage' ) ) {
 					'description'   => esc_html__('This widget area will be displayed on the right of the bottom section.','lovage' ),
 			    ),
 			);
+
+			if( class_exists('WooCommerce') ){
+				$theme_widgets->widgets[] = array(
+				    'name'          => esc_html__( 'Shop Sidebar', 'lovage' ),
+					'id'            => 'sidebar-shop',
+					'description'   => esc_html__('This sidebar will be displayed on the shop page.','lovage' ),
+			    );
+			}
 			
 		}
 
@@ -324,8 +327,9 @@ if( ! class_exists( 'Lovage' ) ) {
 		public function admin_scripts(){
 			wp_enqueue_style( "farbtastic" );
 			wp_enqueue_script( "farbtastic" );
+			wp_enqueue_script( "jquery" );
 			wp_enqueue_style( "lovage-admin", LOVEAGE_INC_URI."admin/assets/css/admin.css", false, "1.0", "all" );
-			wp_enqueue_script( "lovage-admin", LOVEAGE_INC_URI."admin/assets/js/admin.js",array('jquery') );
+			wp_enqueue_script( "lovage-admin", LOVEAGE_INC_URI."admin/assets/js/admin.js", array('jquery'), "1.0", true );
 			wp_localize_script( 'lovage-admin', 'lovage_admin_data', array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'admin_url'=> admin_url()

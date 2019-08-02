@@ -43,18 +43,16 @@
 				<!-- Begin Mailchimp Signup Form -->
 				<style type="text/css">
 					/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
-					#mc_embed_signup form {display:block;position:relative;text-align:left;}
-					#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+					#mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 0}
 					#mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
 					#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
 					#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
 					#mc_embed_signup input:focus {border-color:#333;}
-					#mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
-					#mc_embed_signup .button:hover {background-color:#777;}
+				
 					#mc_embed_signup .small-meta {font-size: 11px;}
 					#mc_embed_signup .nowrap {white-space:nowrap;}
 
-					#mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:1%; min-height:50px;}
+					#mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:3%; min-height:30px;}
 					#mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
 					* html #mc_embed_signup .size1of2 {margin-right:2%; /* Fix for IE6 double margins. */}
 					#mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
@@ -89,31 +87,23 @@
 					#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:5px 10px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
 					#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
 					#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-					/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-					   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 				</style>
 				<div id="mc_embed_signup">
-					<form action="https://mofect.us3.list-manage.com/subscribe/post?u=0ef58d553e8e0c1b18d14fd79&amp;id=f87204d2f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					    <div id="mc_embed_signup_scroll">
-						
-							<div class="mc-field-group">
-								<label for="mce-EMAIL"><?php esc_html_e( 'Email Address', 'lovage' ); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="email" value="<?php bloginfo('admin_email');?>" name="EMAIL" class="required email" id="mce-EMAIL">
-							</div>
-
-							<div id="mce-responses" class="clear">
-								<div class="response" id="mce-error-response" style="display:none"></div>
-								<div class="response" id="mce-success-response" style="display:none"></div>
-							</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-						    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0ef58d553e8e0c1b18d14fd79_f87204d2f4" tabindex="-1" value=""></div>
-						    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-
-						</div>
-					</form>
+				<form action="https://lovage.us3.list-manage.com/subscribe/post?u=79b3860aac3b4d286dd67fc05&amp;id=4048c5b381" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+					<div class="mc-field-group">
+						<input type="email" placeholder="<?php esc_html_e('Email Adddress', 'lovage');?>" value="<?php bloginfo('admin_email');?>" name="EMAIL" class="required email" id="mce-EMAIL">
+					</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0ef58d553e8e0c1b18d14fd79_f87204d2f4" tabindex="-1" value='' /></div>
+				    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-primary"></div>
+				    </div>
+				</form>
 				</div>
-				<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
 				<!--End mc_embed_signup-->
 
 			</div>

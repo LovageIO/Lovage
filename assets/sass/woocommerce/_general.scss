@@ -298,7 +298,7 @@ p.demo_store,
 					width: 10.175%;
 				    display: inline-block;
 				    max-height: 100px;
-				    padding: 0 5px 0 0;
+				    padding: 0 5px 5px 0;
 				    overflow: hidden;
 				    list-style: none;
 
@@ -541,9 +541,9 @@ p.demo_store,
 					max-width: 100%;
 					min-width: 75%;
 					display: inline-block;
-					margin-right: 1em;
-					border-width:0 0 1px;
-					border-color:#eee;
+					margin-bottom: 10px;
+					border-width: 0 0 1px;
+					border-color: #eee;
 				}
 
 				td.label {
@@ -558,7 +558,9 @@ p.demo_store,
 			.reset_variations {
 				visibility: hidden;
 				font-size: 0.93em;
-				color:$highlight;
+				color: $highlight;
+				border: 1px solid $highlight;
+    			padding: 5px 10px;
 				display:none;
 			}
 
@@ -566,7 +568,7 @@ p.demo_store,
 				display: none;
 			}
 			.woocommerce-variation.single_variation{
-			    margin:1em 0;
+			    margin: 1em 0;
 			}
 
 			.button{
@@ -1466,6 +1468,8 @@ p.demo_store,
 			margin: 0;
 			@include clearfix();
 			list-style: none;
+			display: flex;
+			justify-content: flex-start;
 
 			a {
 				font-weight: 700;
@@ -1479,7 +1483,8 @@ p.demo_store,
 
 			img {
 				float: left;
-			    margin-right: 10px;
+			    margin-right: 20px;
+    			margin-left: 20px;
 			    width: 50px;
 			    height: auto;
 			    box-shadow: none;
@@ -1491,8 +1496,10 @@ p.demo_store,
 			}
 
 			.quantity{
-			    display: flex;
-    			align-items: center;
+			    display: block;
+    			float: right;
+			    width: 200px;
+			    text-align: right;
 			}
 
 			dl {
@@ -1840,7 +1847,6 @@ p.demo_store,
 			margin-bottom: 0;
 			border-bottom-width: 2px;
 			border-right-width: 2px;
-			text-align: left;
 			width: 100%;
 			font-size:14px;
 			line-height:1.5;
@@ -2036,7 +2042,7 @@ p.demo_store,
 .woocommerce-error,
 .woocommerce-info {
 	padding: 2em 2em 1em 3.5em;
-	margin: 0 0 2em;
+	margin: 4em 0 0;
 	position: relative;
 	border-top: 3px solid $primary;
 	list-style: none outside;
@@ -2321,6 +2327,7 @@ p.demo_store,
 		td {
 			vertical-align: middle;
 			padding-left:0;
+			text-align: center;
 		}
 
 		td.actions .coupon .input-text {
@@ -2728,7 +2735,7 @@ p.demo_store,
 
 	.mini_cart_item a{
 	    &:nth-child(2){
-	       width: 240px;
+	       width: 280px;
 	    }
 	}   
 }
@@ -2750,6 +2757,7 @@ p.demo_store,
 	    line-height: 50px;
 	    padding: 0;
 	    text-align: center;
+	    border-radius: 0;
 
 	    &:not(.checkout){
 	       background-color: #000;

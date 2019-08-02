@@ -136,9 +136,10 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 	    
 		if( !is_search() && !is_404() ){
 
-			if( is_single() ){ 
+			if( is_singular( apply_filters( 'lovage_post_type_content_width', array( 'post', 'page', 'attachment' ) ) ) && ! lovage_is_realy_woocommerce_page() ){ 
+
 			  if( get_post_meta($post->ID, '_lovage_page_layout', true) == 'one-column'){
-			     $width = 800;
+			         $width = 800;
 			  }elseif(get_post_meta($post->ID, '_lovage_page_layout', true) == 'default' || get_post_meta($post->ID, '_lovage_page_layout', true) == null ){
 
 			  	 if(null == lovage_theme_customizer()->value('blog_post_layout') || lovage_theme_customizer()->value('blog_post_layout') == 'one-column'){
@@ -149,6 +150,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 			  }else{
 			  	 $width = 1140;
 			  }
+			  
 			}
 
 		}
@@ -221,7 +223,7 @@ if ( ! function_exists( 'lovage_posted_on' ) ) :
 		);
 
 		$posted_on = esc_html__( 'Posted on', 'lovage' ) . ' ' .
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_attr( $time_string ) . '</a>';
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . wp_kses_post( $time_string ) . '</a>';
 
 		$byline = esc_html__( 'by', 'lovage' ) . ' ' .
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';

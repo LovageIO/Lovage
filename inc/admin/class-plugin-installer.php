@@ -95,7 +95,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 						        ),
 						        admin_url('plugins.php' )
 						    ),
-						    'install-plugin'.'_'.self::get_plugin_file( $plugin['slug'] )
+						    'activate-plugin'.'_'.self::get_plugin_file( $plugin['slug'] )
 						);
 	                  }
 	               }
@@ -333,7 +333,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
             wp_enqueue_script( 'plugin-installer', LOVEAGE_INC_URI. 'admin/assets/js/plugin-installer.js', array( 'jquery' ) );
 			wp_localize_script( 'plugin-installer', 'lovage_installer_localize', array(
                'ajax_url' => admin_url( 'admin-ajax.php' ),
-               'admin_nonce' => wp_create_nonce( 'lovage_installer_nonce' ),
+               'install_nonce' => wp_create_nonce( 'lovage_plugin_installer_nonce' ),
                'install_now' => esc_html__( 'Are you sure you want to install this plugin?', 'lovage' ),
                'install_btn' => esc_html__( 'Install Now', 'lovage' ),
                'activate_btn' => esc_html__( 'Activate', 'lovage' ),

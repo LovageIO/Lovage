@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
             data: {
                action: 'lovage_plugin_installer',
                plugin: plugin,
-               nonce: lovage_installer_localize.admin_nonce,
+               nonce: lovage_installer_localize.install_nonce,
                dataType: 'json'
             },
             success: function(data) {
@@ -89,20 +89,13 @@ jQuery(document).ready(function($) {
       
       $.ajax({
          type: 'POST',
-         url: lovage_installer_localize.ajax_url,
-         data: {
-            action: 'lovage_plugin_activation',
-            plugin: plugin,
-            nonce: lovage_installer_localize.admin_nonce,
-            dataType: 'json'
-         },
+         url: el.attr('href'),
          success: function(data) {
+            console.log(data);
             if(data){
-               if(data.status === 'success'){
                   el.attr('class', 'installed button disabled');
                   el.html(lovage_installer_localize.installed_btn);
                   el.removeClass('installing');
-               }
             }
             is_loading = false;
          },

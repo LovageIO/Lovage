@@ -1,4 +1,5 @@
 === Lovage ===
+
 Contributors: lovage
 Tags: e-commerce, blog, portfolio, one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, translation-ready
 Requires at least: 5.0
@@ -35,6 +36,13 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 
 == Changelogs ==
+
+= 1.0.3 =
+* Added RTL Support.
+* Fixed the content width issue for the product page.
+* Fixed the comment section bug.
+* Fixed the style issue of the center alignment header.
+* Fixed the recommend plugin can't be activated.
 
 = 1.0.2 =
 * Re-checked all theme files with Theme Sniffer plugin.

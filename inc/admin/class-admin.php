@@ -27,9 +27,9 @@ class Lovage_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_register_menu' ) );
 		add_action( 'load-themes.php', array( $this, 'activation_redirection' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_style' ) );
-		add_action( 'admin_init', array( $this,'plugin_action' ));
+		add_action( 'admin_init', array( $this,'plugin_action' ) );
 		add_action( 'Lovage_Admin', array( $this, 'admin_ui_header' ), 10 );
-		add_action( 'lovage_demos/plugin_page_header', array( $this, 'admin_ui_header' ), 10);
+		add_action( 'lovage_demos/plugin_page_header', array( $this, 'admin_ui_header' ), 10) ;
 		add_filter( 'lovage_demos/plugin_page_setup', array( $this, 'demo_import_menu' ) );
 		add_filter( 'lovage_demos/plugin_page_title', array( $this,'remove_demo_page_title' ) );
 		add_filter( 'lovage_demos/disable_pt_branding', '__return_true' );
