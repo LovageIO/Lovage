@@ -324,8 +324,8 @@
   LovageTheme.popup = function(){
       /*Popup*/
       function lovage_popup(button,obj,status){
-        $(button).on('click',function(){
-          if(status=='open'){
+        $(button).on('click', function(){
+          if(status === 'open'){
               $('#lovage-popup').animate({right: 0}, {
                   duration: 200, 
                   easing: 'easeInQuad', 
@@ -340,6 +340,7 @@
           }
         });
       }
+      
       lovage_popup('#lovage-search-button','#lovage-search','open');
       lovage_popup('#lovage-cart-button','#lovage-cart','open');
       lovage_popup('#lovage-popup-close','.popup_content','close');

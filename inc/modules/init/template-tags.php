@@ -136,7 +136,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 	    
 		if( !is_search() && !is_404() ){
 
-			if( is_singular( apply_filters( 'lovage_post_type_content_width', array( 'post', 'page', 'attachment' ) ) ) && ! lovage_is_realy_woocommerce_page() ){ 
+			if( is_singular( apply_filters( 'lovage_post_type_content_width', array( 'post', 'page', 'attachment' ) ) ) && ! lovage_is_woocommerce_page() ){ 
 
 			  if( get_post_meta($post->ID, '_lovage_page_layout', true) == 'one-column'){
 			         $width = 800;

@@ -44,7 +44,7 @@
 				<style type="text/css">
 					/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
 					#mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 0}
-					#mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+					#mc_embed_signup input {-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
 					#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
 					#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
 					#mc_embed_signup input:focus {border-color:#333;}
@@ -80,7 +80,7 @@
 					#mc_embed_signup #mce-success-response {color:#529214; display:none;}
 					#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
 
-					#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+					#mc-embedded-subscribe {clear:both; width:auto; display:block;}
 					#mc_embed_signup #num-subscribers {font-size:1.1em;}
 					#mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
 

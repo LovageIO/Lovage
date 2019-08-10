@@ -37,6 +37,13 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 == Changelogs ==
 
+= 1.0.3.2 =
+* Fixed the search button didn't work.
+* Fixed the author information section didn't display.
+* Fixed a PHP Error.
+* Fixed the incorrect demo tab on the theme admin page.
+
+
 = 1.0.3.1 =
 * Added missing styles for .sticky, .alignleft, .alignright, .aligncenter.
 

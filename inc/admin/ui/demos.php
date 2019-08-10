@@ -1,6 +1,6 @@
 <?php
 if( ! file_exists( WP_PLUGIN_DIR.'/lovage-demo-import/lovage-demo-import.php' ) ):
-	if( ! class_exists( 'OCDI_Plugin' ) ) :
+	if( ! class_exists( 'Lovage_Demo_Import_Plugin' ) ) :
 
 		$lovage_demo_import_button_text = esc_html__( 'Install Demo Import Plugin', 'lovage' );
 

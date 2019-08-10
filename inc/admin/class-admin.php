@@ -48,22 +48,6 @@ class Lovage_Admin {
 		}
 	}
 
-	/**
-	 * Display an admin notice linking to the welcome screen
-	 * @since 1.0.0
-	 */
-	public function admin_notice() {
-		 global $current_user;
-		 $user_id = $current_user->ID;
-	     if ( LOVEAGE_Admin::check_license() == 'invalid' ) {
-		?>
-			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Thanks for choosing Lovage! Please activate your purchase code before you install the required plugins and demos.', 'lovage' ), '<a href="' . esc_url( admin_url( 'admin.php?page=lovage-license' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'admin.php?page=lovage-license' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Register Now', 'lovage' ); ?></a></p>
-			</div>
-		<?php
-		  }
-	}
 
 	/**
 	 * Load admin screen css
@@ -171,8 +155,10 @@ class Lovage_Admin {
 		    		foreach( $admin_menu as $key => $value ){
 		    			$active_class = $active_tab == $key ? 'nav-tab-active' : '';
 		    			
-		    			if( class_exists( 'OCDI_Plugin' ) && $key == 'lovage-demo-installer' ){
+		    			if( $key == 'lovage-demo-installer' && class_exists( 'Lovage_Demo_Import_Plugin' ) ) {
 		    				$key = 'lovage-demos';
+		    				$active_class = $active_tab == 'lovage-demos' ? 'nav-tab-active' : '';
+
 		    			}
 
 		    			if( $value[ 'show_as_tab' ] ){

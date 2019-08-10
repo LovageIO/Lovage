@@ -8,7 +8,6 @@
  */
 ?>
 
-<?php if ( class_exists( 'woocommerce') ):?>
 <div id="lovage-popup">
   <a id="lovage-popup-close" href="javascript:void(0);"><i class="lovage-icon lovage-icon-close"></i></a>
   
@@ -23,11 +22,13 @@
     </form>
   </div>
   
+  <?php if ( class_exists( 'woocommerce') ):?>
   <!--Cart-->
   <div id="lovage-cart" class="popup_content">
     <h3><?php esc_attr_e('Cart','lovage');?></h3>
 	 <div class="widget_shopping_cart_content"></div>
   </div>
+  <?php endif;?>
 
   <!--Menu-->
   <div id="lovage-menu" class="popup_content">
@@ -36,4 +37,3 @@
 
 </div>
 <div class="lovage-popup-overlay"></div>
-<?php endif;?>

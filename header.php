@@ -25,13 +25,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="body-container">
 
     <?php
-    
-      /* Popup */
-      get_template_part( 'template-parts/header/popup');
-
       do_action( 'lovage_before_header' );
     ?>
 

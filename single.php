@@ -24,8 +24,8 @@ get_header();
 			 get_template_part( 'template-parts/content', 'single' ); 
 
 			 if( get_post_type() !== 'elementor_library' ) {
-				 get_template_part( 'template-parts/single-post/related-posts' ); 
-				 get_template_part( 'template-parts/single-posts/author' );
+				 get_template_part( 'template-parts/content-single', 'related-posts' ); 
+				 get_template_part( 'template-parts/content-single', 'author' );
 			 	 lovage_post_navigation();
 			 }
 			 
