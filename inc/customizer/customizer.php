@@ -117,7 +117,11 @@ if(!class_exists('Lovage_Theme_Customizer')){
 		public function typography($option, $prop){
 			$typography = json_decode($this->value($option), TRUE);
 
-		    return $prop == 'font_family' && $typography['font_family'] == 'System Default' ? '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' : $typography[$prop];
+		    if( $prop == 'font_family' && $typography['font_family'] == 'System Default' ){
+		    	return '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+		    }else{
+		    	return isset( $typography[$prop] ) ? $typography[$prop] : null;
+		    }
 		}
 
 		/**

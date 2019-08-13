@@ -109,6 +109,24 @@
          line-height: 27px;
       }
 
+   .lovage-plugin-installer .pro-required{
+      color: #f00;
+   }
+
+   .lovage-plugin-installer .premium-label{
+      background: #31b92f;
+      right: 0;
+      left: auto;
+      top: 0;
+      width: 90px;
+      position: absolute;
+      text-align: center;
+      line-height: 25px;
+      font-size: 13px;
+      height: 25px;
+      color: #fff;
+   }
+
 @media screen and (max-width: 1170px){
    .lovage-plugin-installer .plugin{
       width: 48%;

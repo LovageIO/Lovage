@@ -29,6 +29,8 @@ if(!class_exists('Lovage_Core')){
 		private $required_modules = array(
 				'lovage-customizer',
 				'lovage-metabox',
+				'lovage-plugin-page-templates',
+				'lovage-template-loader'
 		);
 
 		/**

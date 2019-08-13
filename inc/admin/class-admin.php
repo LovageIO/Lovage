@@ -246,6 +246,11 @@ class Lovage_Admin {
 
 		// We need to display the 'Install' hover link.
 		if ( ! isset( $installed_extensions[ $item['file_path'] ] ) ) {
+			
+			if ( $item['premium'] ){
+				$disable_class = ' disabled';
+			}
+
 			if ( ! $disable_class ) {
 				$url = wp_nonce_url(
 					add_query_arg(
@@ -264,6 +269,7 @@ class Lovage_Admin {
 			} else {
 				$url = '#';
 			}
+
 			$actions = array(
 				'install' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '"' . esc_attr( $data_version ) . ' title="' . esc_html__( 'Install', 'lovage' ) . $item['sanitized_plugin'] . '" data-slug="'.esc_html( $item['slug'] ).'">' . esc_html__( 'Install', 'lovage' ) . '</a>',
 			);
@@ -299,10 +305,8 @@ class Lovage_Admin {
 				'tgmpa-update',
 				'tgmpa-nonce'
 			);
-			if ('themevan_core' == $item['slug']){
-				if( ! LOVEAGE_Admin::check_license() ){
-				   $disable_class = ' disabled';
-			    }
+			if ( $item['premium'] ){
+				$disable_class = ' disabled';
 			}
 			$actions = array(
 				'update' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '" title="' . esc_attr__( 'Update', 'lovage' ) . $item['sanitized_plugin'] . '">' . esc_attr__( 'Update', 'lovage' ) . '</a>',

@@ -79,14 +79,19 @@
         window.onscroll = function(){
           if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             document.getElementById('masthead').classList.add('sticky-header');
+            if($(window).width() <= 782){
+               $('.admin-bar .sticky-header').css('margin-top', '0');
+            }
           }else{
             document.getElementById('masthead').classList.remove('sticky-header');
+            if($(window).width() <= 782){
+               $('.admin-bar .site-header').css('margin-top', '46px');
+            }
           }
         }
 
     }
   }
-
   
   LovageTheme.mobileMenu = function(){
         $('#mobile_menu .menu-item-has-children').addClass('pushy-submenu');
@@ -332,7 +337,7 @@
              });
              $('.lovage-popup-overlay').add(obj).fadeIn();
           }else{
-             $('#lovage-popup').animate({right: '-100%'},{
+             $('#lovage-popup').animate({right: '-150%'},{
                   duration: 200, 
                   easing: "easeOutQuad", 
              }); 

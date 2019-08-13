@@ -67,18 +67,24 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
               <ul class="activation-row">
                  <li>
                     <?php 
-                     foreach ( $lovage_extension_action as $lovage_action_button ) :
-                        echo wp_kses( $lovage_action_button,  array(
-                                                                  //links
-                                                                  'a'  => array(
-                                                                      'href' => array(),
-                                                                      'class' => array()
-                                                                  )
-                                                               ) 
-                            );
-                     endforeach; 
+                       foreach ( $lovage_extension_action as $lovage_action_button ) :
+                          echo wp_kses( $lovage_action_button,  array(
+                                                                    //links
+                                                                    'a'  => array(
+                                                                        'href' => array(),
+                                                                        'class' => array()
+                                                                    )
+                                                                 ) 
+                              );
+                       endforeach; 
                     ?>
                  </li>
+
+                 <?php if ( isset( $lovage_single_extension['premium'] ) && $lovage_single_extension['premium'] ) : ?>
+                  <li><a href="<?php echo isset($lovage_single_extension['buy_url']) ? esc_url($lovage_single_extension['buy_url']) : ''; ?>" class="button button-green" target="_blank">
+                    <?php esc_html_e( 'Buy Now', 'lovage' ); ?>
+                  </a></li>
+                 <?php endif; ?>
 
                  <?php if( isset($lovage_single_extension['external_url']) ): ?>
                  <li>
@@ -87,11 +93,17 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
                     </a>
                  </li>
                  <?php endif;?>
+
+                  <?php if ( isset( $lovage_single_extension['pro_required'] ) && $lovage_single_extension['pro_required'] ) : ?>
+                  <li><a href="https://lovage.io/pro" class="pro-required" target="_blank">
+                    <?php esc_html_e( 'Lovage Pro Required', 'lovage' ); ?>
+                  </a></li>
+                  <?php endif; ?>                  
               </ul>
 
-              <?php if ( isset( $lovage_single_extension['required'] ) && $lovage_single_extension['required'] ) : ?>
-                <div class="plugin-required">
-                  <?php esc_html_e( 'Required', 'lovage' ); ?>
+              <?php if( isset( $lovage_single_extension['premium'] ) && $lovage_single_extension['premium'] ) : ?>
+                <div class="premium-label">
+                  <?php esc_html_e( 'Premium', 'lovage' ); ?>
                 </div>
               <?php endif; ?>
           </div>

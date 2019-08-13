@@ -93,12 +93,14 @@
 
 .admin-bar{
    #lovage-header-cover{
-      top: 32px;
+      margin-top: 0;
    }
 }
 
 @media(max-width: 767px){
    #lovage-header-cover{
+       margin-bottom: 40px;
+
        h1{
           font-size: 3em;
        }
@@ -107,12 +109,4 @@
           font-size: 14px;
        }
    }
-}
-
-@media(max-width: 782px){
-  .admin-bar{
-     #lovage-header-cover{
-        top: 46px;
-     }
-  }
 }

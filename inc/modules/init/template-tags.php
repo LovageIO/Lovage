@@ -48,7 +48,7 @@ if ( ! function_exists( 'lovage_page_header' ) ) :
 
 		$header_image = has_header_image() ? 'style="background-image:url('.esc_url(get_header_image()).'); background-size: cover;"' : '';
 
-		echo '<header id="lovage-header-cover" class="lovage-page-header '. esc_attr( $text_alignment ).'" '.esc_attr( $header_image ).'>
+		echo '<header id="lovage-header-cover" class="lovage-page-header '. esc_attr( $text_alignment ).'" '.wp_kses_post( $header_image ).'>
 		 		<div class="lovage-grid-1140">';
 		 		    
 		 		    if(is_page()){
