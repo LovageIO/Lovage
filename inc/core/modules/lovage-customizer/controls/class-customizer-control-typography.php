@@ -27,8 +27,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
      * Enqueue required scripts and styles.
      */
     public function enqueue() {
-        wp_enqueue_script( 'lovage-select2', LOVEAGE_CORE_URI. 'modules/lovage-customizer/assets/vendors/select2/select2.min.js', array( 'jquery' ), '1.0.0', true );
-        wp_enqueue_style( 'lovage-select2', LOVEAGE_CORE_URI . 'modules/lovage-customizer/assets/vendors/select2/select2.min.css' );
+
     }
 
     /**
