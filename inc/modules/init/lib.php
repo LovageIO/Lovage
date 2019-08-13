@@ -230,7 +230,7 @@ function lovage_breadcrumbs() {
 
 			$breadcrumbs = array_reverse($breadcrumbs);
 
-			foreach ( $breadcrumbs as $crumb ) echo esc_html( $crumb ) . ' ' . wp_kses_post( $delimiter ) . ' ';
+			foreach ( $breadcrumbs as $crumb ) echo wp_kses_post( $crumb ) . ' ' . wp_kses_post( $delimiter ) . ' ';
 			echo wp_kses_post( $before ) . esc_html( get_the_title() ) . wp_kses_post( $after );
 
 		} elseif ( is_search() ) { 
