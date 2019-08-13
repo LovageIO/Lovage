@@ -7,7 +7,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @since 1.0
+ * @since 1.0.3.4
  */
 class Lovage_Admin {
 
@@ -29,10 +29,11 @@ class Lovage_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_style' ) );
 		add_action( 'admin_init', array( $this,'plugin_action' ) );
 		add_action( 'Lovage_Admin', array( $this, 'admin_ui_header' ), 10 );
-		add_action( 'lovage_demos/plugin_page_header', array( $this, 'admin_ui_header' ), 10) ;
+		add_action( 'lovage_demos/plugin_page_header', array( $this, 'admin_ui_header' ), 10 ) ;
 		add_filter( 'lovage_demos/plugin_page_setup', array( $this, 'demo_import_menu' ) );
 		add_filter( 'lovage_demos/plugin_page_title', array( $this,'remove_demo_page_title' ) );
 		add_filter( 'lovage_demos/disable_pt_branding', '__return_true' );
+		add_action( 'after_setup_theme', array( $this, 'check_update' ) );
 
 	} // end constructor
      
@@ -363,5 +364,17 @@ class Lovage_Admin {
 		}
 	}
 
+	/**
+	 * Check the theme update.
+	 */
+	public check_update(){
+		require_once( get_template_directory() . '/inc/theme-update-checker.php' );
+		$lovage_update_checker = new ThemeUpdateChecker(
+			'lovage',
+			'https://lovage.io/update-server/?action=get_metadata&slug=lovage'
+		);
+	}
+
 }
+
 return new Lovage_Admin();

@@ -37,6 +37,9 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 == Changelogs ==
 
+= 1.0.3.4 =
+* Added theme auto update feature.
+
 = 1.0.3.3 =
 * Fixed the header image didn't show up.
 * Fixed some CSS issues.
