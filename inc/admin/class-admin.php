@@ -367,7 +367,7 @@ class Lovage_Admin {
 	/**
 	 * Check the theme update.
 	 */
-	public check_update(){
+	public function check_update(){
 		require_once( get_template_directory() . '/inc/theme-update-checker.php' );
 		$lovage_update_checker = new ThemeUpdateChecker(
 			'lovage',
