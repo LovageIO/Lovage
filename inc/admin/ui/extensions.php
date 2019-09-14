@@ -5,7 +5,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.4
  */
 
 // Do not allow directly accessing this file.
@@ -19,7 +19,7 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
 <div class="section">
   <?php add_thickbox(); ?>
   <div class="page_description">
-    <?php esc_html_e( 'Want more features? We offer some Lovage Extensions can make your online store looks more unique. Please note that Lovage Extensions are only effect for Lovage theme, and you can install, activate and delete it as the standard plugin.', 'lovage' );?>
+    <?php esc_html_e( 'Want more features? We offer some Lovage Extensions can make your website looks more unique. Please note that Lovage Extensions are only made for Lovage theme. You can install, activate and delete it as the standard plugin.', 'lovage' );?>
   </div>
   <div class="lovage-plugin-installer">
       <?php 

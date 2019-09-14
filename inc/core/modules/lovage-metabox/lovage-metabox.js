@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
     var datePicker = function(){
 
         /* Date Picker Option */
-        $('.lovage-date-picker').datepicker();
+        $('.lovage-metabox-date-picker').datepicker();
     }
 
     var imageUpload = function(){
@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
         var meta_image_frame;
      
         // Runs when the image button is clicked.
-        $('.image-upload').click(function(e){
+        $('.lovage-metabox-image .image-upload').click(function(e){
             
             var imageUploadButton = $(this);
 
@@ -55,12 +55,23 @@ jQuery(document).ready(function($) {
      
                 // Sends the attachment URL to our custom image input field.
                 imageUploadButton.prev().val(media_attachment.url);
-                imageUploadButton.next().html('<img src="'+media_attachment.url+'" />');
+                imageUploadButton.next().html('<div class="preview-image"><img src="'+media_attachment.url+'" /> <a href="javascript:;" class="delete">&#10005</a></div>');
             });
      
             // Opens the media library frame.
             meta_image_frame.open();
         });
+
+        $('.lovage-metabox-image').each( function(){
+
+             var dataStore = $(this).find('input[type="url"]');
+            
+             $(this).find('.delete').on('click', function(){
+                $(this).parent('.preview-image').remove();
+                dataStore.attr('value', '');
+             });
+
+        } );
     }
 
     var multiImageUpload = function(){
@@ -68,7 +79,7 @@ jQuery(document).ready(function($) {
         var meta_image_frame;
      
         // Runs when the image button is clicked.
-        $('.multi-image-upload').click(function(e){
+        $('.lovage-metabox-multi-image .multi-image-upload').click(function(e){
             
             var imageUploadButton = $(this);
 
@@ -94,13 +105,22 @@ jQuery(document).ready(function($) {
      
                 // Grabs the attachment selection and creates a JSON representation of the model.
                 var media_attachments = meta_image_frame.state().get('selection').toJSON();
-
-                // Sends the attachment URL to our custom image input field.
-                imageUploadButton.prev().val(JSON.stringify(media_attachments));
+                
                 var images = '';
+                var savedImages = [];
 
                 media_attachments.forEach(function(item, i){
-                    images += '<img src="'+item.url+'" />';
+                    
+                    savedImages.push({
+                       id: item.id,
+                       url: item.url,
+                       alt: item.alt
+                    });
+
+                    // Sends the attachment URL to our custom image input field.
+                    imageUploadButton.prev().val(JSON.stringify(savedImages));
+                    
+                    images += '<div class="preview-image" id="image-'+item.id+'"><img src="'+item.url+'" /> <a href="javascript:;" class="delete">&#10005</a></div>';
                 });
 
                 imageUploadButton.next().html(images);
@@ -109,6 +129,32 @@ jQuery(document).ready(function($) {
             // Opens the media library frame.
             meta_image_frame.open();
         });
+
+        $('.lovage-metabox-multi-image').each(function(){
+
+            var dataStore = $(this).find('input[type="hidden"]');
+            var saved_images_data = dataStore.val();
+            var saved_images_array =  JSON.parse(saved_images_data);
+
+            $('.preview-image').each( function(){
+                 var imageId = $(this).attr('id');
+                 imageId = imageId.split('-');
+
+                 $(this).children('.delete').on('click', function(){
+
+                    $(this).parent('.preview-image').remove();
+                    
+                    for( var i = 0; i < saved_images_array.length; i++){ 
+                        if(saved_images_array[i].id === parseInt(imageId[1])) {
+                            saved_images_array.splice(i, 1);
+                            i--;
+                        }
+                    }
+                    dataStore.val(JSON.stringify(saved_images_array));
+                 });
+            } );
+        });
+  
     }
 
     metaTabs();

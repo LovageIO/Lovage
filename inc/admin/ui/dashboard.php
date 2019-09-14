@@ -1,3 +1,14 @@
+<?php
+/**
+ * Dashboard Page
+ *
+ * @package Lovage
+ * @author Lovage
+ * @link https://lovage.io
+ * @version 1.0
+ */
+?>
+
 <div id="dashboard" class="lovage-admin-container">
 
 

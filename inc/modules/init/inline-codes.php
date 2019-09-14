@@ -12,6 +12,10 @@ function lovage_page_inline_codes(){
 	
 	global $post;
 
+	if( is_404() ) {
+		return;
+	}
+
 	$page_css = get_post_meta( $post->ID, '_lovage_page_css', true );
 	$page_js  = get_post_meta( $post->ID, '_lovage_page_js', true );
 

@@ -8,8 +8,8 @@
  * @version 1.0
  */
 
-add_action('init', 'lovage_page_metabox');
-add_action('init', 'lovage_post_metabox');
+add_action( 'init', 'lovage_page_metabox' );
+add_action( 'init', 'lovage_post_metabox' );
 
 function lovage_is_elementor_template(){
 	
@@ -38,7 +38,7 @@ function lovage_page_metabox(){
 	   'title' 		  => esc_html__( 'Page Settings', 'lovage' ),
 	   'description'  => esc_html__( 'The common settings for the current page (supports the post, page)', 'lovage' ),
 	   'context'	  => 'normal',
-	   'post_type'    => apply_filters( 'lovage_page_metabox_for_post_types', array('post','page') ),
+	   'post_type'    => apply_filters( 'lovage_page_metabox_for_post_types', array( 'post','page' ) ),
 	   'tabs'		  => apply_filters( 'lovage_page_metabox_tabs', array(
 	      'general' => array(
 	      				'title'    => esc_html__( 'General', 'lovage' ),

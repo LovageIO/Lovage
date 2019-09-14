@@ -1,4 +1,13 @@
 <?php
+/**
+ * Demo Importer Install Page
+ *
+ * @package Lovage
+ * @author Lovage
+ * @link https://lovage.io
+ * @version 1.0
+ */
+
 if( ! file_exists( WP_PLUGIN_DIR.'/lovage-demo-import/lovage-demo-import.php' ) ):
 	if( ! class_exists( 'Lovage_Demo_Import_Plugin' ) ) :
 

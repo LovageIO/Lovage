@@ -1,11 +1,11 @@
 <?php
 /**
- * plugins Page
+ * Recommend Plugins Page
  *
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.4
  */
 
 // Do not allow directly accessing this file.
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="section">
 
 	  <div class="page_description">
-	  	<?php esc_html_e( 'We handpicked some useful and high quality 3rd-party plugins which can help you make things easy. Please note, some of these plugins are premium plugins or has Pro version. ','lovage' );?>
+	  	<?php esc_html_e( 'We handpicked some useful and high quality 3rd-party plugins which can help you make things easy. ','lovage' );?>
 	  </div>
 
       <?php
@@ -36,10 +36,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			  ),
 			  array(
 			  	'slug' => 'cookie-notice'
+			  ),
+			  array(
+			  	'slug' => 'autoptimize'
 			  )
 		 );
 
-		 array_merge($lovage_plugins, apply_filters( 'lovage_add_plugins', array() ) );
+		 array_merge( $lovage_plugins, apply_filters( 'lovage_add_plugins', array() ) );
 
 		 if(class_exists('Lovage_Plugins_Installer')){
 		    Lovage_Plugins_Installer::init($lovage_plugins);

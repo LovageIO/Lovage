@@ -1,6 +1,6 @@
 <?php
 /**
- * Lovage Plugin Installer
+ * Plugin Installer
  *
  * @package  Lovage
  * @author   Darren Cooney

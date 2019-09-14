@@ -36,6 +36,22 @@ function lovage_get_extensions() {
 			'force_deactivation' => false,
 			'external_url'       => '',
 			'image_url'          => 'https://ps.w.org/one-click-demo-import/assets/icon-256x256.png'
+		),
+		'lovage-portfolio'  => array(
+			'name'               => 'Lovage Portfolio',
+			'slug'               => 'lovage-portfolio',
+			'required'      	 => false,
+			'pro_required'       => false,
+			'source'			 => 'https://lovage.io/update-server/?action=download&slug=lovage-portfolio',
+			'author'			 => 'Lovage',
+			'description'		 => esc_html__( 'Add portfolio post type that allow you to show your projects on the website.', 'lovage' ),
+			'version'            => '1.0.0',
+			'premium'			 => false,
+			'buy_url'			 => '',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+			'external_url'       => '',
+			'image_url'          => 'https://ps.w.org/one-click-demo-import/assets/icon-256x256.png'
 		)
     );
 

@@ -27,12 +27,9 @@
   margin: 5px 0;
 }
 
-.lovage-desc{
+.lovage-meta-desc{
 	opacity:.55;
 	font-style:italic;
-}
-
-.lovage-option.radio-image .lovage-desc{
   display: block;
 }
 
@@ -111,16 +108,34 @@
 	width:100%;
 	min-height:200px;
 }
+.lovage-option input[type="text"],
+.lovage-option input[type="url"],
+.lovage-option input[type="number"],
+.lovage-option input[type="password"],
+.lovage-option input[type="email"]{
+  width: 50%;
+  height: 30px;
+  box-shadow: none;
+}
+.lovage-option input[type="text"]:focus,
+.lovage-option input[type="url"]:focus,
+.lovage-option input[type="number"]:focus,
+.lovage-option input[type="password"]:focus,
+.lovage-option input[type="email"]:focus,
+.lovage-option textarea{
+   border-color: #eee;
+   box-shadow: 0 0 20px rgba(0,0,0, 0.1);
+}
 
 /* Toggle */
-.lovage-option .switch {
+.lovage-option .lovage-metabox-switch {
   position: relative;
   display: inline-block;
   width: 51px;
   height: 25px;
 }
 
-.lovage-option .switch input {display:none;}
+.lovage-option .lovage-metabox-switch input {display:none;}
 
 .lovage-option .slider {
   position: absolute;
@@ -170,7 +185,7 @@
 }
 
 /* The custom checkbox */
-.lovage-custom-checkbox {
+.lovage-metabox-checkbox {
     display: inline-block;
     position: relative;
     padding-left: 25px;
@@ -184,7 +199,7 @@
 }
 
 /* Hide the browser\'s default checkbox */
-.lovage-custom-checkbox input {
+.lovage-metabox-checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -201,12 +216,12 @@
 }
 
 /* On mouse-over, add a grey background color */
-.lovage-custom-checkbox:hover input ~ .checkmark {
+.lovage-metabox-checkbox:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.lovage-custom-checkbox input:checked ~ .checkmark {
+.lovage-metabox-checkbox input:checked ~ .checkmark {
     background-color: #11c39b;
     border-color: #11c39b;
 }
@@ -219,12 +234,12 @@
 }
 
 /* Show the checkmark when checked */
-.lovage-custom-checkbox input:checked ~ .checkmark:after {
+.lovage-metabox-checkbox input:checked ~ .checkmark:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.lovage-custom-checkbox .checkmark:after {
+.lovage-metabox-checkbox .checkmark:after {
     left: 5px;
     top: 2px;
     width: 3px;
@@ -237,7 +252,7 @@
 }
 
 /* Custom Radio */
-.lovage-custom-radio {
+.lovage-metabox-radio {
   display: block;
   position: relative;
   padding-left: 30px;
@@ -251,13 +266,13 @@
 }
 
 /* Hide the browser\'s default radio button */
-.lovage-custom-radio input {
+.lovage-metabox-radio input {
   position: absolute;
   opacity: 0;
 }
 
 /* Create a custom radio button */
-.lovage-custom-radio .checkmark {
+.lovage-metabox-radio .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -269,30 +284,30 @@
 }
 
 /* On mouse-over, add a grey background color */
-.lovage-custom-radio:hover input ~ .checkmark {
+.lovage-metabox-radio:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.lovage-custom-radio input:checked ~ .checkmark {
+.lovage-metabox-radio input:checked ~ .checkmark {
   background-color: #11c39b;
   border-color: #11c39b;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.lovage-custom-radio .checkmark:after {
+.lovage-metabox-radio .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.lovage-custom-radio input:checked ~ .checkmark:after {
+.lovage-metabox-radio input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.lovage-custom-radio .checkmark:after {
+.lovage-metabox-radio .checkmark:after {
   top: 5px;
   left: 5px;
   width: 6px;
@@ -302,11 +317,11 @@
 }
 
 /* Custom Range */
-.lovage-custom-range {
+.lovage-metabox-range {
     width: 100%;
 }
 
-.lovage-custom-range .lovage-slider {
+.lovage-metabox-range .lovage-slider {
     -webkit-appearance: none;
     width: 100%;
     height: 25px;
@@ -319,11 +334,11 @@
     padding:0;
 }
 
-.lovage-custom-range .lovage-slider:hover {
+.lovage-metabox-range .lovage-slider:hover {
     opacity: 1;
 }
 
-.lovage-custom-range .lovage-slider::-webkit-slider-thumb {
+.lovage-metabox-range .lovage-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -332,59 +347,59 @@
     cursor: pointer;
 }
 
-.lovage-custom-range .lovage-slider::-moz-range-thumb {
+.lovage-metabox-range .lovage-slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background: #11c39b;
     cursor: pointer;
 }
-.lovage-custom-range-numbers{
+.lovage-metabox-range-numbers{
     height:40px;
     display:flex;
     align-items: center;
     justify-content: space-around;
 }
-.lovage-custom-range-numbers span{
+.lovage-metabox-range-numbers span{
     display:inline-block;
     text-align:left;
     width: 33%;
     color:#999;
 }
-.lovage-custom-range-numbers span:last-child{
+.lovage-metabox-range-numbers span:last-child{
     text-align:right;
 }
-.lovage-custom-range-numbers span.lovage-range-value:before{
+.lovage-metabox-range-numbers span.lovage-range-value:before{
     content: 'Value:';
     margin-right:5px;
 }
-.lovage-custom-range-numbers span.lovage-range-value{
+.lovage-metabox-range-numbers span.lovage-range-value{
     color:#11c39b;
     margin-bottom:10px;
 }
 
 /* Custom Radio Image */
-.lovage-custom-radio-image {
+.lovage-metabox-radio-image {
   width:22%;
   margin-bottom:1em;
   display: inline-block;
 }
-.lovage-custom-radio-image .lovage-desc{
+.lovage-metabox-radio-image .lovage-desc{
   display:block;
   float:none;
 }
-.lovage-custom-radio-image > input{ /* HIDE RADIO */
+.lovage-metabox-radio-image > input{ /* HIDE RADIO */
   visibility: hidden; /* Makes input not-clickable */
   position: absolute; /* Remove input from document flow */
 }
-.lovage-custom-radio-image > input + img{ /* IMAGE STYLES */
+.lovage-metabox-radio-image > input + img{ /* IMAGE STYLES */
   cursor:pointer;
   width:100%;
   border:2px solid #eee;
 }
-.lovage-custom-radio-image > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+.lovage-metabox-radio-image > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #11c39b;
 }
-.lovage-custom-radio-image-title{
+.lovage-metabox-radio-image-title{
   display:block;
   margin-top:10px;
   text-align:center;
@@ -399,6 +414,34 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.is-side .lovage-custom-radio-image{
+.is-side .lovage-metabox-radio-image{
   width: 29%;
+}
+
+/* Multi-image / image field preview */
+.lovage-image-preview .preview-image{
+  float: left;
+  text-align: center;
+  width: 30%;
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+.lovage-image-preview .preview-image img{
+  width: 100%;
+  border: 1px solid #eee;
+}
+.lovage-image-preview .preview-image a{
+  background: #f00;
+  color: #fff;
+  font-size: 9px;
+  text-decoration: none;
+  position: absolute;
+  top: -3px;
+  right: -8px;
+  z-index: 99;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 50px;
 }
