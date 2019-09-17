@@ -1139,6 +1139,8 @@ body:not(.single-product) .site-content {
         float: left;
         max-width: 100%;
         padding-top: 0; }
+        .site-header.lovage-centered-vertical .site-branding .site-title {
+          font-size: 1.2em; }
       .site-header.lovage-centered-vertical .main-navigation,
       .site-header.lovage-centered-vertical #site-icons {
         position: relative;
@@ -1152,10 +1154,7 @@ body:not(.single-product) .site-content {
         margin-right: 3%; } }
 @media (max-width: 782px) {
   .admin-bar .site-header {
-    margin-top: 46px; }
-
-  .site-header.lovage-centered-vertical .site-branding .site-title {
-    font-size: 1.2em; } }
+    margin-top: 46px; } }
 @media (max-width: 767px) {
   .site-header .site-branding {
     width: 100px; }
@@ -1576,7 +1575,7 @@ body:not(.single-product) .site-content {
       display: none; }
     .main-navigation .menu-toggle {
       display: block;
-      margin-top: 5px; }
+      margin-top: 0; }
 
   #mega-menu-wrap-primary {
     display: none; } }

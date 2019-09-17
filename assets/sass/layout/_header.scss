@@ -220,6 +220,10 @@
           float: left;
           max-width:100%;
           padding-top:0;
+
+          .site-title{
+            font-size: 1.2em;
+          }
        }
 
        .main-navigation,
@@ -244,12 +248,6 @@
 @media (max-width: 782px){
   .admin-bar .site-header{
     margin-top: 46px;
-  }
-
-  .site-header.lovage-centered-vertical{
-    .site-branding .site-title{
-       font-size: 1.2em;
-    }
   }
 }
 
