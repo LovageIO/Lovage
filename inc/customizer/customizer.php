@@ -74,26 +74,6 @@ if(!class_exists('Lovage_Theme_Customizer')){
 			$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 			$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-			if( ! class_exists('LovagePro') ){
-	          $wp_customize->add_section( 'installation' , array(
-	              'title'      => 'Get Early To Know Lovage Pro',
-	              'description' => 'Hey, Lovage Pro is also upcoming, it offers more advanced options for the multiple website building purposes.' ,
-	              'priority'   => -20,
-	          ) );
-
-	          $wp_customize->add_setting( 'upgrade_pro' , array(
-	              'transport'   => 'refresh',
-	              'sanitize_callback'=> 'esc_attr'
-	          ) );
-  			  
-	          $wp_customize->add_control( new Lovage_Customize_Control_Pro_Installer( $wp_customize, 'upgrade_pro', array(
-	              'label' => 'Get Early To Know Lovage Pro',
-	              'section' => 'installation',
-	              'settings' => 'upgrade_pro',
-	              'type' => 'theme_mod',
-	          ) ));
-	        }
-
 		}
 
 		/**
@@ -257,14 +237,6 @@ if(!class_exists('Lovage_Theme_Customizer')){
 													"letter_spacing" => "0px",
 													"text_transform" => "inherit"
 												  ),
-				
-				'home_container_mode'			  => 'default',
-				'blog_archive_container_mode'	  => 'default',
-				'post_container_mode'			  => 'default',
-				'search_container_mode'			  => 'default',
-				'author_container_mode'			  => 'default',
-				'404_container_mode'			  => 'default',
-				
 				'header_layout'			  		  => 'standard',
 				'header_border_color'			  => 'rgba(0,0,0,0.1)',
 				'menu_buttons'					  => 1,
@@ -326,13 +298,8 @@ if(!class_exists('Lovage_Theme_Customizer')){
 		 * Get the default settings
 		 */
 		public function get_default( $key ){
-			foreach( $this->default_value() as $mod => $value ){
-				if( $key === $mod ){
-					return $value;
-				}else{
-					return null;
-				}
-			}
+			$defaults = $this->default_value();
+			return isset( $defaults[$key] ) ? $defaults[$key] : '';
 		}
 
 		/**

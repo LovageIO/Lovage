@@ -55,11 +55,12 @@ if( ! class_exists( 'Lovage' ) ) {
 
 			load_template( LOVEAGE_CORE_DIR . 'core.php', TRUE );
 			
-			$lovage = new Lovage_Core();
-			$lovage->chosen_modules = array(
-				'lovage-customizer',
-				'lovage-widget'
-			);
+			$lovage = new Lovage_Core( array(
+				'lovage-widget',
+				'lovage-plugin-page-templates',
+				'lovage-template-loader',
+				'lovage-scripts-loader',
+			) );
 
 		}
 
@@ -220,8 +221,7 @@ if( ! class_exists( 'Lovage' ) ) {
 		}
 
 		/**
-		 * Load Google Fonts
-		 * Hook: lovage_scripts
+		 * Load CSS/JS
 		 */
 		public function scripts() {
 

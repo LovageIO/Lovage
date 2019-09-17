@@ -28,7 +28,7 @@
 
 <div id="body-container">
 
-    <?php
+    <?php 
       do_action( 'lovage_before_header' );
     ?>
 

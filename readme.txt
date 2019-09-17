@@ -37,6 +37,13 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 == Changelogs ==
 
+= 1.0.4 =
+* Added scripts loader class for merging all Lovage extensions scripts into one file.
+* Fixed the select metabox option didn't display properly.
+* Fixed the image and multi-image metabox option can't delete the selected images.
+* Fixed the header layout issue.
+* Fixed the customizer default settings didn't output.
+
 = 1.0.3.4 =
 * Added theme auto update feature.
 

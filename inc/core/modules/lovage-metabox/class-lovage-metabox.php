@@ -1,6 +1,6 @@
 <?php
 /**
- * WX Meta Box Module
+ * Lovage Meta Box Module
  * @package core/modules/lovage-metabox
  * @version 1.0.4
  */

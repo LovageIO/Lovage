@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-if(!class_exists('Lovage_Core')){
+if( ! class_exists('Lovage_Core') ){
 	
 	class Lovage_Core{
 		/**
@@ -22,22 +22,20 @@ if(!class_exists('Lovage_Core')){
 		 * @var   object
 		 */
 	    public $chosen_modules = array(
-				'lovage-customizer',
 				'lovage-widget'
 		);
 
-		private $required_modules = array(
+		protected $required_modules = array(
 				'lovage-customizer',
-				'lovage-metabox',
-				'lovage-plugin-page-templates',
-				'lovage-template-loader'
+				'lovage-metabox'
 		);
 
 		/**
 		 * Setup class.
 		 * @since 0.0.1
 		 */
-		public function __construct() {
+		public function __construct( $modules ) {
+			$this->chosen_modules = $modules;
 			$this->include_modules();
 		}	
 
@@ -58,7 +56,7 @@ if(!class_exists('Lovage_Core')){
                 return;
             }
 
-            $load_modules = array_merge($required_modules, $chosen_modules);
+            $load_modules = array_merge( $required_modules, $chosen_modules );
 
             foreach ( $load_modules as $module ) {
               
