@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
      
                 // Grabs the attachment selection and creates a JSON representation of the model.
                 var media_attachments = meta_image_frame.state().get('selection').toJSON();
-                
+
                 var images = '';
                 var savedImages = [];
 
@@ -134,7 +134,7 @@ jQuery(document).ready(function($) {
 
             var dataStore = $(this).find('input[type="hidden"]');
             var saved_images_data = dataStore.val();
-            var saved_images_array =  JSON.parse(saved_images_data);
+            var saved_images_array =  saved_images_data && JSON.parse(saved_images_data);
 
             $('.preview-image').each( function(){
                  var imageId = $(this).attr('id');
@@ -150,6 +150,7 @@ jQuery(document).ready(function($) {
                             i--;
                         }
                     }
+                    
                     dataStore.val(JSON.stringify(saved_images_array));
                  });
             } );

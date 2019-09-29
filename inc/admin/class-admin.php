@@ -96,6 +96,15 @@ class Lovage_Admin {
 		 		'show_as_tab'=> true
 		 	);
 
+		 	$admin_menu['lovage-extensions'] = array(
+		 		'menu_name'  => null,
+		 		'page_title' => esc_html__( 'Lovage Extensions', 'lovage' ),
+		 		'tab_title'  => esc_html__( 'Extensions', 'lovage' ),
+		 		'menu_page'  => array( $this, 'admin_ui' ),
+		 		'capability' => 'edit_theme_options',
+		 		'show_as_tab'=> true
+		 	);
+
 		 	$admin_menu['lovage-plugins'] = array(
 		 		'menu_name'  => null,
 		 		'page_title' => esc_html__( 'Recommend Plugins', 'lovage' ),

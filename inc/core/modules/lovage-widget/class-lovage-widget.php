@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if(!class_exists('Lovage_Widget')){
+if( ! class_exists('Lovage_Widget') ){
 	class Lovage_Widget{
 
 		public $widgets = array(

@@ -30,6 +30,7 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
         }
 
         foreach ( $lovage_all_extensions as $lovage_single_extension ) :
+
           if ( ! array_key_exists( $lovage_single_extension['slug'], $lovage_extensions ) ) {
             continue;
           }
@@ -47,7 +48,7 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
           if ( is_plugin_active( $lovage_extension_path ) ) {
             $lovage_extension_status = 'active';
             $lovage_extension_item_class = 'active';
-          }
+          } 
           ?>
 
           <div class="plugin  <?php echo esc_attr( $lovage_extension_item_class ); ?>">

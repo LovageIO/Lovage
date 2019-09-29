@@ -26,7 +26,7 @@ function lovage_get_extensions() {
 			'slug'               => 'lovage-demo-import',
 			'required'      	 => false,
 			'pro_required'       => false,
-			'source'			 => 'https://lovage.io/update-server/?action=download&slug=lovage-demo-import',
+			'source'			 => 'https://github.com/LovageIO/lovage-demo-import/archive/master.zip',
 			'author'			 => 'Lovage',
 			'description'		 => esc_html__( 'Preview and import Lovage demos.', 'lovage' ),
 			'version'            => '1.0.0',
@@ -36,7 +36,20 @@ function lovage_get_extensions() {
 			'force_deactivation' => false,
 			'external_url'       => '',
 			'image_url'          => 'https://ps.w.org/one-click-demo-import/assets/icon-256x256.png'
-		)
+		),
+		'lovage-blocks'  => array(
+			'name'               => 'Lovage Blocks',
+			'slug'               => 'lovage-blocks',
+			'required'      	 => false,
+			'author'			 => 'Lovage',
+			'description'		 => esc_html__( 'Lovage Blocks offers some common blocks for Gutenberg editor.', 'lovage' ),
+			'version'            => '0.0.1',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+			'external_url'       => '',
+			'image_url'          => 'https://ps.w.org/lovage-blocks/assets/icon-256x256.png'
+		),
+
     );
 
 	array_merge( $lovage_extensions, apply_filters( 'lovage_add_extension', array() ) );

@@ -51,19 +51,23 @@ if ( ! function_exists( 'lovage_page_header' ) ) :
 		echo '<header id="lovage-header-cover" class="lovage-page-header '. esc_attr( $text_alignment ).'" '.wp_kses_post( $header_image ).'>
 		 		<div class="lovage-grid-1140">';
 		 		    
-		 		    if(is_page()){
+		 		    if( is_page() ){
 		 		    	echo '<h1 class="entry-title">'.esc_attr( get_the_title( $post->ID ) ).'</h1>';
+		 		    }
+
+		 		    if( is_tax() || is_category() || is_tag() ){
+		 		    	echo '<h1 class="entry-title">'.single_term_title( '', false ).'</h1>';
 		 		    }
 
 		 		    if( is_search() && function_exists('is_shop') && !is_shop() ){
 		 		    	echo '<h1 class="entry-title">'.esc_html__('Search Results For', 'lovage').' '. isset( $_GET['s'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['s'] ) ) ) : '' . '</h1>';
 		 		    }
 
-		 		    if(is_404()){
+		 		    if( is_404() ){
 		 		    	echo '<h1 class="entry-title">'.esc_html__('404', 'lovage').'</h1>';
 		 		    }
 
-					if(function_exists('is_shop') && is_shop()){
+					if( function_exists('is_shop') && is_shop() ){
 						echo '<h1 class="entry-title">'. esc_html( woocommerce_page_title( false ) ).'</h1>';
 					}
 
