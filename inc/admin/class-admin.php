@@ -100,7 +100,7 @@ class Lovage_Admin {
 		 		'menu_name'  => null,
 		 		'page_title' => esc_html__( 'Lovage Extensions', 'lovage' ),
 		 		'tab_title'  => esc_html__( 'Extensions', 'lovage' ),
-		 		'menu_page'  => array( $this, 'admin_ui' ),
+		 		'menu_page'  => $extensions_callback,
 		 		'capability' => 'edit_theme_options',
 		 		'show_as_tab'=> true
 		 	);
@@ -283,7 +283,7 @@ class Lovage_Admin {
 					'lovage-activate'       => 'activate-plugin',
 					'lovage-activate-nonce' => wp_create_nonce( 'lovage-activate' ),
 				),
-				admin_url( 'admin.php?page=lovage-extensions' )
+				admin_url( 'themes.php?page=lovage-extensions' )
 			);
 
 			$actions = array(
@@ -320,7 +320,7 @@ class Lovage_Admin {
 					'lovage-deactivate'       => 'deactivate-plugin',
 					'lovage-deactivate-nonce' => wp_create_nonce( 'lovage-deactivate' ),
 				),
-				admin_url( 'admin.php?page=lovage-extensions' )
+				admin_url( 'themes.php?page=lovage-extensions' )
 			);
 			$actions = array(
 				'deactivate' => '<a href="' . esc_url( $url ) . '" class="button button-primary" title="' . esc_attr__( 'Deactivate', 'lovage' ) . $item['sanitized_plugin'] . '">' . esc_attr__( 'Deactivate', 'lovage' ) . '</a>',

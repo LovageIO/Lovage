@@ -43,12 +43,7 @@ function lovage_get_extensions() {
 			'required'      	 => false,
 			'author'			 => 'Lovage',
 			'description'		 => esc_html__( 'Lovage Blocks offers some common blocks for Gutenberg editor.', 'lovage' ),
-			'version'            => '0.0.1',
-			'premium'			 => false,
-			'force_activation'   => false,
-			'force_deactivation' => false,
-			'buy_url'			 => '',
-			'external_url'       => '',
+			'external_url'       => 'https://wordpress.org/plugins/lovage-blocks',
 			'image_url'          => LOVEAGE_INC_URI . 'admin/assets/img/lovage-blocks.png'
 		),
 		'lovage-portfolio'  => array(
@@ -57,12 +52,7 @@ function lovage_get_extensions() {
 			'required'      	 => false,
 			'author'			 => 'Lovage',
 			'description'		 => esc_html__( 'Lovage is a simple portfolio plugin that allows you to show your projects.', 'lovage' ),
-			'version'            => '1.0.0',
-			'premium'			 => false,
-			'force_activation'   => false,
-			'force_deactivation' => false,
-			'buy_url'			 => '',
-			'external_url'       => '',
+			'external_url'       => 'https://wordpress.org/plugins/lovage-portfolio',
 			'image_url'          => LOVEAGE_INC_URI . 'admin/assets/img/lovage-portfolio.png'
 		),
 
@@ -98,6 +88,7 @@ function lovage_register_extensions() {
 		'menu'            	=> 'lovage-extensions',
 		'has_notices'     	=> true,
 		'is_automatic'    	=> true,
+		'dismissable'		=> true,
 		'message'         	=> '',
 	);
 

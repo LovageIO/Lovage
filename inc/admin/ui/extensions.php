@@ -39,7 +39,7 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
           $lovage_extension_status = '';
           $lovage_extension_path = isset( $lovage_single_extension['lovage_extension_path'] ) ? $lovage_single_extension['lovage_extension_path'] : '';
           $lovage_extension_action = Lovage_Admin::extension_link( $lovage_single_extension );
-
+  
           // We have a repo plugin.
           if ( ! $lovage_single_extension['version'] ) {
             $lovage_single_extension['version'] = TGM_Plugin_Activation::$instance->does_plugin_have_update( $lovage_single_extension['slug'] );
