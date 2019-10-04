@@ -4,7 +4,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.4.4
  */
 
 // Do not allow directly accessing this file.
@@ -47,7 +47,19 @@ function lovage_get_extensions() {
 			'force_activation'   => false,
 			'force_deactivation' => false,
 			'external_url'       => '',
-			'image_url'          => 'https://ps.w.org/lovage-blocks/assets/icon-256x256.png'
+			'image_url'          => LOVEAGE_INC_URI . 'admin/assets/img/lovage-block.png'
+		),
+		'lovage-portfolio'  => array(
+			'name'               => 'Lovage Portfolio',
+			'slug'               => 'lovage-portfolio',
+			'required'      	 => false,
+			'author'			 => 'Lovage',
+			'description'		 => esc_html__( 'Lovage is a simple portfolio plugin that allows you to show your projects.', 'lovage' ),
+			'version'            => '1.0.0',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+			'external_url'       => '',
+			'image_url'          => LOVEAGE_INC_URI . 'admin/assets/img/lovage-portfolio.png'
 		),
 
     );
