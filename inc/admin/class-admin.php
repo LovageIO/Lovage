@@ -248,7 +248,7 @@ class Lovage_Admin {
 		// We need to display the 'Install' hover link.
 		if ( ! isset( $installed_extensions[ $item['file_path'] ] ) ) {
 			
-			if ( $item['premium'] ){
+			if ( isset( $item['premium'] ) && $item['premium'] ){
 				$disable_class = ' disabled';
 			}
 

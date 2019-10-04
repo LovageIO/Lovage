@@ -36,6 +36,9 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 ## Changelogs
 
+= 1.0.4.5 = 
+* Fixed a PHP bug in class-admin.php file.
+
 = 1.0.4.4 = 
 * Added Lovage Portfolio Extension.
 
