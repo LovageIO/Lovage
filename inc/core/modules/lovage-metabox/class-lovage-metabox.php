@@ -95,10 +95,10 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 			?>
 			<div id="lovage-metabox-tabs-<?php echo esc_html( $metabox_id );?>" class="lovage-metabox-tabs">
 
-				<?php wp_nonce_field( basename( __FILE__ ), $this->metabox['id'].'_nonce' ); ?>
+				<?php wp_nonce_field( basename( __FILE__ ), esc_attr( $this->metabox['id'] ).'_nonce' ); ?>
 
 				<?php if( isset( $this->metabox['description'] ) && '' !== $this->metabox['description'] ):?>
-					<p class="lovage-desc"><?php echo esc_html( $this->metabox['description'] );?></p>
+					<p class="lovage-desc"><?php echo wp_kses_post( $this->metabox['description'] );?></p>
 			    <?php endif;?>
 
 				<?php if( isset( $tabs ) ):?>
@@ -140,7 +140,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 								?>
 								<dl>
 									<dt scope="row"><label for="<?php echo esc_html( $id );?>"><?php echo esc_html( $label );?></label></dt>
-									<dd class="lovage-option"><?php $this->option_type( $id, $args );?><span class="lovage-meta-desc"><?php echo esc_html( $description );?></span></dd>
+									<dd class="lovage-option"><?php $this->option_type( $id, $args );?><span class="lovage-meta-desc"><?php echo wp_kses_post( $description );?></span></dd>
 								</dl>
 								<?php 
 								    endif;
@@ -169,7 +169,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 							<dt scope="row"><label for="<?php echo esc_html( $id );?>"><?php echo esc_html( $label );?></label></dt>
 							<dd class="lovage-option <?php echo esc_attr( $type );?>">
 								<?php $this->option_type( $id, $args );?>
-								<span class="lovage-meta-desc"><?php echo esc_html( $description );?></span>
+								<span class="lovage-meta-desc"><?php echo wp_kses_post( $description );?></span>
 							</dd>
 						</dl>
 						<?php endif; endforeach;?>
@@ -205,15 +205,15 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 			switch( $type ){
 
 				case 'number':
-				  $html .= '<input type="number" value="'.$value.'" class="'.$class.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
+				  $html .= '<input type="number" value="' . sanitize_text_field( $value ) . '" class="' . esc_html( $class ) . '" placeholder="' . esc_html( $placeholder ) . '" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '" />';
 				  break;
 
 				case 'email':
-				  $html .= '<input type="email" value="'.$value.'" class="'.$class.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
+				  $html .= '<input type="email" value="' . sanitize_email( $value ) . '" class="' . esc_html( $class ). '" placeholder="' . esc_html( $placeholder ) . '" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '" />';
 				  break;
 
 				case 'textarea':
-				  $html .= '<textarea placeholder="'.$placeholder.'" class="'.$class.'" name="'.$id.'" id="'.$id.'">'.$value.'</textarea>';
+				  $html .= '<textarea placeholder="' . sanitize_textarea_field( $value ) . '" class="' . esc_html( $class ). '" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '">' . sanitize_textarea_field( $value ) . '</textarea>';
 				  break;
 
 				case 'select':
@@ -224,11 +224,11 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				  	$callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
 				  	if( $callback ){
-						$choices .= '<option value="'.$val.'" '.$selected.'>'.$label.'</option>';
+						$choices .= '<option value="' . esc_html( $val ) . '" '.$selected.'>' . esc_html( $label ) . '</option>';
 					}
 				  }
 
-				  $html .= '<select name="'.$id.'" id="'.$id.'" class="'.$class.'">'.$choices.'</select>';
+				  $html .= '<select class="' . esc_html( $class ). '" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '">' . $choices . '</select>';
 				  break;
 
 				case 'range':
@@ -238,20 +238,20 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				  $val  = $value !== $default ? $value : $default;
 				  $html .= '
 					<div class="lovage-metabox-range">
-				 	 <input type="range" name="'.$id.'" id="'.$id.'" min="'.$min.'" max="'.$max.'" value="'.$val.'" class="lovage-slider '.$class.'"> 
+				 	 <input type="range" name=" ' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '" min="' . esc_attr( $min ) . '" max="' . esc_attr( $max ) . '" value="' . sanitize_text_field( $val ) . '" class="lovage-slider ' . esc_attr( $class ) . '"> 
 				 	 <div class="lovage-metabox-range-numbers">
-				 	   <span>'.$min.'</span>
-				 	   <span id="lovage-range-value-'.$id.'" class="lovage-metabox-range-value"></span>
-				 	   <span>'.$max.'</span>
+				 	   <span>' . esc_attr( $min ) . '</span>
+				 	   <span id="lovage-range-value-'.esc_attr( $id ).'" class="lovage-metabox-range-value"></span>
+				 	   <span>' . esc_attr( $max ) . '</span>
 				 	 </div>
 				 	</div>
 				 	<script>
-						var lovage_range_'.$id.' = document.getElementById("'.$id.'");
-						var lovage_range_value_'.$id.' = document.getElementById("lovage-range-value-'.$id.'");
-						lovage_range_value_'.$id.'.innerHTML = lovage_range_'.$id.'.value;
+						var lovage_range_' . esc_attr( $id ) . ' = document.getElementById("' . esc_attr( $id ) . '");
+						var lovage_range_value_' . esc_attr( $id ) . ' = document.getElementById("lovage-range-value-' . esc_attr( $id ) . '");
+						lovage_range_value_' . esc_attr( $id ) . '.innerHTML = lovage_range_' . esc_attr( $id ) . '.value;
 
-						lovage_range_'.$id.'.oninput = function() {
-						    lovage_range_value_'.$id.'.innerHTML = this.value;
+						lovage_range_'. esc_attr( $id ) .'.oninput = function() {
+						    lovage_range_value_'. esc_attr( $id ) .'.innerHTML = this.value;
 						}
 					</script>
 				 	';
@@ -260,8 +260,8 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				case 'checkbox':
 				  $checked = ( $value == 1 ) ? 'checked="checked"' : '';
 				  $html .= '
-				  <label class="lovage-metabox-checkbox '.$class.'">
-				  	<input type="checkbox" class="'.$style.'" name="'.$id.'" id="'.$id.'" value="1" '.$checked.'>
+				  <label class="lovage-metabox-checkbox ' . esc_attr( $class ) . '">
+				  	<input type="checkbox" class="' . esc_attr( $class ). '" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '" value="1" '.$checked.'>
 				  	<span class="checkmark"></span>
 				  </label>';
 				  break;
@@ -281,8 +281,8 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 			        $callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
 			        if( $callback ){
-					  	$html .= '<label class="lovage-metabox-checkbox '.$class.'">
-					  				<input type="checkbox" class="'.$style.'" name="'.$id.'[]" id="'.$id.'['.$i.']" value="'.$val.'" '.$checked.'><span>'.$label.'</span>
+					  	$html .= '<label class="lovage-metabox-checkbox ' . esc_attr( $class ) . '">
+					  				<input type="checkbox" class="' . esc_attr( $class ) . '" name="' . esc_attr( $id ) . '[]" id="' . esc_attr( $id ) . '['. $i .']" value="' . esc_attr( $val ) . '" '.$checked.'><span>' . esc_html( $label ) . '</span>
 					  				<span class="checkmark"></span>
 					  			  </label>';
 				  	}
@@ -298,7 +298,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 
 				  	if( $callback ){
 				  		$html .= '<label class="lovage-metabox-radio">
-				  					<input type="radio" class="'.$class.'" name="'.$id.'" value="'.$val.'" '.$checked.'><span>'.$label.'</span>
+				  					<input type="radio" class="' . esc_attr( $class ) . '" name="' . esc_attr( $id ) . '" value="' . esc_attr( $val ) . '" '.$checked.'><span>' . esc_html( $label ) . '</span>
 					  				<span class="checkmark"></span>
 					  			  </label>';
 				  	}
@@ -315,12 +315,12 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				  	$callback = isset( $label['callback'] ) ? call_user_func( $label['callback'] ) : true;
 
 					if( $callback ){
-					  	$html .= '<label class="lovage-metabox-radio-image '.$class.'">
-					  				<input type="radio" name="'.$id.'" value="'.$val.'" '. $checked.'>
-					  				<img src="'.$label['image'].'" />';
+					  	$html .= '<label class="lovage-metabox-radio-image ' . esc_attr( $class ) . '">
+					  				<input type="radio" name="' . esc_attr( $id ) . '" value="' . esc_attr( $val ) . '" '. $checked.'>
+					  				<img src="' . esc_utl( $label['image'] ) . '" />';
 
 					  	    if( isset( $label['title'] ) && '' !== $label['title'] ){
-					  		   $html .= '<span class="lovage-metabox-radio-image-title">'.$label['title'].'</span>';
+					  		   $html .= '<span class="lovage-metabox-radio-image-title">' . esc_html( $label['title'] ) . '</span>';
 					  	    }
 					  		$html .= '</label>';
 				  	}
@@ -336,29 +336,29 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 			            $checked = null;
 			        }
 				  $html .= '<label class="lovage-metabox-switch '.$class.'">
-							  <input type="checkbox" name="'.$id.'" id="'.$id.'" value="1" '.$checked.'>
+							  <input type="checkbox" name="' . esc_html( $id ) . '" id="' . esc_html( $id ) . '" value="1" '.$checked.'>
 							  <span class="slider round"></span>
 						    </label>';
 				  break;
 
 				case 'date-picker':
-				  $html .= '<input type="text" placeholder="'.$placeholder.'" class="lovage-metabox-date-picker '.$class.'" name="'.$id.'" id="'.$id.'" value="'.$value.'">';
+				  $html .= '<input type="text" placeholder="' . esc_html( $placeholder ) . '" class="lovage-metabox-date-picker ' . esc_attr( $class ) . '" name="' . esc_html( $id ) . '" id="' . esc_html( $id ) . '" value="' . sanitize_text_field( $value ) . '">';
 				  break;
 
 				case 'colorpicker':
-				  $html .= '<input type="text" placeholder="'.$placeholder.'" class="'.$class.'" value="'.$value.'" name="'.$id.'" id="'.$id.'" />
+				  $html .= '<input type="text" placeholder="' . esc_html( $placeholder ) . '" class="' . esc_attr( $class ) . '" value=" ' . sanitize_text_field( $value ) . '" name="' . esc_html( $id ) . '" id="' . esc_html( $id ) . '" />
 				  			<script>jQuery(document).ready(function($){
-						    $("#'.$id.'").wpColorPicker();
+						    $("#' . esc_html( $id ) . '").wpColorPicker();
 						    });</script>
 				  	  ';
 				  break;
 
 				case 'image':
-				  $html .= '<div class="lovage-metabox-image '.$class.'">';
-				  $html .= '<input type="url" class="'.$class.'" value="'.$value.'" name="'.$id.'" id="'.$id.'" />
+				  $html .= '<div class="lovage-metabox-image ' . esc_attr( $class ) . '">';
+				  $html .= '<input type="url" class="' . esc_attr( $class ) . '" value="' . esc_url( $value ) . '" name="' . esc_html( $id ) . '" id="' . esc_html( $id ) . '" />
 				  	       <input type="button" class="image-upload button" value="'.__( 'Choose or Upload an Image', 'lovage' ).'" />';
 				  if( isset( $value ) && $value !== '' ){
-				  	$html .= '<span class="lovage-image-preview"><div class="preview-image"><img src="'.$value.'" /> <a href="javascript:;" class="delete">&#10005</a></div></span>';
+				  	$html .= '<span class="lovage-image-preview"><div class="preview-image"><img src="' . esc_url( $value ) . '" /> <a href="javascript:;" class="delete">&#10005</a></div></span>';
 				  }else{
 				  	   $html .= '<span class="lovage-image-preview"></span>';
 				  }
@@ -366,8 +366,8 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				  break;
 
 				case 'multi-image':
-				  $html .= '<div class="lovage-metabox-image lovage-metabox-multi-image '.$class.'">';
-				  $html .= "<input type='hidden' value='".$value."' name='".$id."' id='".$id."' />";
+				  $html .= '<div class="lovage-metabox-image lovage-metabox-multi-image ' . esc_attr( $class ) . '">';
+				  $html .= "<input type='hidden' value='" . esc_html( $value ) . "' name='" . esc_html( $id ) . "' id='" . esc_html( $id ) . "' />";
 				  $html .= '<input type="button" class="multi-image-upload button" value="'.__( 'Choose or Upload Images', 'lovage' ).'" />';
 				  
 				  if( $value !== '' ){
@@ -376,10 +376,10 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 
 				  	   if( isset( $images ) ){
 					  	   foreach( $images as $image ){
-					  	   	$preview .= '<div class="preview-image" id="image-'.$image->id.'"><img src="'.esc_url( $image->url ).'" /> <a href="javascript:;" class="delete">&#10005</a></div>';
+					  	   	$preview .= '<div class="preview-image" id="image-' . esc_attr( $image->id ) . '"><img src="'. esc_url( $image->url ) . '" /> <a href="javascript:;" class="delete">&#10005</a></div>';
 					  	   }
 				  	   }
-				  	   $html .= '<span class="lovage-image-preview">'.$preview.'</span>';
+				  	   $html .= '<span class="lovage-image-preview">' . $preview . '</span>';
 				  }else{
 				  	   $html .= '<span class="lovage-image-preview"></span>';
 				  }
@@ -387,16 +387,12 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 				  break;
 
 				case 'url':
-				  $html .= '<input type="url" placeholder="'.$placeholder.'" class="'.$class.'" value="'.$value.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
-				  break;
-
-				case 'email':
-				  $html .= '<input type="email" placeholder="'.$placeholder.'" class="'.$class.'" value="'.$value.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
+				  $html .= '<input type="url" placeholder="' . esc_html( $placeholder ) . '" class="' . esc_attr( $class ) . '" value="' . esc_url( $value ) . '" placeholder="' . esc_html( $placeholder ) . '" name="' . esc_attr( $id ). '" id="' . esc_attr( $id ) . '" />';
 				  break;
 
 				case 'text':
 				default:
-				  $html .= '<input type="text" placeholder="'.$placeholder.'" class="'.$class.'" value="'.$value.'" placeholder="'.$placeholder.'" name="'.$id.'" id="'.$id.'" />';
+				  $html .= '<input type="text" laceholder="'.esc_html( $placeholder ).'" class="' . esc_attr( $class ) . '" value="' .sanitize_text_field( $value ) . '" placeholder="' . esc_html( $placeholder ) . '" name="' . esc_attr( $id ). '" id="' . esc_attr( $id ) . '" />';
 				  break;
 			}
 
@@ -443,7 +439,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 			wp_enqueue_media();
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_script( 'wp-color-picker' );
-			wp_enqueue_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
+			wp_enqueue_style( 'jquery-ui', LOVEAGE_CORE_URI.'modules/lovage-metabox/jquery-ui.css' );
 
 			wp_enqueue_style( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.css' );
 			wp_enqueue_script( 'lovage-metabox', LOVEAGE_CORE_URI.'modules/lovage-metabox/lovage-metabox.js', array( 'jquery','jquery-ui-datepicker' ), '', true );
