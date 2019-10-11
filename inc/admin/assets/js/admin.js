@@ -21,6 +21,19 @@ jQuery(document).ready(function($){
         }
     });
 
+    /**
+     * Change Page Template action
+     */
+    $(window).load(function(){
+        $('.editor-page-attributes__template').find('#inspector-select-control-0').on('change', function(){
+             if( $(this).val() !== '' ){
+                $('body').addClass('not-default-template');
+             }else{
+                $('body').removeClass('not-default-template');
+             }
+        });
+    });
+
 	/**
 	 * Ajax install WordPress plugin  
 	 */

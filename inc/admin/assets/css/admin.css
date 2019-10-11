@@ -215,3 +215,7 @@
   }
 }
 
+.not-default-template dl.lovage_metabox__lovage_page_layout{
+  display: none;
+}
+

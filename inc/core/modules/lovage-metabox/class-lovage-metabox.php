@@ -90,29 +90,29 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 		 * Create Metabox HTML
 		 */
 		public function create_meta_box_content() {
-			$tabs 	    = isset( $this->metabox['tabs'] ) ? $this->metabox['tabs'] : '';
+			$tabs 	    = isset( $this->metabox['tabs'] ) ? $this->metabox['tabs'] : null;
 			$metabox_id = isset( $this->metabox['id'] ) ? $this->metabox['id'] : '';
 			?>
 			<div id="lovage-metabox-tabs-<?php echo esc_html( $metabox_id );?>" class="lovage-metabox-tabs">
 
-				<?php wp_nonce_field( basename( __FILE__ ), esc_attr( $this->metabox['id'] ).'_nonce' ); ?>
+				<?php wp_nonce_field( basename( __FILE__ ), esc_attr( $metabox_id ).'_nonce' ); ?>
 
 				<?php if( isset( $this->metabox['description'] ) && '' !== $this->metabox['description'] ):?>
 					<p class="lovage-desc"><?php echo wp_kses_post( $this->metabox['description'] );?></p>
 			    <?php endif;?>
 
-				<?php if( isset( $tabs ) ):?>
+				<?php if( isset( $tabs ) || $tabs !== null ):?>
 					<div class="lovage-metabox-tabs-container">
 						<ul>
 							
 								<?php 
-								$i=1; 
-								foreach( $tabs as $key => $val ):
+									$i=1; 
+									foreach( $tabs as $key => $val ):
 								?>
 									<li class="lovage-metabox-tab-item <?php echo $i==1 ? 'active' : ''; ?>" id="lovage-metabox-tab-item-<?php echo esc_html( trim( $key ) );?>"><a href="javascript:void(0);" data-target="#lovage-metabox-tab-content-<?php echo esc_html( $key );?>"><?php echo esc_html( $val['title'] );?></a></li>
 								<?php
-								$i++;
-								endforeach;
+									$i++;
+									endforeach;
 								?>
 
 						</ul>
@@ -121,7 +121,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 
 				<?php 
 				// Tabs
-				if( isset( $tabs ) ): 
+				if( isset( $tabs ) || $tabs !== null ): 
 					$j = 1; 
 					foreach( $tabs as $key => $val ):
 				?>
@@ -138,7 +138,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 
 									if( $option_callback && $tab == $key ):
 								?>
-								<dl>
+								<dl class="lovage-metabox-section lovage_metabox_<?php echo esc_html($id);?>">
 									<dt scope="row"><label for="<?php echo esc_html( $id );?>"><?php echo esc_html( $label );?></label></dt>
 									<dd class="lovage-option"><?php $this->option_type( $id, $args );?><span class="lovage-meta-desc"><?php echo wp_kses_post( $description );?></span></dd>
 								</dl>
@@ -317,7 +317,7 @@ if( ! class_exists( 'Lovage_MetaBox' ) ){
 					if( $callback ){
 					  	$html .= '<label class="lovage-metabox-radio-image ' . esc_attr( $class ) . '">
 					  				<input type="radio" name="' . esc_attr( $id ) . '" value="' . esc_attr( $val ) . '" '. $checked.'>
-					  				<img src="' . esc_utl( $label['image'] ) . '" />';
+					  				<img src="' . esc_url( $label['image'] ) . '" />';
 
 					  	    if( isset( $label['title'] ) && '' !== $label['title'] ){
 					  		   $html .= '<span class="lovage-metabox-radio-image-title">' . esc_html( $label['title'] ) . '</span>';

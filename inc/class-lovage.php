@@ -36,7 +36,7 @@ if( ! class_exists( 'Lovage' ) ) {
 			add_action( 'after_setup_theme',          array( $this, 'widgets_init' ) );
 			add_action( 'wp_enqueue_scripts',         array( $this, 'scripts' ) );
 			add_action( 'wp_enqueue_scripts',         array( $this, 'child_scripts' ), 30 ); 
-			add_action( 'admin_init',         		  array( $this, 'admin_scripts' ), 10);
+			add_action( 'admin_init',         		  array( $this, 'admin_scripts' ), 10 );
 		}
 
 		public function constants(){
@@ -327,7 +327,6 @@ if( ! class_exists( 'Lovage' ) ) {
 		public function admin_scripts(){
 			wp_enqueue_style( "farbtastic" );
 			wp_enqueue_script( "farbtastic" );
-			wp_enqueue_script( "jquery" );
 			wp_enqueue_style( "lovage-admin", LOVEAGE_INC_URI."admin/assets/css/admin.css", false, "1.0", "all" );
 			wp_enqueue_script( "lovage-admin", LOVEAGE_INC_URI."admin/assets/js/admin.js", array('jquery'), "1.0", true );
 			wp_localize_script( 'lovage-admin', 'lovage_admin_data', array(
