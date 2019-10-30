@@ -8,7 +8,7 @@
 
   a {
     display: block;
-    font-size:13px;
+    font-size:12px;
     font-weight:400;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -33,7 +33,7 @@
       position: relative;
     
       a{
-        padding:0 15px;
+        padding:0 10px;
         height:auto;
         height: 70px;
         display: block;
@@ -55,7 +55,8 @@
     }
 
     :hover > ul,
-    .focus > ul {
+    ul.focused,
+    li a:focus + ul.sub-menu {
       left: auto;
     }
 
@@ -66,7 +67,7 @@
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
       float: left;
       position: absolute;
-      top: 70px; 
+      top: 68px; 
       left: -999em;
       z-index: 9;
       background:#fff;
@@ -101,12 +102,19 @@
         background:none;
       }
 
-      li:hover,
-      li.focus {
+      li:hover {
         background:#f8f8f8;
 
         > ul{
            left: 100%;
+        }
+      }
+
+      li.focus {
+        background: #11c39b;
+
+        a{
+           color: #fff;
         }
       }
 
@@ -132,7 +140,7 @@
 .main-navigation ul ul a{
   width: 200px;
   color:#000;
-  font-size:0.7rem;
+  font-size: 12px;
   border:none;
   height:auto;
   font-weight:normal;

@@ -42,10 +42,7 @@ function lovage_page_metabox(){
 	   'tabs'		  => apply_filters( 'lovage_page_metabox_tabs', array(
 	      'general' => array(
 	      				'title'    => esc_html__( 'General', 'lovage' ),
-	      			   ),
-	      'code' => array(
-	      				'title'    => esc_html__( 'Additional Codes', 'lovage' ),
-	      			   ),
+	      			   )
 	   ) ),
 	   'options'  => apply_filters( 'lovage_page_metabox_options', array(
 	   	   
@@ -71,22 +68,6 @@ function lovage_page_metabox(){
 						'image' => LOVEAGE_INC_URI.'assets/images/left-sidebar.jpg',
 					)
 				) )
-		   ),
-
-		   $prefix.'page_css' => array(
-				'label'			 => esc_html( 'Page CSS', 'lovage' ),
-				'description'    => esc_html__( 'Don\'t need to start and close with <style> tag.' , 'lovage' ),
-				'tab'			 => 'code',
-				'type'			 => 'textarea',
-				'default'		 => ''
-		   ),
-
-		   $prefix.'page_js' => array(
-				'label'			 => esc_html( 'Page Javascript', 'lovage' ),
-				'description'    => esc_html__( 'Don\'t need to start and close with <script> tag.' , 'lovage' ),
-				'tab'			 => 'code',
-				'type'			 => 'textarea',
-				'default'		 => ''
 		   )
 	   ) )
 	);

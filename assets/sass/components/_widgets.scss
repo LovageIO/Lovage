@@ -199,7 +199,8 @@
 --------------------------------------------------------------*/
 
 .screen-reader-text{
-  display:none;
+  position: absolute;
+  right: -1000em;
 }
 
 .lovage-search{

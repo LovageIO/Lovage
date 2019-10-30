@@ -164,14 +164,6 @@
    color: #fff;
 }
 
-#lovage-install-demo-import-plugin,
-#lovage-demo-install-loader{
-   float: left;
-}
-#lovage-demo-install-loader{
-   display: none;
-}
-
 /* Loader */
 .lovage-loader,
 .lovage-loader:after {

@@ -5,7 +5,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -284,9 +284,6 @@ if(!class_exists('Lovage_Theme_Customizer')){
 				'textarea_focus_color'		      => '#f9f9f9',
 				'textarea_focus_border_color'	  => '#f9f9f9',
 				'textarea_focus_text_color'	  	  => '#000000',
-				
-				'head_codes'		  			  => '',
-				'footer_codes'		  			  => '',
 
 				'shop_sidebar'					  => 0
 			);
@@ -324,7 +321,6 @@ if(!class_exists('Lovage_Theme_Customizer')){
 			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-components.php', TRUE );
 			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-layout.php', TRUE );
 			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-typography.php', TRUE );
-			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-codes.php', TRUE );
 			load_template( LOVEAGE_INC_DIR.'customizer/settings/settings-woocommerce.php', TRUE );
 
 			$options = array_merge(
@@ -332,7 +328,6 @@ if(!class_exists('Lovage_Theme_Customizer')){
 				$GLOBALS[ 'lovage_setting_components' ], 
 			    $GLOBALS[ 'lovage_setting_typography' ], 
 				$GLOBALS[ 'lovage_setting_layout' ], 
-				$GLOBALS[ 'lovage_setting_codes' ], 
 				$GLOBALS[ 'lovage_setting_woocommerce' ]
 			);
 

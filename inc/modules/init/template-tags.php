@@ -6,7 +6,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.5
  */
 
 
@@ -18,7 +18,7 @@ if ( ! function_exists( 'lovage_header_class' ) ) :
 		 
 		  $sticky_header = '';
 
-		  $header_class = 'class="site-header lovage-'.esc_html(lovage_theme_customizer()->value('header_layout')).'"';
+		  $header_class = 'class="site-header lovage-' . esc_html( lovage_theme_customizer()->value( 'header_layout' ) ) . '"';
 	      echo wp_kses_post( $header_class );
 	}
 endif;
@@ -30,15 +30,15 @@ if ( ! function_exists( 'lovage_page_header' ) ) :
 	 */
 	function lovage_page_header(){
 
-		if(is_home() || is_front_page() || is_single()){
+		if( is_home() || is_front_page() || is_single() ){
 			return;
 		}
 
-		if(is_page() && lovage_is_fullwidth()){
+		if( is_page() && lovage_is_fullwidth() ){
 			return;
 		}
 
-		if(is_page_template('page-templates/page-blog-template.php') || is_page_template('elementor_canvas') || is_page_template('elementor_header_footer')){
+		if( is_page_template('page-templates/blog-page-template.php') || is_page_template('page-templates/fullwidth-page-template.php')  || is_page_template('elementor_canvas') || is_page_template('elementor_header_footer')){
 			return;
 		}
 
@@ -134,16 +134,21 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 	 */
 	function lovage_before_content(){
 	    
+		if( is_page() && is_page_template( 'page-templates/fullwidth-page-template.php' ) ) {
+			 $width = 'fullwidth';
+			 return;
+		}
+
 		global $post;
 
 		$width = $GLOBALS['lovage_content_width'];
 	    
-		if( !is_search() && !is_404() ){
+		if( ! is_search() && !is_404() ){
 
-			if( is_singular( apply_filters( 'lovage_post_type_content_width', array( 'post', 'page', 'attachment' ) ) ) && ! lovage_is_woocommerce_page() ){ 
+			if( ! is_page_template( 'page-templates/fullwidth-template.php' ) && is_singular( apply_filters( 'lovage_post_type_content_width', array( 'post', 'page', 'attachment' ) ) ) && ! lovage_is_woocommerce_page() ){
 
 			  if( get_post_meta($post->ID, '_lovage_page_layout', true) == 'one-column'){
-			         $width = 800;
+			       $width = 800;
 			  }elseif(get_post_meta($post->ID, '_lovage_page_layout', true) == 'default' || get_post_meta($post->ID, '_lovage_page_layout', true) == null ){
 
 			  	 if(null == lovage_theme_customizer()->value('blog_post_layout') || lovage_theme_customizer()->value('blog_post_layout') == 'one-column'){
@@ -160,7 +165,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) :
 		}
 
 		echo '<div id="page" class="hfeed site lovage-grid-' . esc_html( $width ) . '">
-		  		 <div id="content" class="site-content">';
+		  		 <div id="content" class="site-content" tabindex="-1">';
 	}
 endif;
 
@@ -310,7 +315,7 @@ if ( ! function_exists( 'lovage_primary_navigation' ) ) :
 	    if(lovage_theme_customizer()->value('header_layout') == 'centered_minimal'){	
 		   $render .= '<a href="javascript:void(0);" class="mini-menu"><i class="lovage-icon lovage-icon-menu"></i></a>';
 	    }else{
-	       $render .= '<nav id="site-navigation" class="main-navigation '.$nav_grid_class.'">
+	       $render .= '<nav id="site-navigation" role="navigation" aria-label="Main navigation" class="main-navigation '.$nav_grid_class.'">
 			<button class="menu-toggle mini-menu" aria-controls="primary-menu" aria-expanded="false"><i class="lovage-icon lovage-icon-menu"></i></button>'
 			.wp_nav_menu( array( 
 				'theme_location' => 'primary', 

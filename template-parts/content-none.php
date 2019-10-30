@@ -17,7 +17,7 @@
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-		<p><?php esc_html_e( 'Ready to publish your first post?', 'lovage' ); ?> <a href="<?php esc_url( admin_url( 'post-new.php' ) ) ); ?>"><?php esc_html_e('Get started here', 'lovage'); ?></a></p>
+		<p><?php esc_html_e( 'Ready to publish your first post?', 'lovage' ); ?> <a href="<?php esc_url( admin_url( 'post-new.php' ) ); ?>"><?php esc_html_e( 'Get started here', 'lovage' ); ?></a></p>
 
 		<?php elseif ( is_search() ) : ?>
 

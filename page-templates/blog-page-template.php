@@ -1,6 +1,12 @@
 <?php
 /**
  * Template Name: Blog Template
+ *
+ * This is the template that displays the pages with fullwidth template.
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ * @package Lovage
+ * @author Lovage
+ * @version 1.0
  */
 
 get_header(); 

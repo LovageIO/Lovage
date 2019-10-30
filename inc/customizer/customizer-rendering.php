@@ -5,7 +5,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.5
  */
 
 /**
@@ -22,8 +22,11 @@ function lovage_customizer_css_render(){
 	}
 
 	if( lovage_theme_customizer()->value( 'theme_link_hover_color' ) !== lovage_theme_customizer()->defaults['theme_link_hover_color'] ){
-		$css[] = 'a:hover, .related-posts .grids .item a:hover, .entry-header .post-categories li a:hover, .post-navigation a:hover, .site-bottom .bottom-widget .widget li a:hover, .site-footer a:hover, .widget li a:hover{
+		$css[] = 'a:hover, a:focus, .related-posts .grids .item a:hover, .entry-header .post-categories li a:hover, .post-navigation a:hover, .site-bottom .bottom-widget .widget li a:hover, .site-footer a:hover, .widget li a:hover{
 			color: '.lovage_theme_customizer()->value( 'theme_link_hover_color' ).';
+		}
+		.main-navigation ul ul li.focused{
+			background-color: '.lovage_theme_customizer()->value( 'theme_link_hover_color' ).';
 		}';
 	}
 
@@ -412,21 +415,6 @@ function lovage_customizer_css_render(){
 }
 add_action( 'wp_enqueue_scripts','lovage_customizer_css_render', 1000 );
 
-/**
- * Rendering Head Codes
- */
-function lovage_headcode_render(){
-	echo wp_kses_post( stripslashes( lovage_theme_customizer()->value('head_codes') ) ) . PHP_EOL;
-}
-add_action( 'wp_head','lovage_headcode_render' );
-
-/**
- * Rendering Footer Codes
- */
-function lovage_footercode_render(){
-	echo wp_kses_post( stripslashes( lovage_theme_customizer()->value('footer_codes' ) ) ) . PHP_EOL;
-}
-add_action( 'wp_footer','lovage_footercode_render' );
 
 /**
  * Import Google Fonts

@@ -30,10 +30,6 @@ do_action('Lovage_Admin');
               load_template( LOVEAGE_INC_DIR . 'admin/ui/extensions.php', TRUE );
               break;
 
-            case 'lovage-demo-installer':
-              load_template( LOVEAGE_INC_DIR . 'admin/ui/demos.php', TRUE );
-              break;
-
             default:
               load_template( LOVEAGE_INC_DIR . 'admin/ui/dashboard.php', TRUE );
        }

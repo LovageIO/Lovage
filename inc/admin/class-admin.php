@@ -7,7 +7,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @since 1.0.3.4
+ * @since 1.0.5
  */
 class Lovage_Admin {
 
@@ -20,12 +20,11 @@ class Lovage_Admin {
 	/**
 	 * Constructor
 	 * Sets up the welcome screen
-	 * @since 1.0.0
+	 * @since 1.0.5
 	 */
 	public function __construct() {
 
 		add_action( 'admin_menu', array( $this, 'admin_register_menu' ) );
-		add_action( 'load-themes.php', array( $this, 'activation_redirection' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_style' ) );
 		add_action( 'admin_init', array( $this,'plugin_action' ) );
 		add_action( 'Lovage_Admin', array( $this, 'admin_ui_header' ), 10 );
@@ -36,19 +35,6 @@ class Lovage_Admin {
 		add_action( 'after_setup_theme', array( $this, 'check_update' ) );
 
 	} // end constructor
-     
-	/**
-	 * Adds an admin notice upon successful activation.
-	 * @since 1.0
-	 */
-	public function activation_redirection() {
-		global $pagenow;
-
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { 
-			wp_redirect( admin_url( "themes.php?page=lovage" ) ); 
-		}
-	}
-
 
 	/**
 	 * Load admin screen css
@@ -86,15 +72,6 @@ class Lovage_Admin {
 			 		'capability' => 'edit_theme_options',
 			 		'show_as_tab'=> true
 			);
-
-		 	$admin_menu['lovage-demo-installer'] = array(
-		 		'menu_name'  => null,
-		 		'page_title' => esc_html__( 'Lovage Demos', 'lovage' ),
-		 		'tab_title'  => esc_html__( 'Demos', 'lovage' ),
-		 		'menu_page'  => array( $this, 'admin_ui' ),
-		 		'capability' => 'edit_theme_options',
-		 		'show_as_tab'=> true
-		 	);
 
 		 	$admin_menu['lovage-extensions'] = array(
 		 		'menu_name'  => null,

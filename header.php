@@ -26,13 +26,15 @@
 
 <body <?php body_class(); ?>>
 
+<a class="skip-link" tabindex="1" href="#content"><?php esc_html_e( 'Skip to content', 'lovage' ); ?></a>
+
+<?php wp_body_open(); ?>
+
 <div id="body-container">
 
-    <?php 
-      do_action( 'lovage_before_header' );
-    ?>
+    <?php do_action( 'lovage_before_header' ); ?>
 
-	<header id="masthead" <?php lovage_header_class();?>>
+	<header id="masthead" <?php lovage_header_class(); ?>>
 
 		<?php
 		/**
@@ -48,4 +50,4 @@
 		?>
 	</header><!-- #masthead -->
 	
-	<?php do_action( 'lovage_after_header' );?>
+	<?php do_action( 'lovage_after_header' ); ?>

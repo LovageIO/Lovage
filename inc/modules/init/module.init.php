@@ -37,8 +37,3 @@ load_template( LOVEAGE_MODULE_DIR.'init/elementor.php', TRUE );
  * Metabox
  */
 load_template( LOVEAGE_MODULE_DIR.'init/metabox.php', TRUE );
-
-/**
- * Metabox
- */
-load_template( LOVEAGE_MODULE_DIR.'init/inline-codes.php', TRUE );

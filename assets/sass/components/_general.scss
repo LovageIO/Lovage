@@ -8,6 +8,12 @@ body{
     line-height: 1.6;
 }
 
+:focus{
+  border-style: solid;
+  border-width: 2px;
+  border-color: #11c39b;
+}
+
 a{
 	color: $primary;
 	text-decoration: none;
@@ -16,9 +22,11 @@ a{
     -webkit-transition: all 0.2s; /* Safari and Chrome */
     -o-transition: all 0.2s; /* Opera */
 }
+a:focus,
 a:hover{
 	color: $link_hover;
 }
+
 h1,h2,h3,h4,h5,h6,blockquote,dt{
 	font-family: $heading_font;
 }
@@ -96,6 +104,9 @@ textarea:focus,
 select:focus,
 button:focus{
 	outline:none;
+	border-style: solid;
+    border-width: 2px;
+    border-color: #11c39b;
 	box-shadow: 2px 2px 20px rgba(0,0,0,.1);
 }
 
@@ -181,6 +192,27 @@ li{
 
 #lovage-page-header .social_share{
 	margin: 25px 0;
+}
+
+/*--------------------------------------------------------------
+# Skip to content link
+--------------------------------------------------------------*/
+.skip-link {
+    position: absolute;
+    top: -9999em;
+}
+.skip-link:focus {
+    left: auto;
+    top: 0;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 999;
+    background: $primary;
+    color: #fff;
+    outline: none;
 }
 
 /*--------------------------------------------------------------

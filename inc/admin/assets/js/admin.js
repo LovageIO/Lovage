@@ -4,7 +4,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @version 1.0
+ * @version 1.0.5
  */
 
 var jQuery;
@@ -25,40 +25,23 @@ jQuery(document).ready(function($){
      * Change Page Template action
      */
     $(window).load(function(){
-        $('.editor-page-attributes__template').find('#inspector-select-control-0').on('change', function(){
-             if( $(this).val() !== '' ){
+
+        function templatesChangeAction(){
+             var pageTemplate = $('.editor-page-attributes__template').find('#inspector-select-control-0').val();
+             if( pageTemplate === 'elementor_canvas' || pageTemplate === 'elementor_header_footer' || pageTemplate === 'page-templates/fullwidth-page-template.php' ){
                 $('body').addClass('not-default-template');
+                $('#lovage-metabox-tab-content-general').append('<div id="lovage-no-general-option">No options for this page template.</div>');
              }else{
                 $('body').removeClass('not-default-template');
+                $('#lovage-no-general-option').remove();
              }
+        }
+
+        templatesChangeAction();
+        $('.editor-page-attributes__template').find('#inspector-select-control-0').on('change', function(){
+            templatesChangeAction();
         });
     });
-
-	/**
-	 * Ajax install WordPress plugin  
-	 */
-	$('#lovage-install-demo-import-plugin:not(.button-disabled)').on('click', function(e){
-		e.preventDefault();
-        
-        var url = $(this).attr('href');
-        $(this).addClass('button-disabled');
-        $('#lovage-demo-install-loader').show();
-
-		$.ajax({
-            type: 'POST',
-            url: url,
-            success: function(data) {
-            	if(data){
-            		window.location.href = lovage_admin_data.admin_url + 'themes.php?page=lovage-demos';
-                    $(this).removeClass('button-disabled');
-                    $('#lovage-demo-install-loader').hide();
-            	}
-            },
-            error: function(xhr, status, error) {
-               console.log(status);
-            }
-        });
-	});
 
 
 	$(window).load(function(){
