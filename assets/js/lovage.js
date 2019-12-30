@@ -52,48 +52,6 @@
     }
   }
 
-  LovageTheme.transition = function(){
-     
-     $('#body-container').on('click', '[data-type="page-transition"]', function(event){
-       event.preventDefault();
-       //detect which page has been selected
-       var newPage = $(this).attr('href');
-       //if the page is not animating - trigger animation
-       changePage(newPage, true);
-    });
-
-    function changePage(url, bool) {
-       // trigger page animation
-       $('body').addClass('page-is-changing');
-       $('#page').empty();
-       loadNewContent(url, bool);
-    }
-
-    function loadNewContent(url, bool) {
-       var section = $('<div id="page" class="hfeed site lovage-grid-1140"></div>');
-       section.load(url+' #page > *', function(event){
-          // load new content and replace <main> content with the new one
-          $('#page').html(section);
-          //...
-          $('body').removeClass('page-is-changing');
-          //...
-
-          if(url != window.location){
-             //add the new page to the window.history
-             window.history.pushState({path: url},'',url);
-          }
-           $('a').attr('data-type', 'page-transition');
-       });
-    }
-
-    $(window).on('popstate', function() {
-       var newPageArray = location.pathname.split('/'),
-       //this is the url of the page to be loaded 
-       newPage = newPageArray[newPageArray.length - 1];
-       if( !isAnimating ) changePage(newPage);
-    });
-  }
-
   LovageTheme.header = function(){
 
     /**
@@ -103,12 +61,16 @@
 
         window.onscroll = function(){
           if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            document.getElementById('masthead').classList.add('sticky-header');
+            if(document.getElementById('masthead')) {
+              document.getElementById('masthead').classList.add('sticky-header');
+            }
             if($(window).width() <= 782){
                $('.admin-bar .sticky-header').css('margin-top', '0');
             }
           }else{
-            document.getElementById('masthead').classList.remove('sticky-header');
+            if(document.getElementById('masthead')) {
+              document.getElementById('masthead').classList.remove('sticky-header');
+            }
             if($(window).width() <= 782){
                $('.admin-bar .site-header').css('margin-top', '46px');
             }
@@ -392,14 +354,14 @@
       /* Keyboard accessible */
       $('#lovage-search-button').focus(function(){ 
          open('#lovage-search');
-      }).focus(function(){
+      });
+
+      $('#search-submit').blur(function(){
          close('#lovage-search');
       });
 
       $('#lovage-cart-button').focus(function(){ 
           open('#lovage-cart');
-      }).blur(function(){ 
-          close('#lovage-cart');
       });
       
       /* Click event */
@@ -443,7 +405,6 @@
    LovageTheme.init = function(){
       LovageTheme.basic();
       LovageTheme.skipLinkFix();
-      LovageTheme.transition();
       LovageTheme.header();
       LovageTheme.accessibleDropMenu();
       LovageTheme.mobileMenu();
@@ -454,35 +415,3 @@
    LovageTheme.init();
 
 })(jQuery);
-
-/**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
- */
-( function() {
-  var isIe = /(trident|msie)/i.test( navigator.userAgent );
-
-  if ( isIe && document.getElementById && window.addEventListener ) {
-    window.addEventListener( 'hashchange', function() {
-      var id = location.hash.substring( 1 ),
-        element;
-
-      if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-        return;
-      }
-
-      element = document.getElementById( id );
-
-      if ( element ) {
-        if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-          element.tabIndex = -1;
-        }
-
-        element.focus();
-      }
-    }, false );
-  }
-} )();

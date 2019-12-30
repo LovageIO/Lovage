@@ -4,12 +4,12 @@
 /* ## Main Navigation*/
 .main-navigation {
   display: block;
-  height:inherit;
+  height: inherit;
 
   a {
     display: block;
-    font-size:12px;
-    font-weight:400;
+    font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
@@ -17,7 +17,7 @@
   }
 
   a:hover{
-    color:$primary;
+    color: $primary;
   }
 
   ul {
@@ -26,15 +26,15 @@
     padding-left: 0;
     text-align: right;
     line-height: $headerheight;
-    height:auto;
+    height: auto;
 
     li{
-      display:inline-block;
+      display: inline-block;
       position: relative;
     
       a{
-        padding:0 10px;
-        height:auto;
+        padding: 0 10px;
+        height: auto;
         height: 70px;
         display: block;
         color: #000;
@@ -42,7 +42,7 @@
     }
 
     > ul > li[class*="current"]{
-      line-height:58px
+      line-height: 58px
     }
 
     li[class*="current"] a{
@@ -51,7 +51,7 @@
     }
 
     > ul li:first-child{
-      padding-left:0;
+      padding-left: 0;
     }
 
     :hover > ul,
@@ -70,16 +70,16 @@
       top: 68px; 
       left: -999em;
       z-index: 9;
-      background:#fff;
-      padding:0;
+      background: #fff;
+      padding: 0;
 
       li {
           text-align: left;
-          display:block;
-          height:auto;
+          display: block;
+          height: auto;
           line-height: 1.2em;
-          padding:10px;
-          background:none;
+          padding: 10px;
+          background: none;
           transition: all 0.2s;
           -moz-transition: all 0.2s; /* Firefox 4 */
           -webkit-transition: all 0.2s; /* Safari and Chrome */
@@ -91,15 +91,10 @@
           }
       }
       li:first-child{
-          border-radius:3px 3px 0 0;
+          border-radius: 3px 3px 0 0;
       }
       li:last-child{
-        border:none;
-      }
-
-      :hover > a,
-      .focus > a {
-        background:none;
+        border: none;
       }
 
       li:hover {
@@ -110,7 +105,7 @@
         }
       }
 
-      li.focus {
+      li.focused {
         background: #11c39b;
 
         a{
@@ -132,29 +127,29 @@
 
 
 .tmv_empty_menu{
-  text-align:right;
-  font-size:12px;
+  text-align: right;
+  font-size: 12px;
   opacity: .8;
 }
 
 .main-navigation ul ul a{
   width: 200px;
-  color:#000;
+  color: #000;
   font-size: 12px;
-  border:none;
-  height:auto;
-  font-weight:normal;
+  border: none;
+  height: auto;
+  font-weight: normal;
 }
 
 /* Small menu. */
 .menu-toggle{
-  color:#000;
+  color: #000;
   display: none;
   text-align: center;
-  background:none;
-  border:0;
+  background: none;
+  border: 0;
   font-size: 1.6em;
-  padding:0;
+  padding: 0;
 
   &:focus{
     box-shadow: none;

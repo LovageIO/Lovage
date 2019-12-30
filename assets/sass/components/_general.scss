@@ -8,23 +8,36 @@ body{
     line-height: 1.6;
 }
 
-:focus{
+:focus,
+li.focused {
   border-style: solid;
-  border-width: 2px;
+  border-width: 0 0 1px;
   border-color: #11c39b;
 }
 
-a{
-	color: $primary;
-	text-decoration: none;
-	transition: all 0.2s;
-    -moz-transition: all 0.2s; /* Firefox 4 */
-    -webkit-transition: all 0.2s; /* Safari and Chrome */
-    -o-transition: all 0.2s; /* Opera */
+div{
+  outline: 0;
 }
-a:focus,
-a:hover{
-	color: $link_hover;
+
+div:focus{
+  border: none;
+}
+
+a {
+  color: #11c39b;
+  text-decoration: none;
+  transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s;
+  /* Opera */
+  outline: 0;
+}
+
+a:hover {
+  color: #11c39b;
 }
 
 h1,h2,h3,h4,h5,h6,blockquote,dt{

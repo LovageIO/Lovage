@@ -47,6 +47,9 @@
 		 * @hooked lovage_site_header_image - 60
 		 */
 		do_action( 'lovage_header' );
+
+		/* Popup */
+ 		get_template_part( 'template-parts/content', 'popup' );
 		?>
 	</header><!-- #masthead -->
 	

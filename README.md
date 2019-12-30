@@ -36,6 +36,10 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 ## Changelogs
 
+= 1.0.6 = 
+* Fixed accessiable for sub menu and popup.
+* Fixed some CSS issues.
+
 = 1.0.5 = 
 * Support skip to content.
 * Support Accessiable for screen reader.

@@ -19,9 +19,6 @@
  * @Hooked  lovage_after_footer()
  */
  do_action( 'lovage_footer' );
-
- /* Popup */
- get_template_part( 'template-parts/content', 'popup' );
 ?>
 </div><!-- #body-container -->
 

@@ -262,22 +262,8 @@ if( ! class_exists( 'Lovage' ) ) {
 
 			$js = array(
 				array(
-					'handler' => 'imagesLoaded',
-					'path'    => '',
-					'dependencies' => '',
-					'version' => null,
-					'in_footer'=> true
-				),
-				array(
-					'handler' => 'masonry',
-					'path'    => '',
-					'dependencies' => '',
-					'version' => null,
-					'in_footer'=> true
-				),
-				array(
 					'handler' => 'jquery-ease',
-					'path'    => LOVEAGE_INC_URI.'assets/vendors/jquery.easing.min.js',
+					'path'    => LOVEAGE_THEME_URI.'assets/js/jquery.easing.min.js',
 					'dependencies' => array('jquery'),
 					'version' => null,
 					'in_footer' => false
@@ -285,7 +271,7 @@ if( ! class_exists( 'Lovage' ) ) {
 				array(
 					'handler' => 'lovage',
 					'path'    => LOVEAGE_THEME_URI.'assets/js/lovage.js',
-					'dependencies' => array('jquery'),
+					'dependencies' => array( 'jquery', 'imagesloaded', 'masonry' ),
 					'version' => null,
 					'in_footer' => true
 				),

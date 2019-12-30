@@ -30,17 +30,43 @@
 
   }
 
-  #lovage-popup-close{
-    float:right;
-    width:50px;
-    height:50px;
+  a#lovage-popup-close{
+    float: right;
+    width: 50px;
+    height: 50px;
     text-align: center;
     line-height: 50px;
     font-size: 3em;
-    color:#000;
+    color: #000;
     margin: 50px 20px 0 0;
     cursor: pointer;
+    opacity: 0.7;
+    position: relative;
   }
+
+  a#lovage-popup-close:focus,
+  a#lovage-popup-close:hover {
+    opacity: 1;
+  }
+  
+  #lovage-popup-close:before, 
+  #lovage-popup-close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+
+  #lovage-popup-close:before {
+    transform: rotate(45deg);
+  }
+  
+  #lovage-popup-close:after {
+    transform: rotate(-45deg);
+  }
+
 }
 
 .lovage-popup-overlay{
@@ -57,14 +83,14 @@
 
 @media (max-width: 768px){
   #lovage-popup{
-    width:100%;
-    margin-left:0;
+    width: 100%;
+    margin-left: 0;
 
     #lovage-popup-close{
       margin: 40px 20px 0 0;
     }
     .popup_content h3{
-      font-size:2rem;
+      font-size: 2rem;
     }
   }
 }
