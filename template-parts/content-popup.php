@@ -8,12 +8,13 @@
  */
 ?>
 
-<div id="lovage-popup">
-  <a id="lovage-popup-close" href="javascript:void(0);"></a>
+<div class="lovage-popup" id="lovage-<?php echo esc_attr( $popup_id ); ?>">
+  <a class="lovage-popup-close" href="javascript:void(0);"></a>
   
+  <?php if( $popup_id === 'search' ) : ?>
   <!--Search-->
-  <div id="lovage-search" class="popup_content">
-    <h3><?php esc_attr_e( 'Search Products', 'lovage' ); ?></h3>
+  <div class="popup_content">
+    <h3><?php esc_attr_e( 'Search', 'lovage' ); ?></h3>
   	<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) );?>" >
       <div class="lovage-search">
         <input type="text" id="s" placeholder="<?php esc_attr_e( 'Enter Keywords.', 'lovage' );?>" value="<?php get_search_query();?>" name="s" />
@@ -21,19 +22,23 @@
       </div>
     </form>
   </div>
+  <?php endif; ?>
   
   <?php if ( class_exists( 'woocommerce') ):?>
+    <?php if( $popup_id === 'cart' ) : ?>
     <!--Cart-->
-    <div id="lovage-cart" class="popup_content">
+    <div class="popup_content">
         <h3><?php esc_attr_e( 'Cart', 'lovage' ); ?></h3>
   	    <div class="widget_shopping_cart_content"></div>
     </div>
+    <?php endif; ?>
   <?php endif;?>
 
+  <?php if( $popup_id === 'menu' ) : ?>
   <!--Menu-->
-  <div id="lovage-menu" class="popup_content">
+  <div class="popup_content">
     <?php lovage_popup_menu(); ?>
   </div>
+  <?php endif; ?>
 
 </div>
-<div class="lovage-popup-overlay"></div>

@@ -4,6 +4,7 @@ Contributors: lovage
 Tags: e-commerce, blog, portfolio, one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, translation-ready
 Requires at least: 5.0
 Tested up to: 5.2.4
+Stable tag: 1.0.7
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,15 +28,24 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 * WooCommerce ready.
 * Translation ready.
 
+== Frequently Asked Questions ==
 
-== Installation ==
+= Installation =
 	
 1. In your WordPress backend, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Upgrade Notice ==
 
-== Changelogs ==
+== Changelog ==
+
+= 1.0.7 = 
+* Updated icon fonts.
+* Updated readme.txt.
+* Fixed the bug for keyboard navigation.
+* Fixed the bug for widgets.
+* Improve some parts of codes.
 
 = 1.0.6 = 
 * Fixed accessiable for sub menu and popup.
@@ -99,3 +109,20 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 = 1.0 =
 * Initial Release.
+
+== Copyright ==
+
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, licensed under [MIT](http://opensource.org/licenses/MIT)
+
+* Genericons: font by Automattic (http://automattic.com/), licensed under [GPL2](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* jquery.easing.min.js http://gsgd.co.uk/sandbox/jquery/easing/, Copyright (C) 2008 George McGinley Smith, Open source under the BSD License. 
+
+* Images included in the theme are made by us and download from Unsplash.com, No copyright.
+
+* Icons used in the icon font:
+
+  - Menu Icon: By Agni (https://thenounproject.com/agniakash40), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - Search Icon: By Icon Island (https://thenounproject.com/iconisland/), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - Shopping Bag: By tezar tantular, ID (https://thenounproject.com/kerismaker), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - User Icon: By Honey Wadhwani, IN (https://thenounproject.com/honeycreatesicons), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)

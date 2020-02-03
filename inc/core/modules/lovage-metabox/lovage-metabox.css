@@ -380,8 +380,13 @@
 /* Custom Radio Image */
 .lovage-metabox-radio-image {
   width:22%;
+  height: 100px;
   margin-bottom:1em;
   display: inline-block;
+}
+.lovage-metabox-radio-image img{
+  width: 100%;
+  height: auto;
 }
 .lovage-metabox-radio-image .lovage-desc{
   display:block;

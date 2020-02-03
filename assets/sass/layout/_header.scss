@@ -24,6 +24,7 @@
       .site-title{
          margin:0;
          height:inherit;
+         letter-spacing: -1px;
          display: flex;
          align-items:center;
          font:600 1.5em $heading_font;
@@ -50,8 +51,10 @@
       justify-content:center;
       align-items:center;
 
-      a{
-        display: inline-block;
+      a#lovage-account-button,
+      a#lovage-cart-button,
+      a#lovage-search-button,
+      a#lovage-menu-button{
         padding:0 10px;
         height:inherit;
         color:#000;
@@ -64,6 +67,10 @@
         &:hover{
             color:$primary;
         }
+      }
+
+      a#lovage-menu-button {
+        display: none;
       }
 
       .cart_tip{
@@ -123,7 +130,7 @@
 
       .site-branding{
          float:none;
-         margin:0 auto 40px;
+         margin:0 auto 80px;
          padding-top: 50px;
          height:$headerheight;
          width:auto;
@@ -191,9 +198,17 @@
         float: left;
      }
 
+     .main-navigation {
+        display: none;
+     }
+
      #site-icons {
         width: 150px;
         margin: 0;
+
+        a#lovage-menu-button {
+            display: flex;
+        }
      }
 
      /**
@@ -212,7 +227,7 @@
       */
      &.lovage-centered-vertical{
 
-       height:$headerheight;
+       height: $headerheight;
 
        .site-branding {
           width: 150px;
@@ -223,10 +238,12 @@
 
           .site-title{
             font-size: 1.2em;
+            text-align: left;
+            justify-content: flex-start;
+            letter-spacing: 0;
           }
        }
 
-       .main-navigation,
        #site-icons{
           position:relative;
           float:right;
@@ -234,11 +251,7 @@
           top:0;
           width:auto;
           height:inherit;
-          margin-right:0;
-       }
-
-       #site-icons{
-          margin-right:3%;
+          margin-right: 3%;
        }
     }
 

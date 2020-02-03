@@ -61,17 +61,6 @@
         'sanitize_callback'    => 'lovage_radio_sanitization', 
     ),
 
-    'menu_buttons' => array(
-        'title'       => esc_html__( 'Show Menu Buttons', 'lovage' ),
-        'description' => esc_html__( 'The menu buttons are search, WooCommerce cart, and account.', 'lovage' ),
-        'section'     => 'lovage_header_layout_section', 
-        'field'       => 'toggle', 
-        'type'        => 'control',
-        'transport'   => 'postMessage',
-        'default'	  => lovage_theme_customizer()->get_default('menu_buttons'),
-        'sanitize_callback'    => 'lovage_switch_sanitization',
-    ),
-
     'sticky_header' => array(
         'title'       => esc_html__( 'Sticky Header', 'lovage' ),
         'description' => esc_html__( 'Set the site header stick to top.', 'lovage' ),

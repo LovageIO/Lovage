@@ -33,7 +33,7 @@ if( ! class_exists( 'Lovage' ) ) {
 
 			add_action( 'after_setup_theme',          array( $this, 'setup' ) );
 			add_action( 'after_setup_theme',          array( $this, 'load_modules' ) );
-			add_action( 'after_setup_theme',          array( $this, 'widgets_init' ) );
+			add_action( 'widgets_init',               array( $this, 'widgets_init' ) );
 			add_action( 'wp_enqueue_scripts',         array( $this, 'scripts' ) );
 			add_action( 'wp_enqueue_scripts',         array( $this, 'child_scripts' ), 30 ); 
 			add_action( 'admin_init',         		  array( $this, 'admin_scripts' ), 10 );
@@ -56,10 +56,8 @@ if( ! class_exists( 'Lovage' ) ) {
 			load_template( LOVEAGE_CORE_DIR . 'core.php', TRUE );
 			
 			$lovage = new Lovage_Core( array(
-				'lovage-widget',
 				'lovage-plugin-page-templates',
 				'lovage-template-loader',
-				'lovage-scripts-loader',
 			) );
 
 		}
@@ -174,10 +172,8 @@ if( ! class_exists( 'Lovage' ) ) {
 		 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 		 */
 		function widgets_init() {
-
-			$theme_widgets = new Lovage_Widget();
 			
-			$theme_widgets->widgets = array(
+			$widgets = array(
 				array(
 				    'name'          => esc_html__( 'Blog Sidebar', 'lovage' ),
 					'id'            => 'sidebar',
@@ -211,11 +207,32 @@ if( ! class_exists( 'Lovage' ) ) {
 			);
 
 			if( class_exists('WooCommerce') ){
-				$theme_widgets->widgets[] = array(
+				$widgets[] = array(
 				    'name'          => esc_html__( 'Shop Sidebar', 'lovage' ),
 					'id'            => 'sidebar-shop',
 					'description'   => esc_html__('This sidebar will be displayed on the shop page.','lovage' ),
 			    );
+			}
+
+			$widgets = apply_filters( 'lovage_widgets', $widgets );
+
+			$widget_tags = array(
+			  'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			  'after_widget'  => '</div>',
+			  'before_title'  => '<h4 class="widget-title">',
+			  'after_title'   => '</h4>',
+			);
+
+			$widget_tags = apply_filters( 'lovage_widget_tags', $widget_tags );
+
+			foreach($widgets as $widget){
+				$widget = array(
+					'name'        => $widget['name'],
+					'id'          => $widget['id'],
+					'description' => $widget['description'],
+				);
+				$widget = array_merge($widget, $widget_tags);
+				register_sidebar( $widget );
 			}
 			
 		}

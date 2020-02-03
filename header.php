@@ -37,19 +37,16 @@
 	<header id="masthead" <?php lovage_header_class(); ?>>
 
 		<?php
-		/**
-		 * Hook lovage_header
-		 * @hooked lovage_before_navigation - 10
-		 * @hooked lovage_custom_logo - 20
-		 * @hooked lovage_primary_navigation - 30
-		 * @hooked lovage_top_buttons - 40
-		 * @hooked lovage_after_navigation - 50
-		 * @hooked lovage_site_header_image - 60
-		 */
-		do_action( 'lovage_header' );
-
-		/* Popup */
- 		get_template_part( 'template-parts/content', 'popup' );
+			/**
+			 * Hook lovage_header
+			 * @hooked lovage_before_navigation - 10
+			 * @hooked lovage_custom_logo - 20
+			 * @hooked lovage_primary_navigation - 30
+			 * @hooked lovage_top_buttons - 40
+			 * @hooked lovage_after_navigation - 50
+			 * @hooked lovage_site_header_image - 60
+			 */
+			do_action( 'lovage_header' );
 		?>
 	</header><!-- #masthead -->
 	

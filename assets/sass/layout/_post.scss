@@ -3,15 +3,15 @@
 ---------------------------------------------*/
 
 .single_featured_image{
-  position:relative;
+  position: relative;
   overflow: hidden;
-  max-height:500px;
-  width:100%;
-  margin-bottom:30px;
+  max-height: 500px;
+  width: 100%;
+  margin-bottom: 30px;
   text-align: center;
 
   img{
-    max-width:100%;
+    max-width: 100%;
   }
 }
 
@@ -64,9 +64,9 @@
   border-bottom: 1px solid #eee;
 
   .hentry img{
-    max-width:100%;
-    width:auto;
-    height:auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     margin: 40px inherit;
   }
 
@@ -80,53 +80,53 @@
     overflow: hidden;
 
     .tags-links{
-      float:right;
+      float: right;
     }
 
     span{
-      margin:0 5px;
-      float:right;
+      margin: 0 5px;
+      float: right;
     }
      
     span.date:after,
     span:first-child:after{
-      content:'';
-      margin-left:0;
+      content: '';
+      margin-left: 0;
     }
 
     .author{
-      float:left;
-      margin:-11px 0 8px;
+      float: left;
+      margin: -11px 0 8px;
       width: 180px;
     }
 
     .author a{
-      color:#3086ff;
+      color: #3086ff;
     }
 
     .author .avatar{
-      float:left;
-      width:50px;
-      height:50px;
+      float: left;
+      width: 50px;
+      height: 50px;
       border-radius: 100px;
       margin-right:10px;
     }
 
     .author p{
-      margin:0;
+      margin: 0;
     }
 
     .author span{
-      display:block;
-      margin-top:-5px;
-      font-size:12px;
-      float:none;
+      display: block;
+      margin-top: -5px;
+      font-size: 12px;
+      float: none;
     }
 
     .cat-links,
     .tags-links{
       overflow: hidden;
-      text-overflow:ellipsis;
+      text-overflow: ellipsis;
       white-space: nowrap;
       width: 200px;
     }
@@ -136,16 +136,16 @@
   .entry-meta,
   .entry-footer span,
   .entry-footer span a{
-    color:#999;
+    color: #999;
   }
 
   .entry-meta a:hover,
   .entry-footer span a:hover{
-    color:#333;
+    color: #333;
   }
 
   .entry-meta span i{
-    margin-right:3px;
+    margin-right: 3px;
   }
 }
 
@@ -191,7 +191,7 @@ body:not(.lovage-sidebar-layout) .entry-body{
 }
 
 .entry-header{
-  margin:0 auto 30px;
+  margin: 0 auto 30px;
 
   .post-categories{
      margin-bottom: 5px;
@@ -200,7 +200,7 @@ body:not(.lovage-sidebar-layout) .entry-body{
 
      li{
        display: inline-block;
-       margin-right: 10px;
+       margin-right: 5px;
 
        a{
          color: #999;
@@ -214,8 +214,8 @@ body:not(.lovage-sidebar-layout) .entry-body{
   }
 
   .entry-title{
-    margin:0;
-    font-weight: 600;
+    margin: 0;
+    font-weight: 700;
   }
 
   .entry-title a{
@@ -658,7 +658,7 @@ gallery .gallery-item{
 .gallery-columns-7 .gallery-item:nth-child(7n+7),
 .gallery-columns-8 .gallery-item:nth-child(8n+8),
 .gallery-columns-9 .gallery-item:nth-child(3n+3){
-  margin-right:0;
+  margin-right: 0;
 }
 
 .gallery-caption {
@@ -668,29 +668,26 @@ gallery .gallery-item{
 
 @media (max-width: 768px){
 
+  .featured_thumbnail {
+      height: 250px;
+  }
+
   .post .entry-footer{
     span,
     .author{
-        float:none;
+        float: none;
     }
     .author{
-         margin-top:20px;
+        margin-top: 20px;
     }
   } 
 
-  .entry-header span.category a{
-      font-size:1rem;
+  .entry-header .entry-title {
+     font-size: 28px;
   }
 
-  .related-posts{
-    
-    .grids .item{
-       width:100%;
-    }
-
-    .grids .item .thumbnail{
-       max-height:250px;
-    }
+  .entry-header span.category a{
+      font-size: 1rem;
   }
   
 }

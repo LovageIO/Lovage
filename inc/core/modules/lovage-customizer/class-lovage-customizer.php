@@ -103,7 +103,7 @@ if(!class_exists('Lovage_Customizer')){
 			);
 
 			foreach($control_types as $key => $val){
-				require_once $val;
+				load_template( $val, true );
 			}
 		}
 

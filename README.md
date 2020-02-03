@@ -34,7 +34,32 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 3. Click Activate to use your new theme right away.
 
 
+## Copyright
+
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, licensed under [MIT](http://opensource.org/licenses/MIT)
+
+* Genericons: font by Automattic (http://automattic.com/), licensed under [GPL2](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* jquery.easing.min.js http://gsgd.co.uk/sandbox/jquery/easing/, Copyright (C) 2008 George McGinley Smith, Open source under the BSD License. 
+
+* Images included in the theme are made by us and download from Unsplash.com, No copyright.
+
+* Icons used in the icon font:
+
+  - Menu Icon: By Agni (https://thenounproject.com/agniakash40), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - Search Icon: By Icon Island (https://thenounproject.com/iconisland/), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - Shopping Bag: By tezar tantular, ID (https://thenounproject.com/kerismaker), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+  - User Icon: By Honey Wadhwani, IN (https://thenounproject.com/honeycreatesicons), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
+
+
 ## Changelogs
+
+= 1.0.7 = 
+* Updated icon fonts.
+* Updated readme.txt.
+* Fixed the bug for keyboard navigation.
+* Fixed the bug for widgets.
+* Improve some parts of codes.
 
 = 1.0.6 = 
 * Fixed accessiable for sub menu and popup.

@@ -55,41 +55,32 @@ class Lovage_Admin {
 	 */
 	public function admin_menu(){
 		 
-		 $extensions_callback = array( $this, 'admin_ui' );
+		 $plugins_callback = array( $this, 'admin_ui' );
 		
 		 if ( isset( $_GET['tgmpa-install'] ) || isset( $_GET['tgmpa-update'] ) ) {
 			remove_action( 'admin_notices', array( $GLOBALS['tgmpa'], 'notices' ) );
-			$extensions_callback = array( $GLOBALS['tgmpa'], 'install_plugins_page' );
+			$plugins_callback = array( $GLOBALS['tgmpa'], 'install_plugins_page' );
 		 }
 		 
 		 $admin_menu = array();
 			 
-			$admin_menu['lovage'] = array(
-			 		'menu_name'  => esc_html__( 'Lovage', 'lovage' ),
-			 		'page_title' => esc_html__( 'Lovage', 'lovage' ),
-			 		'tab_title'  => esc_html__( 'Dashboard', 'lovage' ),
-			 		'menu_page'  => array( $this, 'admin_ui' ),
-			 		'capability' => 'edit_theme_options',
-			 		'show_as_tab'=> true
-			);
+		 $admin_menu['lovage'] = array(
+	 		'menu_name'  => esc_html__( 'Lovage', 'lovage' ),
+	 		'page_title' => esc_html__( 'Lovage', 'lovage' ),
+	 		'tab_title'  => esc_html__( 'Dashboard', 'lovage' ),
+	 		'menu_page'  => array( $this, 'admin_ui' ),
+	 		'capability' => 'edit_theme_options',
+	 		'show_as_tab'=> true
+		 );
 
-		 	$admin_menu['lovage-extensions'] = array(
-		 		'menu_name'  => null,
-		 		'page_title' => esc_html__( 'Lovage Extensions', 'lovage' ),
-		 		'tab_title'  => esc_html__( 'Extensions', 'lovage' ),
-		 		'menu_page'  => $extensions_callback,
-		 		'capability' => 'edit_theme_options',
-		 		'show_as_tab'=> true
-		 	);
-
-		 	$admin_menu['lovage-plugins'] = array(
-		 		'menu_name'  => null,
-		 		'page_title' => esc_html__( 'Recommend Plugins', 'lovage' ),
-		 		'tab_title'  => esc_html__( 'Recommend Plugins', 'lovage' ),
-		 		'menu_page'  => array( $this, 'admin_ui' ),
-		 		'capability' => 'edit_theme_options',
-		 		'show_as_tab'=> true
-		 	);
+	 	 $admin_menu['lovage-plugins'] = array(
+	 		'menu_name'  => null,
+	 		'page_title' => esc_html__( 'Lovage Plugins', 'lovage' ),
+	 		'tab_title'  => esc_html__( 'Plugins', 'lovage' ),
+	 		'menu_page'  => $plugins_callback,
+	 		'capability' => 'edit_theme_options',
+	 		'show_as_tab'=> true
+	 	 );
 
 		 return apply_filters( 'lovage_admin_menu', $admin_menu );
 	}

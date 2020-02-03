@@ -119,5 +119,35 @@
 
 			</div>
 		</div>
+
+		<?php
+	     $lovage_plugins = array(
+			  array(
+			    'slug' => 'elementor'
+			  ),
+			  array(
+			    'slug' => 'woocommerce'
+			  ),
+			  array(
+			    'slug' => 'contact-form-7'
+			  ),
+			  array(
+			  	'slug' => 'wp-gdpr-compliance'
+			  ),
+			  array(
+			  	'slug' => 'cookie-notice'
+			  ),
+			  array(
+			  	'slug' => 'autoptimize'
+			  )
+		 );
+
+		 array_merge( $lovage_plugins, apply_filters( 'lovage_add_plugins', array() ) );
+
+		 if(class_exists('Lovage_Plugins_Installer')){
+		    Lovage_Plugins_Installer::init($lovage_plugins);
+		 }
+       ?>
+
 	</div>
 </div>
