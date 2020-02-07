@@ -42,7 +42,7 @@ $featured_image_alignment = get_post_meta(get_the_ID(), '_lovage_featured_alignm
 	    if($posttags <>''):
 	    ?>
 		    <div class="taglist">
-		      <?php esc_html_e('Post Tags','lovage');?>: <?php the_tags('',' '); ?>
+		      <?php echo esc_html__('Post Tags','lovage');?>: <?php the_tags('',' '); ?>
 		    </div>  
 	    <?php endif;?>
     

@@ -18,7 +18,7 @@ if ( ! function_exists( 'lovage_header_class' ) ) {
 		 
 		  $sticky_header = '';
 
-		  $header_class = 'class="site-header lovage-' . esc_html( lovage_theme_customizer()->value( 'header_layout' ) ) . '"';
+		  $header_class = 'class="site-header lovage-' . esc_attr( lovage_theme_customizer()->value( 'header_layout' ) ) . '"';
 	      echo wp_kses_post( $header_class );
 	}
 }
@@ -38,7 +38,11 @@ if ( ! function_exists( 'lovage_page_header' ) ) {
 			return;
 		}
 
-		if( is_page_template('page-templates/blog-page-template.php') || is_page_template('page-templates/fullwidth-page-template.php')  || is_page_template('elementor_canvas') || is_page_template('elementor_header_footer')){
+		if( is_page_template('page-templates/blog-page-template.php') 
+			|| is_page_template('page-templates/fullwidth-page-template.php')  
+			|| is_page_template('elementor_canvas') 
+			|| is_page_template('elementor_header_footer')
+		){
 			return;
 		}
 
@@ -52,7 +56,7 @@ if ( ! function_exists( 'lovage_page_header' ) ) {
 		 		<div class="lovage-grid-1140">';
 		 		    
 		 		    if( is_page() ){
-		 		    	echo '<h1 class="entry-title">'.esc_attr( get_the_title( $post->ID ) ).'</h1>';
+		 		    	echo '<h1 class="entry-title">'.esc_html( get_the_title( $post->ID ) ).'</h1>';
 		 		    }
 
 		 		    if( is_tax() || is_category() || is_tag() ){
@@ -168,7 +172,7 @@ if ( ! function_exists( 'lovage_before_content' ) ) {
 
 		}
 
-		echo '<div id="page" class="hfeed site lovage-grid-' . esc_html( $width ) . '">
+		echo '<div id="page" class="hfeed site lovage-grid-' . esc_attr( $width ) . '">
 		  		 <div id="content" class="site-content" tabindex="-1">';
 	}
 }
@@ -278,16 +282,16 @@ if ( ! function_exists( 'lovage_custom_logo' ) ) {
 	        }
 		    if (!empty($logo_url) && $logo_url<>'' ) {
 		    	$logo_wrapper_class = 'site-branding-logo';
-				$custom_logo = '<img id="site-logo" src="'.$logo_url.'" alt="'.esc_attr(get_bloginfo('name')).'" />';
+				$custom_logo = '<img id="site-logo" src="' . esc_url( $logo_url ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '" />';
 		    } else { 
-			   $custom_logo = esc_attr(get_bloginfo('name'));
+			   $custom_logo = esc_html( get_bloginfo('name') );
 			}
 			
 			$render = '<div class="site-branding lovage-grid lovage-col2 '.$logo_wrapper_class.'">';
 				if ( is_front_page() && is_home() ){
-					$render .= '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.$custom_logo.'</a></h1>';
+					$render .= '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">' . wp_kses_post( $custom_logo ) . '</a></h1>';
 				}else{
-					$render .= '<span class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.$custom_logo.'</a></span>';
+					$render .= '<span class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">' . wp_kses_post( $custom_logo ) . '</a></span>';
 				}
 			$render .= '</div><!-- .site-branding -->';
 
@@ -317,7 +321,7 @@ if ( ! function_exists( 'lovage_primary_navigation' ) ) {
 	    }
 
 
-       $render = '<nav id="site-navigation" role="navigation" aria-label="Main navigation" class="main-navigation '.$nav_grid_class.'">'
+       $render = '<nav id="site-navigation" role="navigation" aria-label="' . esc_html__( 'Main navigation', 'lovage' ) . '" class="main-navigation ' . esc_attr( $nav_grid_class ) . '">'
 		. wp_nav_menu( array( 
 			'theme_location' => 'primary', 
 			'menu' => esc_html( $menu_slug ),
@@ -350,9 +354,9 @@ if ( ! function_exists( 'lovage_menu_buttons' ) ){
 		  	   	 $status = 'show';
 		  	   }
 
-			   echo'<a href="'.esc_url(home_url('/')).'?page_id='.esc_attr( get_option('woocommerce_myaccount_page_id') ).'"><i class="lovage-icon lovage-icon-user"></i></a>
+			   echo'<a href="'.esc_url( home_url('/') ).'?page_id='.esc_attr( get_option('woocommerce_myaccount_page_id') ).'"><i class="lovage-icon lovage-icon-user"></i></a>
 					<a href="javascript:void(0);" id="lovage-cart-button"><i class="lovage-icon lovage-icon-cart"></i>
-					  <span id="cart_tip" class="cart_tip '.esc_attr($status).'">'.esc_attr($cart_number).'</span>
+					  <span id="cart_tip" class="cart_tip '.esc_attr( $status ).'">'.absint( $cart_number ).'</span>
 					</a>';
 			   lovage_popup_content( 'cart' );
 		  }
@@ -389,7 +393,7 @@ if ( ! function_exists( 'lovage_popup_menu' ) ) {
 	    }
 	    $render = wp_nav_menu( array( 
 	    	'theme_location' => 'primary', 
-	    	'menu' => esc_html($menu_slug),
+	    	'menu' => esc_html( $menu_slug ),
 	    	'menu_id' => 'popup-menu',
 	    	'menu_class' => 'popup-menu',
 	    	'echo' => false 
@@ -416,23 +420,24 @@ if ( ! function_exists( 'lovage_header_add_to_cart_fragment' ) ) {
 	   	  $status = 'show';
 	    }
 	    ob_start(); 
-	    ?>
+		?>
+	    <span class="cart_tip <?php echo esc_attr( $status );?>" id="cart_tip"><?php echo absint( $cart_number );?></span>
 
-	    <span class="cart_tip <?php echo esc_attr( $status );?>" id="cart_tip"><?php echo esc_attr( $cart_number );?></span>
-
-	    <?php 
+	    <?php
 	    $fragments['#cart_tip'] = ob_get_clean();
 	    return $fragments; 
 	}
 }
+
 add_filter('woocommerce_add_to_cart_fragments', 'lovage_header_add_to_cart_fragment');
+
 
 if ( ! function_exists( 'lovage_before_navigation' ) ) {
 	/**
 	 * The Wrapper Before Navigation
 	 */
 	function lovage_before_navigation(){
-		   $render = '<div id="lovage-primary-bar" class="lovage-grid-'.$GLOBALS['lovage_content_width'] .'">';
+		   $render = '<div id="lovage-primary-bar" class="lovage-grid-' . esc_attr( $GLOBALS['lovage_content_width'] ) .'">';
 		   echo wp_kses_post( $render );
 	}
 }
@@ -458,7 +463,7 @@ if ( ! function_exists( 'lovage_copyright' ) ) {
 		if(!empty($copyright) && $copyright<>''){
 		    echo esc_attr(lovage_theme_customizer()->value( 'site_copyright'));
 		}else{
-	        echo esc_html__( 'Proudly powered by', 'lovage' ).'<a href="https://wordpress.org/" target="_blank"> WordPress</a><span class="sep"> & </span><a href="https://lovage.io" rel="dofollow" target="_blank" title="The Mobile-First WordPress Theme">Lovage Theme</a>';
+	        echo esc_html__( 'Proudly powered by', 'lovage' ).'<a href="https://wordpress.org/" target="_blank"> WordPress</a><span class="sep"> & </span><a href="https://lovage.io" rel="dofollow" target="_blank">Lovage Theme</a>';
 		}
 	}
 }
@@ -487,7 +492,7 @@ if ( ! function_exists( 'lovage_bottom_widgets' ) ) {
 	function lovage_bottom_widgets(){
 		if ( is_active_sidebar( 'bottom-widget-1' ) || is_active_sidebar( 'bottom-widget-2' ) || is_active_sidebar( 'bottom-widget-3' ) || is_active_sidebar( 'bottom-widget-4' ) ){
 	        echo '<div id="site-bottom" class="site-bottom">
-	  				<div class="lovage-grid-'.esc_html( $GLOBALS['lovage_content_width'] ) .'">';
+	  				<div class="lovage-grid-'.esc_attr( $GLOBALS['lovage_content_width'] ) .'">';
 	  	    
 			    if(lovage_theme_customizer()->value( 'footer_widget_layout' )=='2'){
 			        // 2 columns
@@ -573,7 +578,7 @@ if ( ! function_exists( 'lovage_author_socials' ) ) {
 		    if($social_name=='vimeo'){
 			    $social_name=$social_array[$i].'-square';
 		    }
-		    $social_profile.='<a href="'.esc_url(get_the_author_meta($social_array[$i])).'" target="_blank"><i class="fa fa-'.esc_attr($social_name).'"></i></a>';
+		    $social_profile.='<a href="'.esc_url( get_the_author_meta($social_array[$i]) ).'" target="_blank"><i class="fa fa-'.esc_attr( $social_name ).'"></i></a>';
 		  }
 		}
 		echo wp_kses_post( $social_profile );
@@ -613,7 +618,7 @@ if ( ! function_exists( 'lovage_default_search_form' ) ) {
 	 * Modify the default WordPress search form
 	 */
 	function lovage_default_search_form( $form ) {
-	    $form = '<form role="search" method="get" id="searchform_default" class="searchform" action="' . esc_url(home_url( '/' )) . '" >
+	    $form = '<form role="search" method="get" id="searchform_default" class="searchform" action="' . esc_url( home_url( '/' ) ) . '" >
 	    <div class="lovage-search">
 	    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
 	    <input type="submit" id="searchsubmit" value="" />

@@ -236,7 +236,7 @@ function lovage_breadcrumbs() {
 		} elseif ( is_search() ) { 
 
 			echo wp_kses_post( $before ) ;
-			esc_html_e( 'Search Results for:', 'lovage' ) .' '. get_search_query();
+			echo esc_html__( 'Search Results for:', 'lovage' ) .' '. get_search_query();
 			echo  wp_kses_post( $after );
 
 		} elseif ( is_tag() ) {
@@ -256,13 +256,13 @@ function lovage_breadcrumbs() {
 
 		} elseif ( is_404() ) { 
 			echo wp_kses_post( $before );
-			esc_html_e( 'Not Found', 'lovage' );
-			echo  wp_kses_post( $after );
+			echo esc_html__( 'Not Found', 'lovage' );
+			echo wp_kses_post( $after );
 		}
 		if ( get_query_var('paged') ) {
 
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() )
-			  esc_html_e( 'Page', 'lovage' ) . ' ' . get_query_var('paged');
+			  echo esc_html__( 'Page', 'lovage' ) . ' ' . get_query_var('paged');
 
 		}
 		echo '</div>';

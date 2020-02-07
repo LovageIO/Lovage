@@ -14,7 +14,7 @@
   <?php if( $popup_id === 'search' ) : ?>
   <!--Search-->
   <div class="popup_content">
-    <h3><?php esc_attr_e( 'Search', 'lovage' ); ?></h3>
+    <h3><?php echo esc_html__( 'Search', 'lovage' ); ?></h3>
   	<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) );?>" >
       <div class="lovage-search">
         <input type="text" id="s" placeholder="<?php esc_attr_e( 'Enter Keywords.', 'lovage' );?>" value="<?php get_search_query();?>" name="s" />
@@ -28,7 +28,7 @@
     <?php if( $popup_id === 'cart' ) : ?>
     <!--Cart-->
     <div class="popup_content">
-        <h3><?php esc_attr_e( 'Cart', 'lovage' ); ?></h3>
+        <h3><?php echo esc_html__( 'Cart', 'lovage' ); ?></h3>
   	    <div class="widget_shopping_cart_content"></div>
     </div>
     <?php endif; ?>

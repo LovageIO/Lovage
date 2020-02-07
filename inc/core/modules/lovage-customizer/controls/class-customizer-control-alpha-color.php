@@ -1,6 +1,6 @@
 <?php
 /**
- * Alpha Color Picker Custom Control
+ * Alpha Color Picker Custom Customize Control
  *
  * @author Braad Martin <http://braadmartin.com>
  * @license http://www.gnu.org/licenses/gpl-3.0.html

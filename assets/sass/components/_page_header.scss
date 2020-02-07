@@ -19,8 +19,8 @@
     justify-content: center;
     align-items: center;
     background-color: #f8f8f8;
-    background-attachment: fixed;
-    background-position: center;
+    background-attachment: scroll;
+    background-position: center -200px;
     background-repeat: no-repeat;
 
     h1{
@@ -41,6 +41,7 @@
        font-size: 18px;
        font-weight: 300;
        position: relative;
+       letter-spacing: 0;
        display: flex;
        justify-content: space-around;
        align-items: center;

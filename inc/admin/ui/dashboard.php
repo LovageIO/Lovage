@@ -15,31 +15,31 @@
 	<div class="row">
 		<div class="col-2">
 			<div class="lovage-admin-box">
-				<h2><?php esc_html_e( 'General Settings' , 'lovage' ); ?></h2>
+				<h2><?php echo esc_html__( 'General Settings' , 'lovage' ); ?></h2>
 				<ul>
 					<li>
 						<i class="dashicons-before dashicons-format-image"></i>
-						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=title_tagline' ) );?>"><?php esc_html_e('Upload Logo & Favicon', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=title_tagline' ) );?>"><?php echo esc_html__('Upload Logo & Favicon', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-art"></i>
-						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=color_panel' ) );?>"><?php esc_html_e('Color Scheme', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=color_panel' ) );?>"><?php echo esc_html__('Color Scheme', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-editor-textcolor"></i>
-						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=typography_panel' ) );?>"><?php esc_html_e('Custom Fonts', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=typography_panel' ) );?>"><?php echo esc_html__('Custom Fonts', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-tagcloud"></i>
-						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=layout_panel' ) );?>"><?php esc_html_e('Header, Footer and Page Layout', 'lovage');?></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=layout_panel' ) );?>"><?php echo esc_html__('Header, Footer and Page Layout', 'lovage');?></a>
 					</li>
 
 					<li>
 						<i class="dashicons-before dashicons-admin-generic"></i>
-						<a href="<?php echo esc_url( admin_url( 'customize.php?' ) );?>"><strong><?php esc_html_e( 'More Theme Options', 'lovage' );?></strong></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php?' ) );?>"><strong><?php echo esc_html__( 'More Theme Options', 'lovage' );?></strong></a>
 					</li>
 				</ul>
 			</div>
@@ -48,8 +48,8 @@
 		<div class="col-2 last">
 			<div class="lovage-admin-box">
 				
-				<h2><?php esc_html_e( 'Subscribe To Lovage Newsletter', 'lovage' );?></h2>
-				<p><?php esc_html_e( 'Get early to know Lovage theme new features, subscriber-only promotion and tutorials.', 'lovage' );?></p>
+				<h2><?php echo esc_html__( 'Subscribe To Lovage Newsletter', 'lovage' );?></h2>
+				<p><?php echo esc_html__( 'Get early to know Lovage theme new features, subscriber-only promotion and tutorials.', 'lovage' );?></p>
 			
 				<!-- Begin Mailchimp Signup Form -->
 				<style type="text/css">
@@ -103,7 +103,7 @@
 				<form action="https://lovage.us3.list-manage.com/subscribe/post?u=79b3860aac3b4d286dd67fc05&amp;id=4048c5b381" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				    <div id="mc_embed_signup_scroll">
 					<div class="mc-field-group">
-						<input type="email" placeholder="<?php esc_html_e('Email Adddress', 'lovage');?>" value="<?php bloginfo('admin_email');?>" name="EMAIL" class="required email" id="mce-EMAIL">
+						<input type="email" placeholder="<?php echo esc_html__('Email Adddress', 'lovage');?>" value="<?php bloginfo('admin_email');?>" name="EMAIL" class="required email" id="mce-EMAIL">
 					</div>
 					<div id="mce-responses" class="clear">
 						<div class="response" id="mce-error-response" style="display:none"></div>

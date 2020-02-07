@@ -49,7 +49,7 @@ if ( lovage_theme_customizer()->value('blog_post_related_post') ) {
 		
 	    <section class="related-posts">
 	    
-	        <h3 class="section-title"><?php esc_html_e( 'You may also like', 'lovage' ); ?></h3>
+	        <h3 class="section-title"><?php echo esc_html__( 'You may also like', 'lovage' ); ?></h3>
 	    
 	        <div class="grids">
 	            <?php 

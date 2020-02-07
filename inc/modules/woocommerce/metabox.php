@@ -19,16 +19,16 @@ function lovage_taxonomy_add_new_meta_field() {
 	// this will add the custom meta field to the add new term page
 	?>
 	<div class="form-field sidebar-settings">
-		<label for="term_meta[cat_sidebar]"><?php esc_html_e( 'Enable Sidebar', 'lovage' ); ?></label>
+		<label for="term_meta[cat_sidebar]"><?php echo esc_html__( 'Enable Sidebar', 'lovage' ); ?></label>
 		<input type="radio" name="term_meta[cat_sidebar]" id="term_meta[cat_sidebar]" value="no" />
 		<select name="term_meta[cat_sidebar]" id="term_meta[cat_sidebar]">
-		 <option value="no"><?php esc_html_e('No','lovage');?></option>
-		 <option value="yes"><?php esc_html_e('Yes','lovage');?></option>
+		 <option value="no"><?php echo esc_html__('No','lovage');?></option>
+		 <option value="yes"><?php echo esc_html__('Yes','lovage');?></option>
 		</select>
 	</div>
 	
 	<div class="form-field slider-settings">
-		<label for="term_meta[revslider_alias]"><?php esc_html_e( 'Revolution Slider Alias', 'lovage' ); ?></label>
+		<label for="term_meta[revslider_alias]"><?php echo esc_html__( 'Revolution Slider Alias', 'lovage' ); ?></label>
 		<input type="text" name="term_meta[revslider_alias]" id="term_meta[revslider_alias]" value="" />
 	</div>
 <?php
@@ -45,17 +45,17 @@ function lovage_taxonomy_edit_meta_field($term) {
 	$term_meta = get_option( "taxonomy_$t_id" ); ?>
 	
 	<tr class="form-field sidebar-settings">
-	<th scope="row" valign="top"><label for="term_meta[cat_sidebar]"><?php esc_html_e( 'Enable Sidebar', 'lovage' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[cat_sidebar]"><?php echo esc_html__( 'Enable Sidebar', 'lovage' ); ?></label></th>
 		<td>			
 		  <select name="term_meta[cat_sidebar]" id="term_meta[cat_sidebar]">
-		    <option value="no" <?php if(esc_attr( $term_meta['cat_sidebar'])=='no')echo 'selected="selected"'; ?>><?php esc_html_e('No','lovage');?></option>
-		    <option value="yes" <?php if(esc_attr( $term_meta['cat_sidebar'])=='yes')echo 'selected="selected"'; ?>><?php esc_html_e('Yes','lovage');?></option>
+		    <option value="no" <?php if(esc_attr( $term_meta['cat_sidebar'])=='no')echo 'selected="selected"'; ?>><?php echo esc_html__('No','lovage');?></option>
+		    <option value="yes" <?php if(esc_attr( $term_meta['cat_sidebar'])=='yes')echo 'selected="selected"'; ?>><?php echo esc_html__('Yes','lovage');?></option>
 		  </select>
 		</td>
 	</tr>
 	
 	<tr class="form-field slider_settings">
-	<th scope="row" valign="top"><label for="term_meta[revslider_alias]"><?php esc_html_e( 'Revolution Slider Alias', 'lovage' ); ?></label></th>
+	<th scope="row" valign="top"><label for="term_meta[revslider_alias]"><?php echo esc_html__( 'Revolution Slider Alias', 'lovage' ); ?></label></th>
 		<td>
 			<input type="text" name="term_meta[revslider_alias]" id="term_meta[revslider_alias]" value="<?php echo esc_html( $term_meta['revslider_alias'] ) ? esc_html( $term_meta['revslider_alias'] ) : ''; ?>">
 		</td>

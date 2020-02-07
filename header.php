@@ -26,7 +26,7 @@
 
 <body <?php body_class(); ?>>
 
-<a class="skip-link" tabindex="1" href="#content"><?php esc_html_e( 'Skip to content', 'lovage' ); ?></a>
+<a class="skip-link" tabindex="1" href="#content"><?php echo esc_html__( 'Skip to content', 'lovage' ); ?></a>
 
 <?php wp_body_open(); ?>
 

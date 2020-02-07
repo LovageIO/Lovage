@@ -51,9 +51,9 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                       <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
                     <?php endif;?>
 
-                    <label><?php esc_html_e( 'Font Family', 'lovage' );?>
+                    <label><?php echo esc_html__( 'Font Family', 'lovage' );?>
                         <select name="lovage_typo_family_<?php echo esc_attr( $this->instance_number );?>">
-                            <option value="System Default"><?php esc_html_e( 'System Default', 'lovage' );?></option>
+                            <option value="System Default"><?php echo esc_html__( 'System Default', 'lovage' );?></option>
                             <?php
                                 foreach ( $this->fonts as $v )
                                 {
@@ -69,17 +69,17 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                     </label>
 
                     <?php if( isset( $value['font_size'] ) ):?>
-                    <label><?php esc_html_e( 'Font Size', 'lovage' );?>
+                    <label><?php echo esc_html__( 'Font Size', 'lovage' );?>
                        <input type="text" name="lovage_typo_size_<?php echo esc_attr( $this->instance_number ); ?>" value="<?php echo esc_html( $value['font_size'] ); ?>" />
                     </label>
                     <?php endif;?>
 
                     <?php if( isset( $value['font_weight'] ) ):?>
-                    <label><?php esc_html_e( 'Font Weight', 'lovage' );?>
+                    <label><?php echo esc_html__( 'Font Weight', 'lovage' );?>
                        <select name="lovage_typo_weight_<?php echo esc_attr( $this->instance_number );?>">
                          <?php 
                              foreach( $weight as $w ){
-                                echo '<option value="'.esc_attr( $w ).'" '.selected( esc_attr( $value['font_weight'] ), esc_attr( $w ), false ).'>'.esc_attr( $w ).'</option>';
+                                echo '<option value="'.esc_attr( $w ).'" '.selected( esc_attr( $value['font_weight'] ), esc_attr( $w ), false ).'>'.esc_html( $w ).'</option>';
                              }
                          ?>
                        </select>
@@ -87,11 +87,11 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                     <?php endif;?>
 
                     <?php if( isset( $value['subsets'] ) ): ?>
-                    <label><?php esc_html_e( 'Subsets', 'lovage' ); ?>
+                    <label><?php echo esc_html__( 'Subsets', 'lovage' ); ?>
                        <select name="lovage_typo_subsets_<?php echo esc_attr( $this->instance_number ); ?>">
                          <?php 
                              foreach( $subsets as $set ){
-                                echo '<option value="'.esc_attr( $set ).'" '.selected( esc_attr( $value['subsets'] ), esc_attr( $set ), false ).'>'.esc_attr( $set ).'</option>';
+                                echo '<option value="'.esc_attr( $set ).'" '.selected( esc_attr( $value['subsets'] ), esc_attr( $set ), false ).'>'.esc_html( $set ).'</option>';
                              }
                              $all_sets = implode( '&', $subsets );
                              echo '<option value="'.esc_attr( $all_sets ).'" '.selected( esc_attr( $value['subsets'] ), esc_attr( $all_sets ), false ).'>'.esc_html( 'Select All', 'lovage' ).'</option>';
@@ -101,19 +101,19 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                     <?php endif;?>
 
                     <?php if( isset( $value['line_height'] ) ):?>
-                    <label><?php esc_html_e( 'Line Height', 'lovage' ); ?>
+                    <label><?php echo esc_html__( 'Line Height', 'lovage' ); ?>
                        <input type="text" name="lovage_typo_line_height_<?php echo esc_attr( $this->instance_number ); ?>" value="<?php echo esc_attr( $value['line_height'] ); ?>" />
                     </label>
                     <?php endif;?>
 
                     <?php if( isset( $value['letter_spacing'] ) ): ?>
-                    <label><?php esc_html_e( 'Letter Spacing', 'lovage' );?>
+                    <label><?php echo esc_html__( 'Letter Spacing', 'lovage' );?>
                        <input type="text" name="lovage_typo_letter_spacing_<?php echo esc_attr( $this->instance_number ); ?>" value="<?php echo esc_attr( $value['letter_spacing'] ); ?>" />
                     </label>
                     <?php endif;?>
 
                     <?php if( isset( $value['text_transform'] ) ): ?>
-                    <label><?php esc_html_e( 'Text Transform', 'lovage' );?>
+                    <label><?php echo esc_html__( 'Text Transform', 'lovage' );?>
                        <select name="lovage_typo_text_transform_<?php echo esc_attr( $this->instance_number ); ?>">
                          <?php 
                              $text_transform_options = array(
@@ -124,7 +124,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                                 'inherit'    => esc_html__( 'Inherit', 'lovage' ), 
                              );
                              foreach( $text_transform_options as $option ) {
-                                echo '<option value="'.esc_attr( $option ).'" '.selected( esc_attr( $value['text_transform'] ), esc_attr( $option ), false ).'>'.esc_attr( $option ).'</option>';
+                                echo '<option value="'.esc_attr( $option ).'" '.selected( esc_attr( $value['text_transform'] ), esc_attr( $option ), false ).'>'.esc_html( $option ).'</option>';
                              }
                          ?>
                        </select>

@@ -157,12 +157,12 @@ if(!class_exists('Lovage_Customizer')){
 			$this->customize->add_panel(
 		        $panel_id,
 		        array(
-		            'title' 			=> isset($args['title'])?esc_html($args['title']):null,
+		            'title' 			=> isset($args['title']) ? esc_html($args['title']) : null,
 		            'capability'		=> $this->capability,
-		            'theme_supports'	=> isset($args['theme_supports'])?esc_html($args['theme_supports']):null,
-		            'description' 		=> isset($args['description'])?esc_html($args['description']):null,
-		            'priority' 			=> isset($args['priority'])?esc_html($args['priority']):'20',
-		            'active_callback' 	=> isset($args['active_callback'])?esc_html($args['active_callback']):null
+		            'theme_supports'	=> isset($args['theme_supports']) ? esc_html($args['theme_supports']) : null,
+		            'description' 		=> isset($args['description']) ? esc_html($args['description']) : null,
+		            'priority' 			=> isset($args['priority']) ? esc_html($args['priority']) : '20',
+		            'active_callback' 	=> isset($args['active_callback']) ? esc_html($args['active_callback']) : null
 		        )
 		    );
 		}
@@ -194,8 +194,8 @@ if(!class_exists('Lovage_Customizer')){
 		public function add_setting($field_id, $args=array()){
 
 			$control_class        = '';
-			$field_id 			  = $this->prefix.'_'.$field_id;
-			$field_type			  = isset($args['field'] ) ? esc_attr( $args['field'] ) : 'text';
+			$field_id 			  = $this->prefix . '_' . $field_id;
+			$field_type			  = isset($args['field'] ) ? esc_html( $args['field'] ) : 'text';
 
 			if($field_type !== 'typography'){
 				$default  = isset($args['default']) ? esc_html($args['default']) : '';
@@ -215,12 +215,12 @@ if(!class_exists('Lovage_Customizer')){
 
 			$sanitize_callback    = isset($args['sanitize_callback']) ? esc_html($args['sanitize_callback']) : 'sanitize_text_field';
 			$sanitize_js_callback = isset($args['sanitize_js_callback']) ? esc_html($args['sanitize_js_callback']) : '';
-			$transport 			  = isset($args['transport'])? esc_html($args['transport']) : 'refresh';
+			$transport 			  = isset($args['transport']) ? esc_html($args['transport']) : 'refresh';
 			$section 			  = isset($args['section']) ? esc_html($args['section']) : '';
 			$title                = isset($args['title']) ? esc_html($args['title']) : '';
 			$priority			  = isset($args['priority']) ? esc_html($args['priority']) : '10';
-			$active_callback      = isset($args['active_callback'])? esc_html($args['active_callback']) : '';
-			$description     	  = isset($args['description'])? esc_html($args['description']) : '';
+			$active_callback      = isset($args['active_callback']) ? esc_html($args['active_callback']) : '';
+			$description     	  = isset($args['description']) ? esc_html($args['description']) : '';
 
 			$this->customize->add_setting( 
 			  $field_id , 

@@ -14,7 +14,7 @@
     <!--Author-->
 	<section id="author_vcard">
 		
-		<h3 class="author-title"><?php esc_html_e('About Author','lovage');?></h3>
+		<h3 class="author-title"><?php echo esc_html__('About Author','lovage');?></h3>
 		<a class="avatar" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?></a>
 		<p><strong><?php the_author_meta('nickname'); ?></strong>	</p>
 		

@@ -1,10 +1,6 @@
 <?php
 /**
  * Lovage Pro installer
- *
- * @author Braad Martin <http://braadmartin.com>
- * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://github.com/BraadMartin/components/tree/master/customizer/alpha-color-picker
  */
 
 if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Lovage_Customize_Control_Pro_Installer' ) ) {
@@ -52,13 +48,13 @@ if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Lovage_Customize
                     $plugin_install_url = admin_url('themes.php?page=lovage-extensions');
                 ?>
 
-                <a class="install-now button-primary button" target="_blank" href="https://lovage.io/pro/?utm_source=<?php bloginfo('name');?>-customizer&utm_medium=uprade-to-pro&utm_campaign=unlock-all-options"><?php esc_html_e( 'Learn More','lovage' ); ?></a>
+                <a class="install-now button-primary button" target="_blank" href="https://lovage.io/pro/?utm_source=<?php bloginfo('name');?>-customizer&utm_medium=uprade-to-pro&utm_campaign=unlock-all-options"><?php echo esc_html__( 'Learn More','lovage' ); ?></a>
 
                 <br/></br><!-- Added <br/> tags to fix the spacing -->
 
             <?php else : ?>
                 <hr>
-                <p><?php esc_html_e( 'The Lovage Pro plugin is installed but not activated. ', 'lovage' ); ?> <a href="<?php echo esc_url($plugin_install_url);?>" class="install-now button-primary button"><?php esc_html_e('Activate it', 'lovage');?></a></p>
+                <p><?php echo esc_html__( 'The Lovage Pro plugin is installed but not activated. ', 'lovage' ); ?> <a href="<?php echo esc_url($plugin_install_url);?>" class="install-now button-primary button"><?php echo esc_html__('Activate it', 'lovage');?></a></p>
             <?php endif;
         }
     }

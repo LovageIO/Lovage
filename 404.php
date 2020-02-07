@@ -19,11 +19,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'lovage' ); ?></h1>
+					<h1 class="page-title"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'lovage' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'lovage' ); ?></p>
+					<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'lovage' ); ?></p>
                     <br />
 					<form role="search" method="get" id="searchform_default" class="searchform" action="<?php echo esc_url(home_url( '/' ));?>" >
 					    <div class="lovage-search">

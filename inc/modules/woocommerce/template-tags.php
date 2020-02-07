@@ -29,7 +29,7 @@ if ( ! function_exists( 'lovage_product_category_list' ) ) {
 					'hierarchical' => true,
 					//'taxonomy' => 'post_tag',
 			    ));
-		$terms = get_terms( 'product_cat',$args);
+		$terms = get_terms( 'product_cat', $args);
 		if ( $terms ) {
 		    echo '<div class="lovage-product-cats-list">';
 		    	do_action('lovage_before_product_list');
@@ -39,7 +39,7 @@ if ( ! function_exists( 'lovage_product_category_list' ) ) {
 		                echo esc_attr( $term->name );
 		                echo '</a>';
 		        }
-		        echo '<a href="'.esc_url(home_url('/')).'?page_id='. esc_attr( get_option('woocommerce_shop_page_id') ).'" class="all_products">'.esc_html__('All Products','lovage').' &raquo;</a>';
+		        echo '<a href="'.esc_url( home_url('/') ).'?page_id='. esc_attr( get_option('woocommerce_shop_page_id') ).'" class="all_products">'.esc_html__('All Products','lovage').' &raquo;</a>';
 
 		        do_action('lovage_after_product_list');
 		    echo '</div>';
@@ -420,7 +420,7 @@ if (!function_exists('lovage_template_loop_product_title')):
  * Show the product title in the product loop. 
  */
 function lovage_template_loop_product_title() {
-    echo '<h3><a href="'.esc_url(get_permalink()).'">' . esc_attr(get_the_title()) . '</a></h3>';
+    echo '<h3><a href="'.esc_url(get_permalink()).'">' . esc_html(get_the_title()) . '</a></h3>';
 }
 endif;
 
@@ -478,7 +478,7 @@ function lovage_woocommerce_category_menu() {
                    
             echo'<li class="category_item">
                 <a href="'.esc_url(get_term_link( $category->slug, 'product_cat' )).'" class="category_item_link">
-                    <span class="category_name">'.esc_attr($category->name).'</span>
+                    <span class="category_name">'.esc_html($category->name).'</span>
                 </a>
             </li>';
                

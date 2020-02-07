@@ -4,7 +4,7 @@ Contributors: lovage
 Tags: e-commerce, blog, portfolio, one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, translation-ready
 Requires at least: 5.0
 Tested up to: 5.2.4
-Stable tag: 1.0.7
+Stable tag: 1.0.9.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -37,6 +37,130 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 3. Click Activate to use your new theme right away.
 
 == Upgrade Notice ==
+
+== Copyright ==
+
+* Normalize 
+Version – 3.0.2
+Source: https://necolas.github.io/normalize.css/
+License: The MIT License (MIT) copyright (c) Nicolas Gallagher and Jonathan Neal
+License Url: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+
+* Plugin Installer 
+Version - 1.0
+Source: https://github.com/dcooney/wordpress-plugin-installer
+License: GNU General Public License v2.0
+License Url: https://github.com/dcooney/wordpress-plugin-installer/blob/master/LICENSE
+
+* TGM Plugina Activation 
+Version - 2.6.1
+Source:  http://tgmpluginactivation.com/
+License: GNU General Public License v2.0 or later
+License Url: http://www.gnu.org/licenses/gpl-2.0.html
+
+* Alpha Color Picker Customize Control 
+Source:  https://github.com/BraadMartin/components/tree/master/customizer/alpha-color-picker
+License: GNU General Public License v3.0
+License Url: http://www.gnu.org/licenses/gpl-3.0.html
+
+* Image Checkbox Customize Control 
+Source:  https://github.com/maddisondesigns
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/gpl-2.0.html
+
+* Multi Checkbox Customize Control 
+Version: 0.1.0
+Source:  David Chandra Purnama <david@genbu.me>
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Radio Image Customize Control 
+Source:  http://themehybrid.com/hybrid-core, Copyright (c) 2008 - 2015, Justin Tadlock
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Range Slider Customize Control 
+Source:  https://github.com/maddisondesigns
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Sortable Checkbox Customize Control 
+Source:  https://github.com/turtlepod/fx-share/blob/master/includes/customizer-controls.php
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Sortable Checkbox Customize Control 
+Source:  https://github.com/turtlepod/fx-share/blob/master/includes/customizer-controls.php
+License: GNU General Public License v2.0
+License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Genericons Font 
+Source: by Automattic http://automattic.com/, 
+License: GNU General Public License v2.0
+License Url: https://www.gnu.org/licenses/gpl-2.0.html
+
+* jQuery.Easing 
+Version - 1.3
+Source: by George McGinley Smith http://gsgd.co.uk/sandbox/jquery/easing
+License: BSD License copyright (c) 2008
+License Url: https://github.com/gdsmith/jquery.easing/blob/master/LICENSE
+
+* jQuery UI 
+Version - 1.8.24
+Source: https://github.com/jquery/jquery-ui
+License: MIT
+License Url: https://github.com/jquery/jquery-ui/blob/master/LICENSE.txt
+
+* FontAwesome 
+Version - 5.0
+Source: https://fontawesome.com 
+License: FontAwesome Free License
+License Url: https://fontawesome.com/license/free
+
+* header-image.jpg
+Source: https://unsplash.com/photos/kZLaSWR-7J4
+License: Unsplash license can be used for commercial and noncommercial purposes
+License Url: https://unsplash.com/license
+
+* Picture in Screenshot.png
+Sournce: https://unsplash.com/photos/tMI2_-r5Nfo
+License: Unsplash license can be used for commercial and noncommercial purposes
+License Url: https://unsplash.com/license
+
+* Menu Icon: 
+Source: By Agni from The Noun Project. https://thenounproject.com/agniakash40), 
+License: Creative Commons CCBY
+Lincese Url: https://creativecommons.org/licenses/
+
+* Search Icon
+Source: By Icon Island from The Noun Project. https://thenounproject.com/iconisland/, 
+License: Creative Commons CCBY
+Lincese Url: https://creativecommons.org/licenses/
+
+* Shopping Bag Icon
+Source: By tezar tantular, ID from The Noun Project. https://thenounproject.com/kerismaker
+License: Creative Commons CCBY
+Lincese Url: https://creativecommons.org/licenses/
+
+* User Icon
+Source: By Honey Wadhwani, IN from The Noun Project. https://thenounproject.com/honeycreatesicons
+License: Creative Commons CCBY
+Lincese Url: https://creativecommons.org/licenses/
+
+* Pencil SVG Icon
+Source: By Bradley Wilton, GB from The Noun project. https://thenounproject.com/b.l.wilton
+License: Creative Commons CCBY
+Lincese Url: https://creativecommons.org/licenses/
+
+* WooCommerce Icons: includes credit-cards svg & png icons and edit.png, laoder.svg, WooCommerce Icon Font
+Source: WooCommerce plugin folder https://github.com/woocommerce/woocommerce/tree/master/assets/images/icons
+License: GPLv2 or later
+License Url: https://www.gnu.org/licenses/gpl-2.0.html
+
+* child-node.png / circle.png / dot.png / parttern.png
+Source: By Lovage https://lovage.io
+License: GPLv2 or later
+License Url: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
@@ -109,20 +233,3 @@ Lovage is a free highly customizable WordPress theme for multiple purposes. Lova
 
 = 1.0 =
 * Initial Release.
-
-== Copyright ==
-
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, licensed under [MIT](http://opensource.org/licenses/MIT)
-
-* Genericons: font by Automattic (http://automattic.com/), licensed under [GPL2](https://www.gnu.org/licenses/gpl-2.0.html)
-
-* jquery.easing.min.js http://gsgd.co.uk/sandbox/jquery/easing/, Copyright (C) 2008 George McGinley Smith, Open source under the BSD License. 
-
-* Images included in the theme are made by us and download from Unsplash.com, No copyright.
-
-* Icons used in the icon font:
-
-  - Menu Icon: By Agni (https://thenounproject.com/agniakash40), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
-  - Search Icon: By Icon Island (https://thenounproject.com/iconisland/), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
-  - Shopping Bag: By tezar tantular, ID (https://thenounproject.com/kerismaker), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)
-  - User Icon: By Honey Wadhwani, IN (https://thenounproject.com/honeycreatesicons), licensed under [Creative Commons CCBY] (https://creativecommons.org/licenses/)

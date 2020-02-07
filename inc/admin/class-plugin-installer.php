@@ -123,11 +123,11 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
          ?>
          <div class="plugin">
 		      <div class="plugin-wrap">
-			      <img src="<?php echo esc_html( $api->icons['1x'] ); ?>" alt="">
+			      <img src="<?php echo esc_url( $api->icons['1x'] ); ?>" alt="">
                <h2><?php echo esc_html( $api->name ); ?></h2>
                <p><?php echo esc_html( $api->short_description ); ?></p>
 
-               <p class="plugin-author"><?php esc_html_e( 'By', 'lovage' ); ?> <?php echo wp_kses_post( $api->author ); ?></p>
+               <p class="plugin-author"><?php echo esc_html__( 'By', 'lovage' ); ?> <?php echo wp_kses_post( $api->author ); ?></p>
 			   </div>
 			   <ul class="activation-row">
                <li>
@@ -139,8 +139,8 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
                   </a>
                </li>
                <li>
-                  <a href="https://wordpress.org/plugins/<?php echo esc_html( $api->slug ); ?>/" target="_blank">
-                     <?php esc_html_e( 'More Details', 'lovage' ); ?>
+                  <a href="https://wordpress.org/plugins/<?php echo esc_attr( $api->slug ); ?>/" target="_blank">
+                     <?php echo esc_html__( 'More Details', 'lovage' ); ?>
                   </a>
                </li>
             </ul>
@@ -200,10 +200,10 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 			
 			if( $api->name ){
 				$status = 'success';
-				$msg = esc_html( $api->name ) .' successfully installed.';
+				$msg = esc_html( $api->name ) .' '.esc_html__('successfully installed.', 'lovage');
 			} else {
 				$status = 'failed';
-				$msg = 'There was an error installing '. esc_html( $api->name ) .'.';
+				$msg = esc_html__( 'There was an error installing', 'lovage' ) . ' '. esc_html( $api->name ) .'.';
 			}
 			$json = array(
 				'status' => $status,
@@ -211,6 +211,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 			);
 			wp_send_json( $json );
 		}
+		
 		 /*
 	      * lovage_plugin_activation
 	      * Activate plugin via Ajax.
