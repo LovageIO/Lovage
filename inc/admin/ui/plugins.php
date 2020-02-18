@@ -96,7 +96,7 @@ $lovage_all_extensions = TGM_Plugin_Activation::$instance->plugins;
                  <?php endif;?>
 
                   <?php if ( isset( $lovage_single_extension['pro_required'] ) && $lovage_single_extension['pro_required'] ) : ?>
-                  <li><a href="https://lovage.io/pro" class="pro-required" target="_blank">
+                  <li><a href="<?php echo esc_url( 'https://lovage.io/pro' );?>" class="pro-required" target="_blank">
                     <?php echo esc_html__( 'Lovage Pro Required', 'lovage' ); ?>
                   </a></li>
                   <?php endif; ?>                  

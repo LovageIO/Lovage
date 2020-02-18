@@ -453,7 +453,7 @@ function lovage_customizer_google_fonts(){
 	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
 	if( count( $font_families ) > 0 ){
-	   wp_enqueue_style( 'lovage-customizer-google-fonts', esc_url_raw( $fonts_url ), array(), null );
+	   wp_enqueue_style( 'lovage-customizer-google-fonts', esc_url( $fonts_url ), array(), null );
 	}
 }
 add_action('wp_enqueue_scripts','lovage_customizer_google_fonts');

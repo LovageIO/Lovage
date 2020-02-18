@@ -278,7 +278,7 @@ class Lovage_Admin {
 				$disable_class = ' disabled';
 			}
 			$actions = array(
-				'update' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '" title="' . esc_html__( 'Update', 'lovage' ) . $item['sanitized_plugin'] . '">' . esc_html__( 'Update', 'lovage' ) . '</a>',
+				'update' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '" title="' . esc_attr__( 'Update', 'lovage' ) . $item['sanitized_plugin'] . '">' . esc_html__( 'Update', 'lovage' ) . '</a>',
 			);
 		} elseif ( is_plugin_active( $item['file_path'] ) ) {
 			$url = add_query_arg(

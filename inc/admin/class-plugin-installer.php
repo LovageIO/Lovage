@@ -132,8 +132,8 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 			   <ul class="activation-row">
                <li>
                   <a class="<?php echo esc_attr( $button_classes ); ?>"
-                  	data-slug="<?php echo esc_html( $api->slug ); ?>"
-								data-name="<?php echo esc_html( $api->name ); ?>"
+                  	data-slug="<?php echo esc_attr( $api->slug ); ?>"
+								data-name="<?php echo esc_attr( $api->name ); ?>"
 									href="<?php echo esc_url($button_link);?>">
 							<?php echo esc_html( $button_text ); ?>
                   </a>

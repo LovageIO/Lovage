@@ -42,6 +42,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, blockquote, dt{
 	font-family: $heading_font;
+  word-wrap: break-word;
 }
 
 h1, h2, h3 {

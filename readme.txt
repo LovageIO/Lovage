@@ -3,8 +3,8 @@
 Contributors: lovage
 Tags: e-commerce, blog, portfolio, one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, translation-ready
 Requires at least: 5.0
-Tested up to: 5.2.4
-Stable tag: 1.0.9.1
+Tested up to: 5.3.2
+Stable tag: 1.0.9.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,11 @@ Version - 2.6.1
 Source:  http://tgmpluginactivation.com/
 License: GNU General Public License v2.0 or later
 License Url: http://www.gnu.org/licenses/gpl-2.0.html
+
+* Customize Module
+Source: Inspired From Cherry Framework https://github.com/CherryFramework/cherry-framework/blob/master/modules/cherry-customizer/cherry-customizer.php
+* License: GPLv3
+* License Url: http://www.gnu.org/licenses/gpl-3.0.html
 
 * Alpha Color Picker Customize Control 
 Source:  https://github.com/BraadMartin/components/tree/master/customizer/alpha-color-picker
@@ -118,14 +123,14 @@ License: FontAwesome Free License
 License Url: https://fontawesome.com/license/free
 
 * header-image.jpg
-Source: https://unsplash.com/photos/kZLaSWR-7J4
-License: Unsplash license can be used for commercial and noncommercial purposes
-License Url: https://unsplash.com/license
+Source: https://www.rawpixel.com/image/430547/free-photo-image-banff-canada-canadian
+License: Public domain CC0
+License Url: https://creativecommons.org/publicdomain/zero/1.0/
 
 * Picture in Screenshot.png
-Sournce: https://unsplash.com/photos/tMI2_-r5Nfo
-License: Unsplash license can be used for commercial and noncommercial purposes
-License Url: https://unsplash.com/license
+Source: https://stocksnap.io/photo/R5RP4AHWI0
+License: Public domain CC0
+License Url: https://creativecommons.org/publicdomain/zero/1.0/
 
 * Menu Icon: 
 Source: By Agni from The Noun Project. https://thenounproject.com/agniakash40), 
@@ -163,6 +168,24 @@ License: GPLv2 or later
 License Url: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
+
+= 1.0.9.5 = 
+* Fixed some wrong escape issue.
+* Fixed the text overflow issue.
+
+= 1.0.9.4 = 
+* Fixed the navigation menu duplicated issue.
+
+= 1.0.9.3 = 
+* Fixed the select dropdown doesn't work with keyboard navigation.
+* Fixed a translation string's text domain is missed.
+
+= 1.0.9.2 = 
+* Updated the screenshot
+* Updated readme.txt.
+* Fixed the wrong escape method issue.
+* Fixed the customizer bug.
+* Changed home page banner.
 
 = 1.0.7 = 
 * Updated icon fonts.

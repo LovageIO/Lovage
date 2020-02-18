@@ -15,12 +15,15 @@
   text-align:left;
   font-weight:600;
   margin-top:1em;
+  word-wrap: break-word;
 }
 #author_vcard.narrow .section-title{
   text-align:center;
+  word-wrap: break-word;
 }
 #author_vcard .author-title{
   margin-bottom:40px;
+  word-wrap: break-word;
 }
 #author_vcard a.avatar{
   float:left;

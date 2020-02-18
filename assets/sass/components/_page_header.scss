@@ -20,7 +20,7 @@
     align-items: center;
     background-color: #f8f8f8;
     background-attachment: scroll;
-    background-position: center -200px;
+    background-position: center;
     background-repeat: no-repeat;
 
     h1{
@@ -31,6 +31,7 @@
       position: relative;
       margin: 0;
       text-align: center;
+      word-wrap: break-word;
    }
 
    h2{
@@ -45,6 +46,7 @@
        display: flex;
        justify-content: space-around;
        align-items: center;
+       word-wrap: break-word;
 
        span{
           display: block;

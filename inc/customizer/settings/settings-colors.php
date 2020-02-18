@@ -100,7 +100,7 @@ $GLOBALS[ 'lovage_setting_colors' ] =  array(
         'transport'   => 'postMessage',
         'show_opacity' => true,
         'default'	  => lovage_theme_customizer()->get_default('header_border_color'),
-        'sanitize_callback'    => '',
+        'sanitize_callback'    => 'lovage_hex_rgba_sanitization',
     ),
 
 	'site_title_color' => array(

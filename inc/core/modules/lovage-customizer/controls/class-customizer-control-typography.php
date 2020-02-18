@@ -70,7 +70,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 
                     <?php if( isset( $value['font_size'] ) ):?>
                     <label><?php echo esc_html__( 'Font Size', 'lovage' );?>
-                       <input type="text" name="lovage_typo_size_<?php echo esc_attr( $this->instance_number ); ?>" value="<?php echo esc_html( $value['font_size'] ); ?>" />
+                       <input type="text" name="lovage_typo_size_<?php echo esc_attr( $this->instance_number ); ?>" value="<?php echo esc_attr( $value['font_size'] ); ?>" />
                     </label>
                     <?php endif;?>
 

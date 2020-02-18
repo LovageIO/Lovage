@@ -7,6 +7,7 @@
  * @version 1.0
  */
 
+
 (function($){
   "use strict";
   var LovageTheme = window.LovageTheme || {};
@@ -25,6 +26,27 @@
      if($('.wcppec-cart-widget-button').length > 0){
        $('.woocommerce .woocommerce-mini-cart__buttons').css('flex-wrap', 'wrap');
      }
+
+     $("select").focus(function(){
+        $("select").attr("size", 10);
+     });
+
+     /* Menu Button */
+     $('.site-header #lovage-menu-button').on('click', function(){
+        if ( ! $('.site-header').hasClass('lovage-standard-rtl') ) {
+          $( '.main-navigation' ).css( 'right', 0 );
+        } else {
+          $( '.main-navigation' ).css( 'left', 0 );
+        }
+     });
+
+     $('.site-header #close-menu').on('click', function(){
+        if ( ! $('.site-header').hasClass('lovage-standard-rtl') ) {
+          $( '.main-navigation' ).css( 'right', '-999em' );
+        } else {
+          $( '.main-navigation' ).css( 'left', '-999em' );
+        }
+     });
   }
 
   LovageTheme.skipLinkFix = function(){
@@ -81,13 +103,53 @@
   }
 
   LovageTheme.accessibleDropMenu = function(){
-      $('.main-navigation ul ul li a').focus( function () {
-        $(this).parent('li').addClass('focused');
-        $(this).closest('ul.sub-menu').addClass('focused');
-      }).blur(function(){
-         $(this).parent('li').removeClass('focused');
-        $(this).closest('ul.sub-menu').removeClass('focused');
-      });
+      var masthead, siteNavContain, siteNavigation;
+
+      masthead       = $( '#masthead' );
+      siteNavContain = masthead.find( '.main-navigation' );
+      siteNavigation = masthead.find( '.main-navigation > div > ul' );
+
+      // Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+      (function() {
+        if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+          return;
+        }
+
+        // Toggle `focus` class to allow submenu access on tablets.
+        function toggleFocusClassTouchScreen() {
+          if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
+
+            $( document.body ).on( 'touchstart.lovage', function( e ) {
+              if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+                $( '.main-navigation li' ).removeClass( 'focus' );
+              }
+            });
+
+            siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
+              .on( 'touchstart.lovage', function( e ) {
+                var el = $( this ).parent( 'li' );
+
+                if ( ! el.hasClass( 'focused' ) ) {
+                  e.preventDefault();
+                  el.toggleClass( 'focus' );
+                  el.siblings( '.focus' ).removeClass( 'focus' );
+                }
+              });
+
+          } else {
+            siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.lovage' );
+          }
+        }
+
+        if ( 'ontouchstart' in window ) {
+          $( window ).on( 'resize.lovage', toggleFocusClassTouchScreen );
+          toggleFocusClassTouchScreen();
+        }
+
+        siteNavigation.find( 'a' ).on( 'focus.lovage blur.lovage', function() {
+          $( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+        });
+      })();
   }
 
   LovageTheme.popup = function(){

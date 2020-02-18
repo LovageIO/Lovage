@@ -103,7 +103,7 @@ if(!class_exists('Lovage_Customizer')){
 			);
 
 			foreach($control_types as $key => $val){
-				load_template( $val, true );
+				load_template( trailingslashit( dirname( __FILE__ ) ) . $val, true );
 			}
 		}
 

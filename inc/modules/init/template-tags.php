@@ -122,8 +122,8 @@ if ( ! function_exists( 'lovage_site_header_image' ) ) {
 
 			 $render .= '<div id="lovage-header-cover" style="background-image:url('.esc_url(get_header_image()).');background-size: cover;">';
 						  if(null == get_theme_mod('header_text') || get_theme_mod('header_text') == 1){
-							 $render .= '<h1>'.esc_html($title).'</h1>
-							  <h2><span>'.esc_html($subtitle).'</span></h2>';
+							 $render .= '<h1>'.wp_kses_post($title).'</h1>
+							  <h2><span>'.wp_kses_post($subtitle).'</span></h2>';
 						  }
 						$render .= '<div class="lovage-header-image-overlay"></div>
 				   	   </div>';
@@ -321,7 +321,8 @@ if ( ! function_exists( 'lovage_primary_navigation' ) ) {
 	    }
 
 
-       $render = '<nav id="site-navigation" role="navigation" aria-label="' . esc_html__( 'Main navigation', 'lovage' ) . '" class="main-navigation ' . esc_attr( $nav_grid_class ) . '">'
+       $render = '<nav id="site-navigation" role="navigation" aria-label="' . esc_html__( 'Main navigation', 'lovage' ) . '" class="main-navigation ' . esc_attr( $nav_grid_class ) . '">
+       		<a id="close-menu">&times;</a>'
 		. wp_nav_menu( array( 
 			'theme_location' => 'primary', 
 			'menu' => esc_html( $menu_slug ),
@@ -365,7 +366,6 @@ if ( ! function_exists( 'lovage_menu_buttons' ) ){
 		      lovage_popup_content( 'search' );
 		      
 		      echo '<a href="javascript:void(0);" id="lovage-menu-button" class="mini-menu"><i class="lovage-icon lovage-icon-menu"></i></a>';
-		      lovage_popup_content( 'menu' );
 	      echo '</div>';
 		}
 	}
@@ -461,9 +461,9 @@ if ( ! function_exists( 'lovage_copyright' ) ) {
 	function lovage_copyright(){
 	    $copyright = lovage_theme_customizer()->value( 'site_copyright');
 		if(!empty($copyright) && $copyright<>''){
-		    echo esc_attr(lovage_theme_customizer()->value( 'site_copyright'));
+		    echo wp_kses_post(lovage_theme_customizer()->value( 'site_copyright'));
 		}else{
-	        echo esc_html__( 'Proudly powered by', 'lovage' ).'<a href="https://wordpress.org/" target="_blank"> WordPress</a><span class="sep"> & </span><a href="https://lovage.io" rel="dofollow" target="_blank">Lovage Theme</a>';
+	        echo esc_html__( 'Proudly powered by', 'lovage' ) . '<a href=" '. esc_url( 'https://wordpress.org/' ) .' " target="_blank"> WordPress</a><span class="sep"> & </span><a href=" ' . esc_url ( 'https://lovage.io ' ) . ' " rel="dofollow" target="_blank"> ' . esc_html__( 'Lovage Theme ', 'lovage' ) . '</a>';
 		}
 	}
 }
