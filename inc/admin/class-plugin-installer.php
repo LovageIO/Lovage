@@ -37,7 +37,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
    		   foreach( $plugins as $plugin ) :
    		   	
                $button_classes = 'install button';
-               $button_text = __( 'Install Now', 'lovage' );
+               $button_text = esc_html__( 'Install Now', 'lovage' );
 
                $api = plugins_api( 'plugin_information',
                   array(
@@ -67,7 +67,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 				        ),
 				        admin_url( 'update.php' )
 				    ),
-				    'install-plugin'.'_'.$api->slug
+				    'install-plugin' . '_' . $api->slug
 				);
  
 				if ( ! is_wp_error( $api ) ) { // confirm error free
@@ -95,7 +95,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 						        ),
 						        admin_url('plugins.php' )
 						    ),
-						    'activate-plugin'.'_'.self::get_plugin_file( $plugin['slug'] )
+						    'activate-plugin' . '_' . self::get_plugin_file( $plugin['slug'] )
 						);
 	                  }
 	               }
@@ -200,10 +200,10 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
 			
 			if( $api->name ){
 				$status = 'success';
-				$msg = esc_html( $api->name ) .' '.esc_html__('successfully installed.', 'lovage');
+				$msg = esc_html( $api->name ) . ' ' . esc_html__('successfully installed.', 'lovage');
 			} else {
 				$status = 'failed';
-				$msg = esc_html__( 'There was an error installing', 'lovage' ) . ' '. esc_html( $api->name ) .'.';
+				$msg = esc_html__( 'There was an error installing', 'lovage' ) . ' ' . esc_html( $api->name ) . '.';
 			}
 			$json = array(
 				'status' => $status,
@@ -331,7 +331,7 @@ if( ! class_exists( ' Lovage_Plugins_Installer ' ) ) {
        * @since 1.0
        */
       public function enqueue_scripts(){
-            wp_enqueue_script( 'plugin-installer', LOVEAGE_INC_URI. 'admin/assets/js/plugin-installer.js', array( 'jquery' ) );
+            wp_enqueue_script( 'plugin-installer', LOVEAGE_INC_URI . 'admin/assets/js/plugin-installer.js', array( 'jquery' ) );
 			wp_localize_script( 'plugin-installer', 'lovage_installer_localize', array(
                'ajax_url' => admin_url( 'admin-ajax.php' ),
                'install_nonce' => wp_create_nonce( 'lovage_plugin_installer_nonce' ),

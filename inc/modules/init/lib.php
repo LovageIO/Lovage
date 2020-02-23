@@ -190,10 +190,6 @@ function lovage_breadcrumbs() {
 				echo '<a itemprop="breadcrumb" href="' . esc_url( $homeLink ) . '/' . esc_attr( $slug['slug'] ) . '/">' . esc_attr( $post_type->labels->singular_name ) . '</a> ' . wp_kses_post( $delimiter ) . ' ';
 				echo wp_kses_post( $before ) . esc_html( get_the_title() ) . wp_kses_post( $after );
 			} else { 
-				/*$cat = get_the_category(); 
-				$cat = $cat[0];
-				$cat_code = get_category_parents($cat, TRUE, ' ' . wp_kses_post( $delimiter ) . ' ');
-				echo $cat_code = str_replace ('<a','<a itemprop="breadcrumb"', $cat_code );*/
 				echo wp_kses_post( $before ) . esc_html(get_the_title()) . wp_kses_post( $after );
 			}
 

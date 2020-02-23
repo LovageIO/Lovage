@@ -7,7 +7,7 @@
  * @package Lovage
  * @author Lovage
  * @link https://lovage.io
- * @since 1.0.5
+ * @since 1.0.9.6
  */
 class Lovage_Admin {
 
@@ -109,7 +109,7 @@ class Lovage_Admin {
 		$lovage = wp_get_theme( 'lovage' );
 	?>
 		<div class="wrap about-wrap lovage-wrap">
-			<h1><?php echo '<strong>'.esc_html( $lovage['Name'] ).'</strong> <sup class="version">' . esc_html( $lovage['Version'] ) . '</sup>'; ?></h1>
+			<h1><?php echo '<strong>' . esc_html( $lovage['Name'] ) . '</strong> <sup class="version">' . esc_html( $lovage['Version'] ) . '</sup>'; ?></h1>
 			<p class="intro"><?php echo esc_html( $lovage['Description'] );?></p>
 
 		    <h2 class="nav-tab-wrapper">
@@ -131,7 +131,7 @@ class Lovage_Admin {
 		    			}
 
 		    			if( $value[ 'show_as_tab' ] ){
-		    				echo '<a href="'.esc_url( admin_url( 'themes.php?page='.$key ) ).'" class="nav-tab ' . esc_attr( $active_class ) . '">'. esc_html( $value[ 'tab_title' ] ).'</a>';
+		    				echo '<a href="'.esc_url( admin_url( 'themes.php?page='.$key ) ).'" class="nav-tab ' . esc_attr( $active_class ) . '">' . esc_html( $value[ 'tab_title' ] ) . '</a>';
 		    			}
 		    		}
 		    	?>
@@ -164,7 +164,7 @@ class Lovage_Admin {
 	 * Remove Demo Page Title
 	 * @since 1.0.0
 	 */
-	public function remove_demo_page_title(){
+	public function remove_demo_page_title() {
 		return '';
 	}
 
@@ -182,11 +182,11 @@ class Lovage_Admin {
      */
 	public static function text( $name,$val ) {
 	  
-	  if(null !== get_option( $name ) && get_option( $name )<>''){
+	  if( null !== get_option( $name ) && get_option( $name ) !== '' ) {
 	  	 $val = get_option( $name );
 	  }
 
-	  $return_html = '<input name="' . esc_attr( $name ) . '" type="text" class="ui textfield" value="'.esc_attr( $val ).'">';      
+	  $return_html = '<input name="' . esc_attr( $name ) . '" type="text" class="ui textfield" value="' . esc_attr( $val ) . '">';      
       
       return $return_html;
 	}
@@ -255,7 +255,7 @@ class Lovage_Admin {
 			);
 
 			$actions = array(
-				'activate' => '<a href="' . esc_url( $url ) . '" class="button button-primary"' . esc_attr( $data_version ) . ' title="' . esc_attr__( 'Activate', 'lovage' ). $item['sanitized_plugin'] . '" data-slug="'.esc_attr( $item['slug'] ).'">' . esc_attr__( 'Activate' , 'lovage' ) . '</a>',
+				'activate' => '<a href="' . esc_url( $url ) . '" class="button button-primary"' . esc_attr( $data_version ) . ' title="' . esc_attr__( 'Activate', 'lovage' ). $item['sanitized_plugin'] . '" data-slug="' . esc_attr( $item['slug'] ) . '">' . esc_attr__( 'Activate' , 'lovage' ) . '</a>',
 			);
 		} elseif ( version_compare( $installed_extensions[ $item['file_path'] ]['Version'], $item['version'], '<' ) ) {
 			$disable_class = '';
@@ -278,7 +278,7 @@ class Lovage_Admin {
 				$disable_class = ' disabled';
 			}
 			$actions = array(
-				'update' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '" title="' . esc_attr__( 'Update', 'lovage' ) . $item['sanitized_plugin'] . '">' . esc_html__( 'Update', 'lovage' ) . '</a>',
+				'update' => '<a href="' . esc_url( $url ) . '" class="button button-primary' . esc_attr( $disable_class ) . '" title="' . esc_attr__( 'Update', 'lovage' ) . esc_attr( $item['sanitized_plugin'] ) . '">' . esc_html__( 'Update', 'lovage' ) . '</a>',
 			);
 		} elseif ( is_plugin_active( $item['file_path'] ) ) {
 			$url = add_query_arg(

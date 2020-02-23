@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				echo absint( get_comments_number() ). ' ' .esc_html__( 'Comments On', 'lovage' ). ' ' .esc_html( get_the_title() );
+				echo absint( get_comments_number() ) . ' ' . esc_html__( 'Comments On', 'lovage' ) . ' ' . esc_html( get_the_title() );
 			?>
 		</h2>
 

@@ -4,7 +4,7 @@ Contributors: lovage
 Tags: e-commerce, blog, portfolio, one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, translation-ready
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 1.0.9.5
+Stable tag: 1.0.9.6
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -94,8 +94,8 @@ Source:  https://github.com/turtlepod/fx-share/blob/master/includes/customizer-c
 License: GNU General Public License v2.0
 License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-* Sortable Checkbox Customize Control 
-Source:  https://github.com/turtlepod/fx-share/blob/master/includes/customizer-controls.php
+* Breadcrumbs codes
+Source:  https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
 License: GNU General Public License v2.0
 License Url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 

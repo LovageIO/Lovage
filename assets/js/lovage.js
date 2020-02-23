@@ -150,6 +150,18 @@
           $( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
         });
       })();
+
+      /* Responsive Keyboard Navigation */
+      function responsiveMenu() {
+        if( $(window).width() <= 960 ) {
+           $('#site-navigation').appendTo('#lovage-primary-bar');
+        }else{
+           $('#site-icons').appendTo('#lovage-primary-bar');
+        }
+      }
+
+      $(window).load( function() { responsiveMenu() });
+      $(window).resize( function() { responsiveMenu() });
   }
 
   LovageTheme.popup = function(){
@@ -201,11 +213,11 @@
       
       $('#lovage-menu-button').focus(function(){ 
          $(this).addClass('focus');
-         open('#lovage-menu');
+         $('#site-navigation').css({right: 0});
       });
 
-      $('#popup-menu a').last().blur(function(){
-         close('#lovage-menu');
+      $('#site-navigation a').last().blur(function(){
+          $('#site-navigation').css({right: '-999em'});
       });
 
       /* Click event */
