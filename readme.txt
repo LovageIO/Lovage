@@ -169,6 +169,14 @@ License Url: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.0.9.7 = 
+* Added conditional for woocommerce class if exists then add woo-commerce support.
+* Fixed the icon font conflict with Elementor FontAwesome.
+
+= 1.0.9.6 = 
+* Fixed keyboard navigation issue for responsive menu.
+* Fixed some wrong escape issue.
+
 = 1.0.9.5 = 
 * Fixed some wrong escape issue.
 * Fixed the text overflow issue.

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lovage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-27 11:00+0000\n"
+"POT-Creation-Date: 2020-03-11 09:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,170 +15,302 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.0; wp-5.2.2"
 
-#: inc/modules/init/lib.php:452 inc/modules/init/lib.php:517
-#: inc/modules/init/template-tags.php:263
-msgid "% Comments"
+#: 404.php:22
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: inc/modules/init/lib.php:279
-#, php-format
-msgid "( Page %s )"
+#: 404.php:26
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#. used between list items, there is a space after the comma
-#: inc/modules/init/template-tags.php:249
-#: inc/modules/init/template-tags.php:255
-msgid ", "
+#: comments.php:31
+msgid "Comments On"
 msgstr ""
 
-#: inc/modules/init/lib.php:451 inc/modules/init/lib.php:521
-#: inc/modules/init/template-tags.php:263
-msgid "1 Comment"
+#: comments.php:37 comments.php:58
+msgid "Comment navigation"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:198
-msgid "1/1/2 Columns"
+#: comments.php:40 comments.php:61
+msgid "Older Comments"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:202
-msgid "1/2/1 Columns"
+#: comments.php:41 comments.php:62
+msgid "Newer Comments"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:206
-msgid "1/3 Columns"
+#: comments.php:74
+msgid "Comments are closed."
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:186
-msgid "2 Columns"
+#: header.php:29
+msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:210
-msgid "2/1/1 Columns"
+#: inc/class-lovage.php:154
+msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:190
-msgid "3 Columns"
+#: inc/class-lovage.php:155
+msgid "Mobile Menu"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:214
-msgid "3/1 Columns"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:194
-msgid "4 Columns"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:63
-msgid "404"
-msgstr ""
-
-#: template-parts/single-post/author.php:17
-msgid "About Author"
-msgstr ""
-
-#: inc/admin/class-admin.php:290 inc/admin/class-plugin-installer.php:87
-#: inc/admin/class-plugin-installer.php:337
-msgid "Activate"
-msgstr ""
-
-#: inc/admin/class-admin.php:290
-#, php-format
-msgid "Activate %s"
-msgstr ""
-
-#: inc/admin/ui/demos.php:24
-msgid "Activate Demo Import Plugin"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:61
-msgid "Activate it"
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:83
-#: inc/admin/class-plugin-installer.php:338
-msgid "Activated"
-msgstr ""
-
-#: inc/customizer/settings/settings-codes.php:14
-msgid "Additional Codes"
-msgstr ""
-
-#: inc/modules/woocommerce/template-tags.php:42
-msgid "All Products"
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:335
-msgid "Are you sure you want to install this plugin?"
-msgstr ""
-
-#: inc/modules/init/lib.php:268
-#, php-format
-msgid "Author Archives: %s"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:247
-msgid "Blog Archive/Category Layouts"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:236
-msgid "Blog Archive/Category Page"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:203
-msgid "Blog Color Scheme"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:276
-msgid "Blog Post Page"
-msgstr ""
-
-#: inc/class-lovage.php:199
+#: inc/class-lovage.php:180
 msgid "Blog Sidebar"
+msgstr ""
+
+#: inc/class-lovage.php:182
+msgid "This sidebar will be displayed on the category and single post page."
+msgstr ""
+
+#: inc/class-lovage.php:185
+msgid "Page Sidebar"
+msgstr ""
+
+#: inc/class-lovage.php:187
+msgid "This sidebar will be displayed on the static page."
+msgstr ""
+
+#: inc/class-lovage.php:190
+msgid "Bottom Widget 1"
+msgstr ""
+
+#: inc/class-lovage.php:192
+msgid "This widget area will be displayed on the left of the bottom section."
+msgstr ""
+
+#: inc/class-lovage.php:195
+msgid "Bottom Widget 2"
+msgstr ""
+
+#: inc/class-lovage.php:197
+msgid ""
+"This widget area will be displayed on the second left of the bottom section."
+msgstr ""
+
+#: inc/class-lovage.php:200
+msgid "Bottom Widget 3"
+msgstr ""
+
+#: inc/class-lovage.php:202
+msgid "This widget area will be displayed on the middle of the bottom section."
+msgstr ""
+
+#: inc/class-lovage.php:205
+msgid "Bottom Widget 4"
+msgstr ""
+
+#: inc/class-lovage.php:207
+msgid "This widget area will be displayed on the right of the bottom section."
+msgstr ""
+
+#: inc/class-lovage.php:213
+msgid "Shop Sidebar"
+msgstr ""
+
+#: inc/class-lovage.php:215
+msgid "This sidebar will be displayed on the shop page."
 msgstr ""
 
 #. Name of the template
 msgid "Blog Template"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:215
-msgid "Blog Title Color"
+#. Name of the template
+msgid "Fullwidth Template"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:227
-msgid "Blog Title Hover Color"
+#: template-parts/content-single.php:36 template-parts/content-page.php:18
+#: template-parts/content.php:47
+msgid "Pages:"
 msgstr ""
 
-#: inc/class-lovage.php:214
-msgid "Bottom Widget 1"
+#: template-parts/content-single.php:45
+msgid "Post Tags"
 msgstr ""
 
-#: inc/class-lovage.php:219
-msgid "Bottom Widget 2"
+#: template-parts/content-single-author.php:17
+msgid "About Author"
 msgstr ""
 
-#: inc/class-lovage.php:224
-msgid "Bottom Widget 3"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
 msgstr ""
 
-#: inc/class-lovage.php:229
-msgid "Bottom Widget 4"
+#: template-parts/content-none.php:20
+msgid "Ready to publish your first post?"
 msgstr ""
 
-#: inc/modules/woocommerce/extras.php:45
-msgctxt "breadcrumb"
-msgid "Home"
+#: template-parts/content-none.php:20
+msgid "Get started here"
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-single-related-posts.php:52
+msgid "You may also like"
+msgstr ""
+
+#. %s: Name of current post.
+#: template-parts/content.php:36
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content.php:41
+msgid "Continue reading"
+msgstr ""
+
+#: template-parts/content-popup.php:17
+msgid "Search"
+msgstr ""
+
+#: template-parts/content-popup.php:20
+msgid "Enter Keywords."
+msgstr ""
+
+#: template-parts/content-popup.php:31
+msgid "Cart"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:40
+#: inc/admin/class-plugin-installer.php:339
+msgid "Install Now"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:84
+#: inc/admin/class-plugin-installer.php:341
+msgid "Activated"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:88
+#: inc/admin/class-plugin-installer.php:340 inc/admin/class-admin.php:258
+#: inc/admin/class-admin.php:258
+msgid "Activate"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:130 inc/admin/ui/index.php:39
+#: inc/admin/ui/plugins.php:65
+msgid "By"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:143 inc/admin/ui/plugins.php:93
+msgid "More Details"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:160
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:167
+#: inc/admin/class-plugin-installer.php:232
+msgid "Error - unable to verify nonce, please try again."
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:203
+msgid "successfully installed."
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:206
+msgid "There was an error installing"
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:225
+msgid "Sorry, you are not allowed to activate plugins on this site."
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:265
+msgid " successfully activated."
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:269
+msgid "There was an error activating "
+msgstr ""
+
+#: inc/admin/class-plugin-installer.php:338
+msgid "Are you sure you want to install this plugin?"
+msgstr ""
+
+#. Name of the theme
+#: inc/admin/class-admin.php:68 inc/admin/class-admin.php:69
+msgid "Lovage"
+msgstr ""
+
+#: inc/admin/class-admin.php:70
+msgid "Dashboard"
+msgstr ""
+
+#: inc/admin/class-admin.php:78
+msgid "Lovage Plugins"
+msgstr ""
+
+#: inc/admin/class-admin.php:79
+msgid "Plugins"
+msgstr ""
+
+#: inc/admin/class-admin.php:155 inc/admin/class-admin.php:156
+msgid "Lovage Demos"
+msgstr ""
+
+#: inc/admin/class-admin.php:243
+msgid "Install"
+msgstr ""
+
+#: inc/admin/class-admin.php:281
+msgid "Update"
+msgstr ""
+
+#: inc/admin/class-admin.php:294
+msgid "Deactivate"
+msgstr ""
+
+#: inc/admin/extensions.php:31
+msgid "Preview and import Lovage demos."
+msgstr ""
+
+#: inc/admin/extensions.php:45
+msgid "Lovage Blocks offers some common blocks for Gutenberg editor."
+msgstr ""
+
+#: inc/admin/extensions.php:54
+msgid ""
+"Lovage is a simple portfolio plugin that allows you to show your projects."
+msgstr ""
+
+#: inc/customizer/settings/settings-woocommerce.php:15
+msgid "Shop Page"
+msgstr ""
+
+#: inc/customizer/settings/settings-woocommerce.php:16
+msgid "Manage the settings for the shop page."
+msgstr ""
+
+#: inc/customizer/settings/settings-woocommerce.php:26
+msgid "Show Sidebar"
+msgstr ""
+
+#: inc/customizer/settings/settings-components.php:14
+msgid "Components"
+msgstr ""
+
+#: inc/customizer/settings/settings-components.php:15
+msgid "Manage the site components style."
 msgstr ""
 
 #: inc/customizer/settings/settings-components.php:28
 msgid "Button"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:87
-msgid "Button Border Width"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:71
-msgid "Button Radius"
 msgstr ""
 
 #: inc/customizer/settings/settings-components.php:38
@@ -196,175 +328,60 @@ msgstr ""
 msgid "Button: Text Color"
 msgstr ""
 
-#: inc/admin/class-plugin-installer.php:129 inc/admin/ui/extensions.php:65
-msgid "By"
+#: inc/customizer/settings/settings-components.php:71
+msgid "Button Radius"
 msgstr ""
 
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:122
-msgid "Capitalize"
+#: inc/customizer/settings/settings-components.php:72
+#: inc/customizer/settings/settings-components.php:88
+#: inc/customizer/settings/settings-components.php:196
+#: inc/customizer/settings/settings-components.php:211
+#: inc/customizer/settings/settings-components.php:319
+#: inc/customizer/settings/settings-components.php:334
+msgid "The default unit is px"
 msgstr ""
 
-#: template-parts/header/popup.php:28
-msgid "Cart"
+#: inc/customizer/settings/settings-components.php:87
+msgid "Button Border Width"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:58
-msgid "Centered Vertical"
+#: inc/customizer/settings/settings-components.php:104
+msgid "Hover Status"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:248
-msgid "Choose a layout for all blog archive/category pages."
+#: inc/customizer/settings/settings-components.php:105
+msgid "Manage button style when hovering on it. "
 msgstr ""
 
-#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:357
-#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:439
-msgid "Choose or Upload an Image"
+#: inc/customizer/settings/settings-components.php:151
+msgid "Text Field"
 msgstr ""
 
-#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:367
-msgid "Choose or Upload Images"
+#: inc/customizer/settings/settings-components.php:152
+msgid "Manage the input text field style."
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:178
-msgid "Choose the global site footer widget area layout."
+#: inc/customizer/settings/settings-components.php:162
+#: inc/customizer/settings/settings-components.php:236
+msgid "Text Field: Background Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:41
-msgid "Choose the global site header layout."
+#: inc/customizer/settings/settings-components.php:173
+#: inc/customizer/settings/settings-components.php:247
+msgid "Text Field: Border Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:155
-msgid "Choose the site footer background color for the global site."
+#: inc/customizer/settings/settings-components.php:184
+#: inc/customizer/settings/settings-components.php:258
+msgid "Text Field: Text Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:179
-msgid "Choose the site footer link color for the global site."
+#: inc/customizer/settings/settings-components.php:195
+msgid "Text Field: Border Radius"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:167
-msgid "Choose the site footer text color for the global site."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:83
-msgid "Choose the site header background color for the global site."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:119
-msgid "Choose the site navigation menu link color for the global site."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:107
-msgid "Choose the site title color for the global site."
-msgstr ""
-
-#: inc/admin/ui/dashboard.php:96 inc/customizer/settings/settings-colors.php:12
-msgid "Color Scheme"
-msgstr ""
-
-#: comments.php:41 comments.php:62
-msgid "Comment navigation"
-msgstr ""
-
-#: inc/modules/init/lib.php:502
-#, php-format
-msgid "Comment on %s"
-msgstr ""
-
-#: comments.php:78
-msgid "Comments are closed."
-msgstr ""
-
-#: inc/modules/init/lib.php:453
-msgid "Comments Off"
-msgstr ""
-
-#: comments.php:32
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/customizer/settings/settings-components.php:14
-msgid "Components"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:60
-msgid "Content"
-msgstr ""
-
-#: template-parts/content.php:41
-msgid "Continue reading"
-msgstr ""
-
-#. %s: Name of current post.
-#: template-parts/content.php:36
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:221
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/admin/ui/dashboard.php:101
-msgid "Custom Fonts"
-msgstr ""
-
-#: inc/admin/class-admin.php:99
-msgid "Dashboard"
-msgstr ""
-
-#: inc/admin/class-admin.php:328
-msgid "Deactivate"
-msgstr ""
-
-#: inc/admin/class-admin.php:328
-#, php-format
-msgid "Deactivate %s"
-msgstr ""
-
-#: inc/modules/init/metabox.php:133
-msgid "Default"
-msgstr ""
-
-#: inc/admin/class-admin.php:108
-msgid "Demos"
-msgstr ""
-
-#: inc/modules/init/metabox.php:86
-msgid "Don't need to start and close with <script> tag."
-msgstr ""
-
-#: inc/modules/init/metabox.php:78
-msgid "Don't need to start and close with <style> tag."
-msgstr ""
-
-#: inc/modules/woocommerce/metabox.php:22
-#: inc/modules/woocommerce/metabox.php:48
-msgid "Enable Sidebar"
-msgstr ""
-
-#: template-parts/header/popup.php:20
-msgid "Enter Keywords."
-msgstr ""
-
-#: inc/modules/init/lib.php:465
-msgid "Enter your password to view comments."
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:166
-#: inc/admin/class-plugin-installer.php:229
-msgid "Error - unable to verify nonce, please try again."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:239
-msgid "Excerpt Text Color"
-msgstr ""
-
-#: inc/admin/class-admin.php:117
-msgid "Extensions"
+#: inc/customizer/settings/settings-components.php:210
+msgid "Text Field: Border Width"
 msgstr ""
 
 #: inc/customizer/settings/settings-components.php:227
@@ -372,57 +389,464 @@ msgstr ""
 msgid "Focus Status"
 msgstr ""
 
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:55
-msgid "Font Family"
+#: inc/customizer/settings/settings-components.php:228
+msgid "Manage text field style when focusing on it. "
 msgstr ""
 
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:73
-msgid "Font Size"
+#: inc/customizer/settings/settings-components.php:274
+msgid "Textarea"
 msgstr ""
 
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:79
-msgid "Font Weight"
+#: inc/customizer/settings/settings-components.php:275
+msgid "Manage the textarea style."
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:165
-msgid "Footer"
+#: inc/customizer/settings/settings-components.php:285
+#: inc/customizer/settings/settings-components.php:359
+msgid "Textarea: Background Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-codes.php:34
-msgid "Footer Codes"
+#: inc/customizer/settings/settings-components.php:296
+#: inc/customizer/settings/settings-components.php:370
+msgid "Textarea: Border Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:143
+#: inc/customizer/settings/settings-components.php:307
+#: inc/customizer/settings/settings-components.php:381
+msgid "Textarea: Text Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-components.php:318
+msgid "Textarea: Border Radius"
+msgstr ""
+
+#: inc/customizer/settings/settings-components.php:333
+msgid "Textarea: Border Width"
+msgstr ""
+
+#: inc/customizer/settings/settings-components.php:351
+msgid "Manage textarea style when focusing on it. "
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:13 inc/admin/ui/dashboard.php:27
+msgid "Color Scheme"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:14
+msgid "Manage the site color style"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:24
+msgid "Theme Color Scheme"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:25
+msgid "Manage the global color scheme."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:35
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:36
+msgid "The global link color."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:47
+msgid "Link Hover Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:48
+msgid "The global link color when hovering on the link."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:59
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:60
+msgid "The global content text color."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:72
+msgid "Header Color Scheme"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:73
+msgid "Manage the site header color style"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:83
+msgid "Site Header Background Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:84
+msgid "Choose the site header background color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:95
+msgid "Header Border Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:96
+msgid "The bottom border color of the site header."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:107
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:108
+msgid "Choose the site title color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:119
+msgid "Site Menu Link Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:120
+msgid "Choose the site navigation menu link color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:131
+msgid "Site Menu Link Hover Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:132
+msgid "The color when the mouse hovering on the site menu link."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:144
 msgid "Footer Color Scheme"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:177
-msgid "Footer Widget Area Layouts"
+#: inc/customizer/settings/settings-colors.php:145
+msgid "Manage the site footer color style"
 msgstr ""
 
-#: inc/customizer/settings/settings-colors.php:240
-msgid "For blog archive page."
+#: inc/customizer/settings/settings-colors.php:155
+msgid "Site Footer Background Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:156
+msgid "Choose the site footer background color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:167
+msgid "Site Footer Text Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:168
+msgid "Choose the site footer text color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:179
+msgid "Site Footer Link Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:180
+msgid "Choose the site footer link color for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:191
+msgid "Site Footer Link Hover Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:192
+msgid "The color when the mouse hovering on the link."
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:204
+msgid "Blog Color Scheme"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:205
+msgid "Manage the blog color scheme."
 msgstr ""
 
 #: inc/customizer/settings/settings-colors.php:216
-#: inc/customizer/settings/settings-colors.php:228
+msgid "Blog Title Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-colors.php:217
+#: inc/customizer/settings/settings-colors.php:229
 msgid "For both archive page and single post."
 msgstr ""
 
-#: inc/admin/ui/extensions.php:30
-msgid ""
-"For some reasons, the extensions information is not loaded, please try to "
-"refresh the page."
+#: inc/customizer/settings/settings-colors.php:228
+msgid "Blog Title Hover Color"
 msgstr ""
 
-#: inc/admin/ui/dashboard.php:5
-msgid ""
-"Get early to know Lovage theme new features, subscriber-only promotion and "
-"tutorials."
+#: inc/customizer/settings/settings-colors.php:240
+msgid "Excerpt Text Color"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:288
+#: inc/customizer/settings/settings-colors.php:241
+msgid "For blog archive page."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:14
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:15
+msgid "Manage the site layout"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:28
+#: inc/customizer/settings/settings-typography.php:28
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:29
+msgid "Manage the site header style"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:40
+msgid "Header Layouts"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:41
+msgid "Choose the global site header layout."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:50
+msgid "Standard"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:54
+msgid "Standard RTL"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:58
+msgid "Centered Vertical"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:65
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:66
+msgid "Set the site header stick to top."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:76
+msgid "Header Image Height"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:77
+msgid "Set the header image height, the unite is %"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:92
+msgid "Header Title"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:93
+msgid "If you leave it empty, just show the site name by default."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:103
+msgid "Header Subtitle"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:104
+msgid "If you leave it empty, just show the site tagline by default."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:114
+msgid "Header Image Text Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:115
+msgid "Set the color for header text color"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:126
+msgid "Header Text Border Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:127
+msgid "The border around the subheading in the header area."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:138
+msgid "Header Image Overlay Color"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:139
+msgid "Set the color and opacity for header image overlay"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:154
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:155
+msgid "Manage the site footer style"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:166
+msgid "Footer Widget Area Layouts"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:167
+msgid "Choose the global site footer widget area layout."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:175
+msgid "2 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:179
+msgid "3 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:183
+msgid "4 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:187
+msgid "1/1/2 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:191
+msgid "1/2/1 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:195
+msgid "1/3 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:199
+msgid "2/1/1 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:203
+msgid "3/1 Columns"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:210
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:211
+msgid ""
+"The copyright text shows in the bottom footer. The content supports <a> "
+"<span> <small> <strong> HTML tag."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:225
+msgid "Blog Archive/Category Page"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:236
+msgid "Blog Archive/Category Layouts"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:237
+msgid "Choose a layout for all blog archive/category pages."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:246
+#: inc/customizer/settings/settings-layout.php:286
+msgid "One Column"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:250
+#: inc/customizer/settings/settings-layout.php:290
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:254
+#: inc/customizer/settings/settings-layout.php:294
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:265
+msgid "Blog Post Page"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:276
+msgid "Single Post Layouts"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:277
 msgid "Globally choose a layout for all the single posts."
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:301
+msgid "Show Author Section"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:311
+msgid "Related Posts Section"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:321
+msgid "Related Posts Show By"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:327
+msgid "Related Category"
+msgstr ""
+
+#: inc/customizer/settings/settings-layout.php:328
+msgid "Related Tag"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:17
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:18
+msgid "Manage the typography design for the global site."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:29
+msgid "Manage the typography design for the site header area."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:39
+msgid "Site Title Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:40
+msgid ""
+"The typography settings for the default site title text. If you set the LOGO,"
+" the site title will be replaced, so you don't need to set this option."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:49
+msgid "Site Navigation Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:50
+msgid "The typography settings for the default site navigation text."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:60
+msgid "Content"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:61
+msgid "Manage the typography for the page content area."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:71
+msgid "Standard Blog Title Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:72
+msgid "The typography settings for the standard blog title."
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:81
+msgid "Paragraph Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:82
+msgid "The typography settings for the content paragraph text."
 msgstr ""
 
 #: inc/customizer/settings/settings-typography.php:91
@@ -449,270 +873,198 @@ msgstr ""
 msgid "H6 Typography"
 msgstr ""
 
-#: inc/customizer/settings/settings-codes.php:24
-msgid "Head Codes"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:28
-#: inc/customizer/settings/settings-typography.php:28
-msgid "Header"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:94
-msgid "Header Border Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:71
-msgid "Header Color Scheme"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:87
-msgid "Header Image Height"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:149
-msgid "Header Image Overlay Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:125
-msgid "Header Image Text Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:40
-msgid "Header Layouts"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:114
-msgid "Header Subtitle"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:137
-msgid "Header Text Border Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:103
-msgid "Header Title"
-msgstr ""
-
-#: inc/admin/ui/dashboard.php:106
-msgid "Header, Footer and Page Layout"
-msgstr ""
-
-#: inc/modules/init/lib.php:165
-msgid "Home"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:104
-msgid "Hover Status"
-msgstr ""
-
-#. URI of the theme
-msgid "https://lovage.io"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://www.themevan.com"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:104
-msgid "If you leave it empty, just show the site name by default."
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:115
-msgid "If you leave it empty, just show the site tagline by default."
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:125
-msgid "Inherit"
-msgstr ""
-
-#: inc/admin/class-admin.php:275
-msgid "Install"
-msgstr ""
-
-#: inc/admin/class-admin.php:275
-#, php-format
-msgid "Install %s"
-msgstr ""
-
-#: inc/admin/ui/demos.php:5
-msgid "Install Demo Import Plugin"
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:39
-#: inc/admin/class-plugin-installer.php:336
-msgid "Install Now"
-msgstr ""
-
-#: 404.php:26
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-
-#: template-parts/content-none.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:14
-msgid "Layout"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:263
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/modules/init/metabox.php:134
-msgid "Left"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:261
-#: inc/customizer/settings/settings-layout.php:301
-msgid "Left Sidebar"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:111
-msgid "Letter Spacing"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:105
-msgid "Line Height"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:34
-msgid "Link Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:46
-msgid "Link Hover Color"
-msgstr ""
-
-#: inc/modules/woocommerce/template-tags.php:85
-msgid "Load More"
-msgstr ""
-
-#. Name of the theme
-#: inc/admin/class-admin.php:97 inc/admin/class-admin.php:98
-msgid "Lovage"
-msgstr ""
-
-#: inc/admin/class-admin.php:107 inc/admin/class-admin.php:196
-#: inc/admin/class-admin.php:197
-msgid "Lovage Demos"
-msgstr ""
-
-#: inc/admin/class-admin.php:116
-msgid "Lovage Extensions"
-msgstr ""
-
-#. Description of the theme
-msgid ""
-"Lovage is a highly customizable free WordPress theme. It’s completely "
-"compatible with the popular page builders such as Elementor, WPBakery Page "
-"Builder, Beaver Builder."
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:124
-msgid "Lowercase"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:105
-msgid "Manage button style when hovering on it. "
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:228
-msgid "Manage text field style when focusing on it. "
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:351
-msgid "Manage textarea style when focusing on it. "
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:204
-msgid "Manage the blog color scheme."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:24
-msgid "Manage the global color scheme."
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:152
-msgid "Manage the input text field style."
-msgstr ""
-
-#: inc/customizer/settings/settings-woocommerce.php:16
-msgid "Manage the settings for the shop page."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:13
-msgid "Manage the site color style"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:15
-msgid "Manage the site components style."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:144
-msgid "Manage the site footer color style"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:166
-msgid "Manage the site footer style"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:72
-msgid "Manage the site header color style"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:29
-msgid "Manage the site header style"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:15
-msgid "Manage the site layout"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:275
-msgid "Manage the textarea style."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:18
-msgid "Manage the typography design for the global site."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:29
-msgid "Manage the typography design for the site header area."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:61
-msgid "Manage the typography for the page content area."
+#: inc/customizer/settings/settings-typography.php:147
+msgid "Widget"
 msgstr ""
 
 #: inc/customizer/settings/settings-typography.php:148
 msgid "Manage the typography for the site widget areas."
 msgstr ""
 
-#: inc/class-lovage.php:172
-msgid "Mobile Menu"
+#: inc/customizer/settings/settings-typography.php:158
+msgid "Widget Title Typography"
 msgstr ""
 
-#: inc/admin/class-plugin-installer.php:142 inc/admin/ui/extensions.php:78
-msgid "More Details"
+#: inc/customizer/settings/settings-typography.php:159
+msgid "The typography settings for the site widgets title."
 msgstr ""
 
-#: inc/admin/ui/dashboard.php:111
+#: inc/customizer/settings/settings-typography.php:168
+msgid "Widget Content Typography"
+msgstr ""
+
+#: inc/customizer/settings/settings-typography.php:169
+msgid "The typography settings for the site widgets content text."
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:18
+msgid "General Settings"
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:22
+msgid "Upload Logo & Favicon"
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:32
+msgid "Custom Fonts"
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:37
+msgid "Header, Footer and Page Layout"
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:42
 msgid "More Theme Options"
 msgstr ""
 
-#: inc/admin/ui/extensions.php:57
-#, php-format
-msgid "New Version Available: %s"
+#: inc/admin/ui/dashboard.php:51
+msgid "Subscribe To Lovage Newsletter"
 msgstr ""
 
-#: comments.php:45 comments.php:66
-msgid "Newer Comments"
+#: inc/admin/ui/dashboard.php:52
+msgid ""
+"Get early to know Lovage theme new features, subscriber-only promotion and "
+"tutorials."
+msgstr ""
+
+#: inc/admin/ui/dashboard.php:106
+msgid "Email Adddress"
+msgstr ""
+
+#: inc/admin/ui/index.php:39
+msgid "Lovage Team"
+msgstr ""
+
+#: inc/admin/ui/plugins.php:22
+msgid ""
+"Want more features? We offer some Lovage Extensions can make your website "
+"looks more unique. Please note that Lovage Extensions are only made for "
+"Lovage theme. You can install, activate and delete it as the standard plugin."
+msgstr ""
+
+#: inc/admin/ui/plugins.php:29
+msgid ""
+"For some reasons, the extensions information is not loaded, please try to "
+"refresh the page."
+msgstr ""
+
+#: inc/admin/ui/plugins.php:57
+msgid "New Version Available: "
+msgstr ""
+
+#: inc/admin/ui/plugins.php:86
+msgid "Buy Now"
+msgstr ""
+
+#: inc/admin/ui/plugins.php:100
+msgid "Lovage Pro Required"
+msgstr ""
+
+#: inc/admin/ui/plugins.php:107
+msgid "Premium"
+msgstr ""
+
+#: inc/modules/init/metabox.php:38
+msgid "Page Settings"
+msgstr ""
+
+#: inc/modules/init/metabox.php:39
+msgid "The common settings for the current page (supports the post, page)"
+msgstr ""
+
+#: inc/modules/init/metabox.php:44
+msgid "General"
+msgstr ""
+
+#: inc/modules/init/metabox.php:55
+msgid ""
+"You can separately set a layout for this page, if you choose default, it "
+"will use the customize blog post layout setting."
+msgstr ""
+
+#: inc/modules/init/metabox.php:83
+msgid "Post Settings"
+msgstr ""
+
+#: inc/modules/init/metabox.php:84
+msgid "The common settings for the current blog post."
+msgstr ""
+
+#: inc/modules/init/metabox.php:89
+msgid "Featured Image"
+msgstr ""
+
+#: inc/modules/init/metabox.php:114
+msgid "Default"
+msgstr ""
+
+#: inc/modules/init/metabox.php:115
+msgid "Left"
+msgstr ""
+
+#: inc/modules/init/metabox.php:116
+msgid "Right"
+msgstr ""
+
+#: inc/modules/init/lib.php:150
+msgid "Home"
+msgstr ""
+
+#: inc/modules/init/lib.php:235
+msgid "Search Results for:"
+msgstr ""
+
+#: inc/modules/init/lib.php:241
+msgid "Tag Archives:"
+msgstr ""
+
+#: inc/modules/init/lib.php:250
+msgid "Author Archives:"
+msgstr ""
+
+#: inc/modules/init/lib.php:255
+msgid "Not Found"
+msgstr ""
+
+#: inc/modules/init/lib.php:261
+msgid "Page"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:67
+msgid "Search Results For"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:71
+msgid "404"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:242
+msgid "Posted on"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:245
+msgid "by"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:324
+msgid "Main navigation"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:466
+msgid "Proudly powered by"
+msgstr ""
+
+#: inc/modules/init/template-tags.php:466
+msgid "Lovage Theme "
+msgstr ""
+
+#: inc/modules/init/template-tags.php:598
+msgid "Post navigation"
+msgstr ""
+
+#: inc/modules/woocommerce/metabox.php:22
+#: inc/modules/woocommerce/metabox.php:48
+msgid "Enable Sidebar"
 msgstr ""
 
 #: inc/modules/woocommerce/metabox.php:25
@@ -720,127 +1072,9 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: inc/modules/init/lib.php:450 inc/modules/init/lib.php:519
-msgid "No Comments"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:121
-msgid "None"
-msgstr ""
-
-#: inc/modules/init/lib.php:273
-msgid "Not Found"
-msgstr ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: comments.php:44 comments.php:65
-msgid "Older Comments"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:257
-#: inc/customizer/settings/settings-layout.php:297
-msgid "One Column"
-msgstr ""
-
-#: 404.php:22
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: inc/class-lovage.php:204
-msgid "Page Sidebar"
-msgstr ""
-
-#: template-parts/content-page.php:18 template-parts/content-single.php:36
-#: template-parts/content.php:47
-msgid "Pages:"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:81
-msgid "Paragraph Typography"
-msgstr ""
-
-#: inc/admin/ui/demos.php:32
-msgid ""
-"Please click the following button to install the demo import plugin, then "
-"you will be able to preview and import the demos."
-msgstr ""
-
-#: inc/modules/init/template-tags.php:231
-#, php-format
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:226
-#, php-format
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:587
-msgid "Post navigation"
-msgstr ""
-
-#: inc/modules/init/metabox.php:102
-msgid "Post Settings"
-msgstr ""
-
-#: template-parts/content-single.php:45
-msgid "Post Tags"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:251
-#, php-format
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/class-lovage.php:171
-msgid "Primary Menu"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:461
-msgid "Proudly powered by"
-msgstr ""
-
-#: inc/modules/init/lib.php:135
-msgid "Read More &raquo;"
-msgstr ""
-
-#: template-parts/content-none.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: inc/admin/class-admin.php:125 inc/admin/class-admin.php:126
-msgid "Recommend Plugins"
-msgstr ""
-
-#: inc/admin/class-admin.php:62
-msgid "Register Now"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:338
-msgid "Related Category"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:322
-msgid "Related Posts Section"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:332
-msgid "Related Posts Show By"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:339
-msgid "Related Tag"
-msgstr ""
-
-#: inc/admin/ui/extensions.php:85
-msgid "Required"
+#: inc/modules/woocommerce/metabox.php:26
+#: inc/modules/woocommerce/metabox.php:52
+msgid "Yes"
 msgstr ""
 
 #: inc/modules/woocommerce/metabox.php:31
@@ -848,435 +1082,114 @@ msgstr ""
 msgid "Revolution Slider Alias"
 msgstr ""
 
-#: inc/modules/init/metabox.php:135
-msgid "Right"
+#: inc/modules/woocommerce/extras.php:45
+msgctxt "breadcrumb"
+msgid "Home"
 msgstr ""
 
-#: inc/customizer/settings/settings-layout.php:265
-#: inc/customizer/settings/settings-layout.php:305
-msgid "Right Sidebar"
+#: inc/modules/woocommerce/template-tags.php:42
+msgid "All Products"
+msgstr ""
+
+#: inc/modules/woocommerce/template-tags.php:85
+msgid "Load More"
 msgstr ""
 
 #: inc/modules/woocommerce/template-tags.php:411
 msgid "Sale!"
 msgstr ""
 
-#: template-parts/header/popup.php:17
-msgid "Search Products"
+#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:358
+#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:447
+msgid "Choose or Upload an Image"
 msgstr ""
 
-#: inc/modules/init/template-tags.php:59
-msgid "Search Results For"
+#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:370
+msgid "Choose or Upload Images"
 msgstr ""
 
-#: inc/modules/init/lib.php:253
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:150
-msgid "Set the color and opacity for header image overlay"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:126
-msgid "Set the color for header text color"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:88
-msgid "Set the header image height, the unite is %"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:77
-msgid "Set the site header stick to top."
-msgstr ""
-
-#: inc/customizer/settings/settings-woocommerce.php:15
-msgid "Shop Page"
-msgstr ""
-
-#: inc/class-lovage.php:209
-msgid "Shop Sidebar"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:312
-msgid "Show Author Section"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:65
-msgid "Show Menu Buttons"
-msgstr ""
-
-#: inc/customizer/settings/settings-woocommerce.php:26
-msgid "Show Sidebar"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:287
-msgid "Single Post Layouts"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:154
-msgid "Site Footer Background Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:178
-msgid "Site Footer Link Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:190
-msgid "Site Footer Link Hover Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:166
-msgid "Site Footer Text Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:82
-msgid "Site Header Background Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:118
-msgid "Site Menu Link Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:130
-msgid "Site Menu Link Hover Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:49
-msgid "Site Navigation Typography"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:106
-msgid "Site Title Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:39
-msgid "Site Title Typography"
-msgstr ""
-
-#: template-parts/content-none.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:223
-msgid "Sorry, you are not allowed to activate plugins on this site."
-msgstr ""
-
-#: inc/admin/class-plugin-installer.php:159
-msgid "Sorry, you are not allowed to install plugins on this site."
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:50
-msgid "Standard"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:71
-msgid "Standard Blog Title Typography"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:54
-msgid "Standard RTL"
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:76
-msgid "Sticky Header"
-msgstr ""
-
-#: inc/admin/ui/dashboard.php:4
-msgid "Subscribe To Lovage Newsletter"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:91
-msgid "Subsets"
-msgstr ""
-
-#: inc/modules/init/lib.php:259
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: inc/modules/init/template-tags.php:257
-#, php-format
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:58
-msgid "Text Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:151
-msgid "Text Field"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:162
-#: inc/customizer/settings/settings-components.php:236
-msgid "Text Field: Background Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:173
-#: inc/customizer/settings/settings-components.php:247
-msgid "Text Field: Border Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:195
-msgid "Text Field: Border Radius"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:210
-msgid "Text Field: Border Width"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:184
-#: inc/customizer/settings/settings-components.php:258
-msgid "Text Field: Text Color"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:117
-msgid "Text Transform"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:274
-msgid "Textarea"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:285
-#: inc/customizer/settings/settings-components.php:359
-msgid "Textarea: Background Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:296
-#: inc/customizer/settings/settings-components.php:370
-msgid "Textarea: Border Color"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:318
-msgid "Textarea: Border Radius"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:333
-msgid "Textarea: Border Width"
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:307
-#: inc/customizer/settings/settings-components.php:381
-msgid "Textarea: Text Color"
-msgstr ""
-
-#: inc/admin/class-admin.php:61
-msgid ""
-"Thanks for choosing Lovage! Please activate your purchase code before you "
-"install the required plugins and demos."
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:138
-msgid "The border around the subheading in the header area."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:95
-msgid "The bottom border color of the site header."
-msgstr ""
-
-#: inc/customizer/settings/settings-codes.php:35
-msgid "The codes will be appened above </body> tag."
-msgstr ""
-
-#: inc/customizer/settings/settings-codes.php:25
-msgid "The codes will be appened within <head></head> tag."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:191
-msgid "The color when the mouse hovering on the link."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:131
-msgid "The color when the mouse hovering on the site menu link."
-msgstr ""
-
-#: inc/modules/init/metabox.php:103
-msgid "The common settings for the current blog post."
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:222
-msgid ""
-"The copyright text shows in the bottom footer. The content supports <a> "
-"<span> <small> <strong> HTML tag."
-msgstr ""
-
-#: inc/customizer/settings/settings-components.php:72
-#: inc/customizer/settings/settings-components.php:88
-#: inc/customizer/settings/settings-components.php:196
-#: inc/customizer/settings/settings-components.php:211
-#: inc/customizer/settings/settings-components.php:319
-#: inc/customizer/settings/settings-components.php:334
-msgid "The default unit is px"
-msgstr ""
-
-#: inc/admin/ui/demos.php:31
-msgid "The Demo Import Plugin Isn't Installed."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:59
-msgid "The global content text color."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:47
-msgid "The global link color when hovering on the link."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:35
-msgid "The global link color."
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:61
-msgid "The Lovage Pro plugin is installed but not activated. "
-msgstr ""
-
-#: inc/customizer/settings/settings-layout.php:66
-msgid "The menu buttons are search, WooCommerce cart, and account."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:82
-msgid "The typography settings for the content paragraph text."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:50
-msgid "The typography settings for the default site navigation text."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:40
-msgid ""
-"The typography settings for the default site title text. If you set the LOGO,"
-" the site title will be replaced, so you don't need to set this option."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:169
-msgid "The typography settings for the site widgets content text."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:159
-msgid "The typography settings for the site widgets title."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:72
-msgid "The typography settings for the standard blog title."
-msgstr ""
-
-#: inc/customizer/settings/settings-colors.php:23
-msgid "Theme Color Scheme"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:57
-msgid "System Default"
-msgstr ""
-
-#. Author of the theme
-msgid "Lovage"
-msgstr ""
-
-#: inc/class-lovage.php:201
-msgid "This sidebar will be displayed on the category and single post page."
-msgstr ""
-
-#: inc/class-lovage.php:211
-msgid "This sidebar will be displayed on the shop page."
-msgstr ""
-
-#: inc/class-lovage.php:206
-msgid "This sidebar will be displayed on the static page."
-msgstr ""
-
-#: inc/class-lovage.php:216
-msgid "This widget area will be displayed on the left of the bottom section."
-msgstr ""
-
-#: inc/class-lovage.php:226
-msgid "This widget area will be displayed on the middle of the bottom section."
-msgstr ""
-
-#: inc/class-lovage.php:231
-msgid "This widget area will be displayed on the right of the bottom section."
-msgstr ""
-
-#: inc/class-lovage.php:221
-msgid ""
-"This widget area will be displayed on the second left of the bottom section."
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:17
-msgid "Typography"
-msgstr ""
-
-#: inc/admin/class-admin.php:315
-msgid "Update"
-msgstr ""
-
-#: inc/admin/class-admin.php:315
-#, php-format
-msgid "Update %s"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:55
-msgid "Upgrade to Lovage Pro!"
-msgstr ""
-
-#: inc/admin/ui/dashboard.php:91
-msgid "Upload Logo & Favicon"
-msgstr ""
-
-#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:123
-msgid "Uppercase"
-msgstr ""
-
-#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:440
+#: inc/core/modules/lovage-metabox/class-lovage-metabox.php:448
 msgid "Use this image"
 msgstr ""
 
-#: inc/admin/ui/extensions.php:23
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:54
+msgid "Font Family"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:56
+msgid "System Default"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:72
+msgid "Font Size"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:78
+msgid "Font Weight"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:90
+msgid "Subsets"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:104
+msgid "Line Height"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:110
+msgid "Letter Spacing"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:116
+msgid "Text Transform"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:120
+msgid "None"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:121
+msgid "Capitalize"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:122
+msgid "Uppercase"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:123
+msgid "Lowercase"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-typography.php:124
+msgid "Inherit"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:51
+msgid "Learn More"
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:57
+msgid "The Lovage Pro plugin is installed but not activated. "
+msgstr ""
+
+#: inc/core/modules/lovage-customizer/controls/class-customizer-control-pro-installer.php:57
+msgid "Activate it"
+msgstr ""
+
+#. Description of the theme
 msgid ""
-"Want more features? We offer some Lovage Extensions can make your online "
-"store looks more unique. Please note that Lovage Extensions are only effect "
-"for Lovage theme, and you can install, activate and delete it as the "
-"standard plugin."
+"Lovage is a free highly customizable WordPress theme for multiple purposes. "
+"Lovage theme also comes with many useful extensions that offers the extended "
+"features for different type of website building needs. Especially, we keep "
+"to make pre-designed website demos that you can one click import, the pre-"
+"designed website templates are made by Elementor page builder. For more "
+"details you can learn on https://lovage.io"
 msgstr ""
 
-#: inc/admin/ui/plugins.php:20
-msgid ""
-"We handpicked some useful and high quality 3rd-party plugins which can help "
-"you make things easy. Please note, some of these plugins are premium plugins "
-"or has Pro version. "
+#. URI of the theme
+msgid "https://demo.lovage.io"
 msgstr ""
 
-#: inc/customizer/settings/settings-typography.php:147
-msgid "Widget"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:168
-msgid "Widget Content Typography"
-msgstr ""
-
-#: inc/customizer/settings/settings-typography.php:158
-msgid "Widget Title Typography"
-msgstr ""
-
-#: inc/modules/woocommerce/metabox.php:26
-#: inc/modules/woocommerce/metabox.php:52
-msgid "Yes"
-msgstr ""
-
-#: inc/customizer/settings/settings-codes.php:15
-msgid ""
-"You can add additional codes to head or footer such like google analytics, "
-"facebook pixel, Meta tags and Javascript."
-msgstr ""
-
-#: inc/modules/init/metabox.php:58
-msgid ""
-"You can separately set a layout for this page, if you choose default, it "
-"will use the customize blog post layout setting."
-msgstr ""
-
-#: template-parts/single-post/related-posts.php:52
-msgid "You may also like"
+#. URI of the theme
+msgid "https://lovage.io"
 msgstr ""
